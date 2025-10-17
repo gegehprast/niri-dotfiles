@@ -268,7 +268,7 @@
     "ui": {
         "fontDefault": "Roboto",
         "fontDefaultScale": 1,
-        "fontFixed": "DejaVu Sans Mono",
+        "fontFixed": "FiraCode Nerd Font Mono",
         "fontFixedScale": 1,
         "idleInhibitorEnabled": false,
         "tooltipsEnabled": true
