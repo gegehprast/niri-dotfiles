@@ -2,6 +2,12 @@
 TerminalApplication=kitty
 TerminalService=kitty.desktop
 
+[Icons]
+Theme=Papirus-Dark
+
+[KDE]
+windgetStyle=kvantum
+
 [KFileDialog Settings]
 Allow Expansion=false
 Automatically select filename extension=true
@@ -18,9 +24,3 @@ Sort hidden files last=false
 Sort reversed=false
 Speedbar Width=187
 View Style=DetailTree
-
-[Icons]
-Theme=Papirus-Dark
-
-[KDE]
-windgetStyle=kvantum
