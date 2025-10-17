@@ -66,3 +66,4 @@ Mask the `/usr/share/dbus-1/services/org.freedesktop.FileManager1.service` file 
 Name=org.freedesktop.FileManager1
 Exec=/bin/false
 ```
+Probably requires a restart or relogin.
