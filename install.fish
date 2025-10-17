@@ -1,24 +1,32 @@
 #!/usr/bin/env fish
 
+# Essentials
 paru -S \
-bibata-cursor-theme \
-xdg-desktop-portal-kde \
-yazi \
-stow \
-seahorse \
-gnome-keyring \
-zoxide \
-starship \
-archlinux-xdg-menu \
-ttf-firacode-nerd \
-visual-studio-code-bin \
-zen-browser-bin \
-qt6ct \
-qt5ct \
-gwenview \
-cava \
-matugen \
-dolphin \
-neovim \
-nvtop \
-wlsunset
+    gnome-keyring \
+    seahorse \
+    stow \
+    ttf-firacode-nerd \
+    qt6ct \
+    qt5ct \
+    xdg-desktop-portal-kde \
+    dolphin \
+    archlinux-xdg-menu \
+    gwenview \
+    bibata-cursor-theme \
+    papirus-icon-theme \
+    yazi \
+    zoxide \
+    starship \
+    zen-browser-bin \
+    matugen \
+    wlsunset \
+    cava \
+    visual-studio-code-bin
+
+# My personal app & tools
+paru -S \
+    nvtop \
+    neovim \
+    fnm \
+    pnpm \
+    discord
