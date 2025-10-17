@@ -47,7 +47,7 @@ binds {
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen toggle"; }
     MOD+COMMA                           hotkey-overlay-title="Noctalia setting" { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
     MOD+E                               hotkey-overlay-title="File Manager: Dolphin" { spawn-sh "dolphin"; }
-    MOD+C                               hotkey-overlay-title="VS Code" { spawn-sh "code"; }
+    MOD+C                               hotkey-overlay-title="VS Code" { spawn-sh "DISPLAY=:0 code"; }
     
     // Audio Controls
     XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1.5"; }
