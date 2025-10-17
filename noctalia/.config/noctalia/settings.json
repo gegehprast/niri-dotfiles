@@ -172,7 +172,7 @@
         "backgroundOpacity": 1,
         "colorizeIcons": false,
         "displayMode": "auto_hide",
-        "floatingRatio": 1,
+        "floatingRatio": 0.3,
         "monitors": [
             "DP-3"
         ],
