@@ -7,7 +7,7 @@
     "keybinding": "default",
     "keybinds": {
     },
-    "popToRootOnClose": false,
+    "popToRootOnClose": true,
     "rootSearch": {
         "searchFiles": true
     },
