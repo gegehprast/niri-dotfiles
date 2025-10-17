@@ -2,6 +2,7 @@
     "closeOnFocusLoss": false,
     "faviconService": "twenty",
     "font": {
+        "normal": "FiraCode Nerd Font Mono",
         "size": 10
     },
     "keybinding": "default",
