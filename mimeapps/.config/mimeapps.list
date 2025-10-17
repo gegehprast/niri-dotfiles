@@ -1,4 +1,5 @@
 [Added Associations]
+application/vnd.ms-publisher=code.desktop;
 application/x-extension-htm=zen.desktop;
 application/x-extension-html=zen.desktop;
 application/x-extension-shtml=zen.desktop;
@@ -15,6 +16,7 @@ x-scheme-handler/http=zen.desktop;
 x-scheme-handler/https=zen.desktop;
 
 [Default Applications]
+application/vnd.ms-publisher=code.desktop;
 application/x-extension-htm=zen.desktop
 application/x-extension-html=zen.desktop
 application/x-extension-shtml=zen.desktop
