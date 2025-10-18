@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
 # Essentials
-paru -S \
+paru -S --needed \
     gnome-keyring \
     seahorse \
     stow \
@@ -21,10 +21,12 @@ paru -S \
     matugen \
     wlsunset \
     cava \
-    visual-studio-code-bin
+    visual-studio-code-bin \
+    noctalia-shell \
+    vicinae-bin \
 
 # My personal app & tools
-paru -S \
+paru -S --needed \
     nvtop \
     neovim \
     fnm \
