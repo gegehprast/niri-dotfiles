@@ -256,6 +256,11 @@ animations {
     }
 }
 
+window-rule {
+    geometry-corner-radius 5
+    clip-to-geometry true // noctalia-shell also need this?
+}
+
 // Window Rules
 window-rule {
     match app-id=r#"zen$"# title="^Picture-in-Picture$"
@@ -268,8 +273,13 @@ window-rule {
 }
 
 window-rule {
-    geometry-corner-radius 5
-    clip-to-geometry true // noctalia-shell also need this?
+    match app-id=r#"code$"#
+    // open-maximized-to-edges true // TODO: available on next niri release
+}
+
+window-rule {
+    match app-id=r#"kitty$"#
+    // open-maximized-to-edges true // TODO: available on next niri release
 }
 
 environment {
