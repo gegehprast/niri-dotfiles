@@ -2,6 +2,7 @@
 
 # Essentials
 paru -S --needed \
+    polkit-kde-agent \
     gnome-keyring \
     seahorse \
     stow \
@@ -25,7 +26,7 @@ paru -S --needed \
     visual-studio-code-bin \
     noctalia-shell \
     vicinae-bin
-    
+
 # My personal app & tools
 paru -S --needed \
     nvtop \
