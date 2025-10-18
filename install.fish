@@ -21,10 +21,11 @@ paru -S --needed \
     matugen \
     wlsunset \
     cava \
+    kitty \
     visual-studio-code-bin \
     noctalia-shell \
-    vicinae-bin \
-
+    vicinae-bin
+    
 # My personal app & tools
 paru -S --needed \
     nvtop \
