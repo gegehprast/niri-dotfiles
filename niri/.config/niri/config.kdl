@@ -46,6 +46,7 @@ binds {
     MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "zen-browser"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen toggle"; }
     MOD+COMMA                           hotkey-overlay-title="Noctalia setting" { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
+    MOD+PERIOD                          hotkey-overlay-title="Noctalia control center" { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
     MOD+E                               hotkey-overlay-title="File Manager: Dolphin" { spawn-sh "dolphin"; }
     MOD+C                               hotkey-overlay-title="VS Code" { spawn-sh "DISPLAY=:0 code"; }
     MOD+V                               hotkey-overlay-title="Clipboard History: vicinae" { spawn-sh "vicinae vicinae://extensions/vicinae/clipboard/history"; }
