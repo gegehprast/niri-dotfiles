@@ -261,12 +261,19 @@ animations {
     }
 }
 
+// Window Rules
 window-rule {
     geometry-corner-radius 5
     clip-to-geometry true // noctalia-shell also need this?
 }
 
-// Window Rules
+// KDE portal file picker
+window-rule {
+    match app-id="org.freedesktop.impl.portal.desktop.kde"
+    open-floating true
+    default-column-width { fixed 720; }
+    default-window-height { fixed 560; }
+}
 window-rule {
     match app-id="zen" title="^Picture-in-Picture$"
     open-floating true // Always float Zen PiP windows
