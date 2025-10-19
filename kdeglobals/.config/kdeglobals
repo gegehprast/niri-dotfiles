@@ -6,7 +6,7 @@ TerminalService=kitty.desktop
 Theme=Papirus-Dark
 
 [KDE]
-windgetStyle=kvantum
+windgetStyle=Breeze
 
 [KFileDialog Settings]
 Allow Expansion=false
