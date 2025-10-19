@@ -1,22 +1,26 @@
 #!/usr/bin/env fish
 
-echo "Installing packages..."
-fish packages.fish
+read -P "Do you want to install/update/reinstall the packages listed in packages.fish? (yes/NO): " confirmation
+if test "$confirmation" = yes
+    fish packages.fish
+else
+    echo "Skipping package installation."
+end
 
-echo --------------------------------------------
-echo "Copying .config and .local folders to home directory..."
-read -P "This will overwrite your existing .config and .local folders. Do you want to continue? (yes/NO): " confirmation
+read -P "Do you want to copy .config and .local folders to home directory? (yes/NO): " confirmation
 
 if test "$confirmation" = yes
     cp -rf .config/ ~/
     cp -rf .local/ ~/
 else
-    echo "Config and local files not copied."
+    echo "Skipping .config and .local copy."
 end
 
-echo --------------------------------------------
-echo "Copying wallpapers to Pictures directory..."
-mkdir -p ~/Pictures/Wallpapers
-cp -rf wallpapers/* ~/Pictures/Wallpapers/
+read -P "Do you want to copy wallpapers to Pictures directory? (yes/NO): " confirmation
 
-echo ok
+if test "$confirmation" = yes
+    mkdir -p ~/Pictures/Wallpapers
+    cp -rf wallpapers/* ~/Pictures/Wallpapers/
+else
+    echo "Skipping wallpapers copy."
+end
