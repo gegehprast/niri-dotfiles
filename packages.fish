@@ -11,6 +11,8 @@ paru -S --needed \
     ttf-firacode-nerd \
     qt6ct \
     qt5ct \
+    xdg-desktop-portal-gtk \
+    xdg-desktop-portal-gnome \
     xdg-desktop-portal-kde \
     bibata-cursor-theme \
     papirus-icon-theme \
