@@ -274,8 +274,14 @@ window-rule {
     default-column-width { fixed 720; }
     default-window-height { fixed 560; }
 }
+
 window-rule {
-    match app-id="zen" title="^Picture-in-Picture$"
+    match app-id=r#".*cloud-drive-ui.*"#
+    open-floating true
+}
+
+window-rule {
+    match app-id="zen" title=r#"^Picture-in-Picture$"#
     open-floating true // Always float Zen PiP windows
 }
 
