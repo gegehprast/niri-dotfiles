@@ -6,17 +6,16 @@
         "size": 10
     },
     "keybinding": "default",
-    "keybinds": {
-    },
+    "keybinds": {},
     "popToRootOnClose": true,
     "rootSearch": {
         "searchFiles": true
     },
     "theme": {
-        "name": "catppuccin-mocha.json"
+        "name": "catppuccin-mocha"
     },
     "window": {
-        "csd": false,
+        "csd": true,
         "opacity": 0.95,
         "rounding": 10
     }
