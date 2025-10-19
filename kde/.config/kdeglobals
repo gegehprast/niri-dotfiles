@@ -2,6 +2,18 @@
 TerminalApplication=kitty
 TerminalService=kitty.desktop
 
+[Colors:View]
+BackgroundNormal=#00000000
+BackgroundAlternate=#121212ff
+ForegroundNormal=#ffffffff
+ForegroundInactive=#7f7f7fff
+ForegroundActive=#ffffffff
+HighlightNormal=#292929ff
+HighlightInactive=#292929ff
+
+[UiSettings]
+ColorScheme=colors/noctalia.conf
+
 [Icons]
 Theme=Papirus-Dark
 
