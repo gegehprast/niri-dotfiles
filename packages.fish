@@ -14,7 +14,6 @@ paru -S --needed \
     xdg-desktop-portal-kde \
     bibata-cursor-theme \
     papirus-icon-theme \
-    kvantum \
     archlinux-xdg-menu \
     dolphin \
     gwenview \
