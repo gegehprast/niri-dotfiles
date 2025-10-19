@@ -12,11 +12,12 @@ paru -S --needed \
     qt6ct \
     qt5ct \
     xdg-desktop-portal-kde \
-    dolphin \
-    archlinux-xdg-menu \
-    gwenview \
     bibata-cursor-theme \
     papirus-icon-theme \
+    kvantum \
+    archlinux-xdg-menu \
+    dolphin \
+    gwenview \
     yazi \
     zoxide \
     starship \
