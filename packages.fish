@@ -6,6 +6,7 @@ paru -S --needed \
     polkit-kde-agent \
     gnome-keyring \
     seahorse \
+    playerctl \
     stow \
     ttf-firacode-nerd \
     qt6ct \
@@ -20,10 +21,11 @@ paru -S --needed \
     zoxide \
     starship \
     zen-browser-bin \
-    matugen \
+    matugen-bin \
     wlsunset \
     cava \
     kitty \
+    neovim \
     visual-studio-code-bin \
     noctalia-shell \
     vicinae-bin
@@ -31,7 +33,8 @@ paru -S --needed \
 # My personal app & tools
 paru -S --needed \
     nvtop \
-    neovim \
     fnm \
     pnpm \
-    discord
+    discord \
+    nm-connection-editor \
+    downgrade

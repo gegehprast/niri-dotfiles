@@ -44,7 +44,7 @@ set -U fish_pager_color_secondary_completion "#b9b1bc" # suffix of every second 
 set -U fish_pager_color_secondary_description "#b9b1bc" # description of every second unselected completion
 
 # EDITOR
-set -gx EDITOR code
+set -gx EDITOR nvim
 #EDITOR end
 
 # Starship

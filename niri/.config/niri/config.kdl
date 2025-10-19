@@ -263,12 +263,7 @@ window-rule {
 
 // Window Rules
 window-rule {
-    match app-id=r#"zen$"# title="^Picture-in-Picture$"
-    open-floating true // Always float Zen PiP windows
-}
-
-window-rule {
-    match app-id=r#"steam$"# title="^Friends List$"
+    match app-id="zen" title="^Picture-in-Picture$"
     open-floating true // Always float Zen PiP windows
 }
 
@@ -282,6 +277,12 @@ window-rule {
     // open-maximized-to-edges true // TODO: available on next niri release
 }
 
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+    open-focused false
+}
+
 environment {
     DISPLAY ":1"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
@@ -290,6 +291,7 @@ environment {
     XDG_SESSION_TYPE "wayland"
     XDG_CURRENT_DESKTOP "niri"
     QT_QPA_PLATFORMTHEME "qt6ct"
+    QS_ICON_THEME "Papirus-Dark"
 }
 
 hotkey-overlay {
