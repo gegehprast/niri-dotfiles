@@ -34,7 +34,7 @@ paru -S --needed \
 # My personal app & tools
 paru -S --needed \
     nvtop \
-    fnm \
+    fnm-bin \
     pnpm \
     discord \
     nm-connection-editor \
