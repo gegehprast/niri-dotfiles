@@ -33,9 +33,9 @@ password	optional	pam_gnome_keyring.so
 
 ### Automatic login to virtual console
 
-#### Virtual console
+I don't like using a login manager. I just use the shell lockscreen, see `~/.config/niri/scripts/autolock.fish`. The script will trigger Noctalia lockScreen when niri first starts.
 
-Create a drop-in file for `getty@tty1.service` with the following contents:
+Now to make automatic login to virtual console work, create a drop-in file for `getty@tty1.service` with the following contents:
 
 ```
 /etc/systemd/system/getty@tty1.service.d/autologin.conf
@@ -44,6 +44,8 @@ Create a drop-in file for `getty@tty1.service` with the following contents:
 ExecStart=
 ExecStart=-/sbin/agetty --noreset --noclear --autologin USERNAME - ${TERM}
 ```
+
+Replace `USERNAME` with your username.
 
 ## Default Terminal
 
