@@ -4,9 +4,9 @@
 
 Add `auth optional pam_gnome_keyring.so` at the end of the auth section and `session optional pam_gnome_keyring.so auto_start` at the end of the session section.
 
-```
-/etc/pam.d/login
+*/etc/pam.d/login*
 
+```
 #%PAM-1.0
 
 auth       required     pam_securetty.so
@@ -22,9 +22,9 @@ session    optional     pam_gnome_keyring.so auto_start
 
 Append `password optional pam_gnome_keyring.so` to `/etc/pam.d/passwd`:
 
-```
-/etc/pam.d/passwd
+*/etc/pam.d/passwd*
 
+```
 ...
 password	optional	pam_gnome_keyring.so
 ```
@@ -37,9 +37,9 @@ I don't like using a login manager. I just use the shell lockscreen, see `~/.con
 
 Now to make automatic login to virtual console work, create a drop-in file for `getty@tty1.service` with the following contents:
 
-```
-/etc/systemd/system/getty@tty1.service.d/autologin.conf
+*/etc/systemd/system/getty@tty1.service.d/autologin.conf*
 
+```
 [Service]
 ExecStart=
 ExecStart=-/sbin/agetty --noreset --noclear --autologin USERNAME - ${TERM}
@@ -61,9 +61,9 @@ I've also installed xdg-terminal-exec and added kitty.desktop to the list (`~/.c
 
 Mask the `/usr/share/dbus-1/services/org.freedesktop.FileManager1.service` file by copying it to `~/.local/share/dbus-1/services/` and modifying the `Exec=` line to `/bin/false`.
 
-```
-~/.local/share/dbus-1/services/org.freedesktop.FileManager1.service
+*~/.local/share/dbus-1/services/org.freedesktop.FileManager1.service*
 
+```
 [D-BUS Service]
 Name=org.freedesktop.FileManager1
 Exec=/bin/false
@@ -73,12 +73,13 @@ Probably requires a restart or relogin.
 
 ## Screencasting
 
-I don't know what happen during my setup but screencasting doesn't work without this two lines in `~/.config/xdg-desktop-portal/niri-portal.conf`.
+I don't know what happen during my setup but screencasting doesn't work without this two lines in `niri-portal.conf`.
 
+*~/.config/xdg-desktop-portal/niri-portal.conf*
 ```
-~/.config/xdg-desktop-portal/niri-portal.conf
-
 [preferred]
+...
 org.freedesktop.impl.portal.Settings=gnome;
 org.freedesktop.impl.portal.ScreenCast=gnome;
+...
 ```
