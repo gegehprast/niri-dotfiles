@@ -1,4 +1,5 @@
 // Input
+// https://yalter.github.io/niri/Configuration%3A-Input.html
 input {
     keyboard {
         xkb {
@@ -22,13 +23,14 @@ input {
 }
 
 // Cursor
+// https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#cursor
 cursor {
     xcursor-theme "Bibata-Modern-Amber"
     xcursor-size 20
 }
 
 // Outputs
-// Use `niri msg outputs` to get output names
+// https://yalter.github.io/niri/Configuration%3A-Outputs.html
 output "DP-3" {
     mode "2560x1440@144.000"
     scale 1
@@ -37,6 +39,7 @@ output "DP-3" {
 }
 
 // Keybindings
+// https://yalter.github.io/niri/Configuration%3A-Key-Bindings.html
 binds {
     MOD+SLASH                           { show-hotkey-overlay; }
     
@@ -172,6 +175,7 @@ binds {
 }
 
 // Startups
+// https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#spawn-at-startup
 spawn-sh-at-startup "dbus-update-activation-environment --systemd --all"
 spawn-sh-at-startup "gnome-keyring-daemon --start --components=secrets"
 spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
@@ -180,9 +184,11 @@ spawn-sh-at-startup "~/.config/niri/scripts/autolock.fish"
 spawn-sh-at-startup "vicinae server"
 
 // Disable window decorations
+// https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#prefer-no-csd
 prefer-no-csd
 
 // Layout
+// https://yalter.github.io/niri/Configuration%3A-Layout.html
 layout {
     gaps 4
     center-focused-column "never"
@@ -228,6 +234,7 @@ layout {
 }
 
 // Animations
+// https://yalter.github.io/niri/Configuration%3A-Animations.html
 animations {
     workspace-switch {
         spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
@@ -262,6 +269,7 @@ animations {
 }
 
 // Window Rules
+// https://yalter.github.io/niri/Configuration%3A-Window-Rules.html
 window-rule {
     geometry-corner-radius 5
     clip-to-geometry true // noctalia-shell also need this?
@@ -301,6 +309,8 @@ window-rule {
     open-focused false
 }
 
+// Environment Variables
+// https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#environment
 environment {
     DISPLAY ":1"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
@@ -313,16 +323,22 @@ environment {
     QS_ICON_THEME "Papirus-Dark"
 }
 
+// Hotkey Overlay
+// https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#hotkey-overlay
 hotkey-overlay {
     skip-at-startup
 }
 
+// Layer Rules
+// https://yalter.github.io/niri/Configuration%3A-Layer-Rules.html
 // noctalia-shell need this
 layer-rule {
     match namespace="^quickshell-overview$"
     place-within-backdrop true
 }
 
+// Debug Options
+// https://yalter.github.io/niri/Configuration%3A-Debug-Options.html
 // noctalia-shell need this
 debug {
     honor-xdg-activation-with-invalid-serial
