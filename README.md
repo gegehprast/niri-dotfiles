@@ -66,4 +66,17 @@ Mask the `/usr/share/dbus-1/services/org.freedesktop.FileManager1.service` file 
 Name=org.freedesktop.FileManager1
 Exec=/bin/false
 ```
+
 Probably requires a restart or relogin.
+
+## Screencasting
+
+I don't know what happen during my setup but screencasting doesn't work without this two lines in `~/.config/xdg-desktop-portal/niri-portal.conf`.
+
+```
+~/.config/xdg-desktop-portal/niri-portal.conf
+
+[preferred]
+org.freedesktop.impl.portal.Settings=gnome;
+org.freedesktop.impl.portal.ScreenCast=gnome;
+```
