@@ -73,6 +73,7 @@ binds {
 
     // Window Management
     MOD+Q                               { close-window; }
+    MOD+R                               { switch-preset-column-width; }
 
     MOD+LEFT                            { focus-column-left; }
     MOD+H                               { focus-column-left; }
@@ -143,7 +144,7 @@ binds {
     MOD+SHIFT+8                         { move-column-to-workspace 8; }
     MOD+SHIFT+9                         { move-column-to-workspace 9; }
 
-    MOD+TAB                             { focus-workspace-previous; }
+    MOD+SHIFT+TAB                       { focus-workspace-previous; }
 
     // Layout Management
     MOD+CTRL+F                          { expand-column-to-available-width; }
@@ -156,9 +157,11 @@ binds {
 
     // Window States
     MOD+T                               { toggle-window-floating; }
+    MOD+SHIFT+T                         { switch-focus-between-floating-and-tiling; }
     MOD+F                               { maximize-column; }
     MOD+SHIFT+F                         { fullscreen-window; }
     MOD+W                               { toggle-column-tabbed-display; }
+    MOD+TAB                       { focus-window-down-or-top; }
 
     // Screenshots
     MOD+SHIFT+S                         { screenshot; }
@@ -190,24 +193,25 @@ prefer-no-csd
 // Layout
 // https://yalter.github.io/niri/Configuration%3A-Layout.html
 layout {
-    gaps 4
+    gaps 8
     center-focused-column "never"
 
     preset-column-widths {
         proportion 0.33333
         proportion 0.5
-        proportion 0.66667
+        proportion 0.66666
     }
 
     border {
-        width 2
-        urgent-color "#9b0000"
-        active-gradient from="#cc80ffff" to="#bbddff" angle=75
-        inactive-gradient from="#505050" to="#cfcfcfcf" angle=75
+        off
     }
 
     focus-ring {
-        off
+        width 4
+        urgent-color "#f00f"
+        // active-gradient from="#cc80ffff" to="#bbddff" angle=75
+        active-gradient from="#cc80ffff" to="#bbddff" angle=75 in="oklch longer hue"
+        inactive-color "#505050"
     }
 
     shadow {
@@ -227,9 +231,16 @@ layout {
     tab-indicator {
         width 8
         gap 8
-        length total-proportion=1.0
+        gaps-between-tabs 8
+        length total-proportion=0.5
         position "bottom"
         place-within-column
+    }
+    
+    insert-hint {
+        // off
+        color "#cc80ffff"
+        gradient from="#cc80ff67" to="#bbddff49" angle=75 in="oklch longer hue" relative-to="workspace-view"
     }
 }
 
