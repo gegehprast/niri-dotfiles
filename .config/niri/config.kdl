@@ -47,6 +47,7 @@ binds {
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
     MOD+KP_Enter                        hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
     MOD+SPACE                           hotkey-overlay-title="Open App Launcher: vicinae" { spawn-sh "vicinae toggle"; }
+    MOD+SHIFT+W                         hotkey-overlay-title="Focus to Opened Window" { spawn-sh "~/.config/niri/scripts/opened_windows.fish"; }
     MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "zen-browser"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen toggle"; }
     MOD+COMMA                           hotkey-overlay-title="Noctalia setting" { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
@@ -166,7 +167,7 @@ binds {
     // Screenshots
     MOD+SHIFT+S                         { screenshot; }
     MOD+PRINT                           { screenshot-screen; }
-    MOD+SHIFT+W                         { screenshot-window; }
+    MOD+SHIFT+PRINT                     { screenshot-window; }
 
     // Emergency Escape Key
     MOD+ESCAPE                          allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
