@@ -7,3 +7,6 @@ qt6ct/.config/qt6ct/colors/noctalia.conf
 qt5ct/.config/qt5ct/colors/noctalia.conf
 gtk4/.config/gtk-4.0/gtk.css
 gtk3/.config/gtk-3.0/gtk.css
+
+# Personal scripts
+.config/niri/scripts/personal_autostart.fish
