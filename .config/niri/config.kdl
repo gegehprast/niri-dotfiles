@@ -205,8 +205,8 @@ layout {
 
     border {
         width 4
-        urgent-color "#f00f"
-        active-gradient from="#8a4294ff" to="#0cbcc2ff" angle=75 in="oklch longer hue"
+        urgent-color "#dd2d2dff"
+        active-gradient from="#cc80ffff" to="#bbddffff" angle=75 in="oklch longer hue"
         inactive-color "#505050"
     }
 
@@ -235,6 +235,8 @@ layout {
         length total-proportion=0.5
         position "bottom"
         place-within-column
+        active-gradient from="#bbddffff" to="#cc80ffff" angle=75 in="oklch longer hue"
+        inactive-color "#505050"
     }
     
     insert-hint {
