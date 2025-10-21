@@ -2,7 +2,8 @@
     "appLauncher": {
         "backgroundOpacity": 1,
         "enableClipboardHistory": false,
-        "pinnedExecs": [],
+        "pinnedExecs": [
+        ],
         "position": "center",
         "sortByMostUsed": true,
         "terminalCommand": "xterm -e",
@@ -10,7 +11,8 @@
     },
     "audio": {
         "cavaFrameRate": 60,
-        "mprisBlacklist": [],
+        "mprisBlacklist": [
+        ],
         "preferredPlayer": "",
         "visualizerType": "linear",
         "volumeOverdrive": true,
@@ -22,7 +24,8 @@
         "floating": false,
         "marginHorizontal": 0.25,
         "marginVertical": 0.25,
-        "monitors": [],
+        "monitors": [
+        ],
         "position": "top",
         "showCapsule": true,
         "widgets": {
@@ -71,7 +74,8 @@
                     "id": "ScreenRecorder"
                 },
                 {
-                    "blacklist": [],
+                    "blacklist": [
+                    ],
                     "colorizeIcons": false,
                     "id": "Tray"
                 },
@@ -172,9 +176,12 @@
         "colorizeIcons": false,
         "displayMode": "auto_hide",
         "floatingRatio": 2,
-        "monitors": ["DP-3"],
+        "monitors": [
+            "DP-3"
+        ],
         "onlySameOutput": true,
-        "pinnedApps": []
+        "pinnedApps": [
+        ]
     },
     "general": {
         "animationDisabled": false,
@@ -219,7 +226,8 @@
         "lastSeenTs": 1760875119000,
         "location": "bottom_right",
         "lowUrgencyDuration": 5,
-        "monitors": [],
+        "monitors": [
+        ],
         "normalUrgencyDuration": 10,
         "respectExpireTimeout": false
     },
@@ -228,7 +236,8 @@
         "autoHideMs": 2000,
         "enabled": true,
         "location": "bottom",
-        "monitors": []
+        "monitors": [
+        ]
     },
     "screenRecorder": {
         "audioCodec": "opus",
@@ -276,6 +285,8 @@
         "enabled": true,
         "fillColor": "#000000",
         "fillMode": "crop",
+        "monitors": [
+        ],
         "randomEnabled": true,
         "randomIntervalSec": 3600,
         "setWallpaperOnAllMonitors": true,

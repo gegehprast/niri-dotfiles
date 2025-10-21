@@ -10,3 +10,4 @@ gtk3/.config/gtk-3.0/gtk.css
 
 # Personal scripts
 .config/niri/scripts/personal_autostart.fish
+ignores/

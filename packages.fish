@@ -13,6 +13,7 @@ paru -S --needed \
     xdg-desktop-portal-gtk \
     xdg-desktop-portal-gnome \
     xdg-desktop-portal-kde \
+    stow \
     bibata-cursor-theme \
     papirus-icon-theme \
     archlinux-xdg-menu \
@@ -33,7 +34,6 @@ paru -S --needed \
 
 # My personal app & tools
 paru -S --needed \
-    stow \
     nvtop \
     fnm-bin \
     pnpm \
