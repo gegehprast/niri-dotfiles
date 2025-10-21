@@ -194,7 +194,7 @@ prefer-no-csd
 // Layout
 // https://yalter.github.io/niri/Configuration%3A-Layout.html
 layout {
-    gaps 8
+    gaps 4
     center-focused-column "never"
 
     preset-column-widths {
@@ -204,15 +204,14 @@ layout {
     }
 
     border {
-        off
+        width 4
+        urgent-color "#f00f"
+        active-gradient from="#8a4294ff" to="#0cbcc2ff" angle=75 in="oklch longer hue"
+        inactive-color "#505050"
     }
 
     focus-ring {
-        width 4
-        urgent-color "#f00f"
-        // active-gradient from="#cc80ffff" to="#bbddff" angle=75
-        active-gradient from="#cc80ffff" to="#bbddff" angle=75 in="oklch longer hue"
-        inactive-color "#505050"
+        off
     }
 
     shadow {
@@ -223,10 +222,10 @@ layout {
     }
 
     struts {
-        left -2
-        right -2
-        top -2
-        bottom -2
+        left 0
+        right 0
+        top 0
+        bottom 0
     }
 
     tab-indicator {
