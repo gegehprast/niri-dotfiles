@@ -7,7 +7,6 @@ paru -S --needed \
     gnome-keyring \
     seahorse \
     playerctl \
-    stow \
     ttf-firacode-nerd \
     qt6ct \
     qt5ct \
@@ -34,6 +33,7 @@ paru -S --needed \
 
 # My personal app & tools
 paru -S --needed \
+    stow \
     nvtop \
     fnm-bin \
     pnpm \
