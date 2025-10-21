@@ -67,16 +67,7 @@ fzf --fish | source
 # fzf end
 
 # fnm
-fnm env --use-on-cd --shell fish | source
-set -gx PATH /run/user/1000/fnm_multishells/40311_1760717545792/bin $PATH
-set -gx FNM_MULTISHELL_PATH /run/user/1000/fnm_multishells/40311_1760717545792
-set -gx FNM_VERSION_FILE_STRATEGY local
-set -gx FNM_DIR "$HOME/.local/share/fnm"
-set -gx FNM_LOGLEVEL info
-set -gx FNM_NODE_DIST_MIRROR "https://nodejs.org/dist"
-set -gx FNM_COREPACK_ENABLED false
-set -gx FNM_RESOLVE_ENGINES true
-set -gx FNM_ARCH x64
+fnm env --use-on-cd --resolve-engines --version-file-strategy=recursive --shell fish | source
 # fnm end
 
 # pnpm
