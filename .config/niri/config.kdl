@@ -186,6 +186,7 @@ spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
 spawn-sh-at-startup "qs -c noctalia-shell"
 spawn-sh-at-startup "~/.config/niri/scripts/autolock.fish"
 spawn-sh-at-startup "vicinae server"
+spawn-sh-at-startup "~/.config/niri/scripts/personal_autostart.fish"
 
 // Disable window decorations
 // https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#prefer-no-csd
