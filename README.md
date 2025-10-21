@@ -1,3 +1,5 @@
+# This is not necessarily a usage guide, more like a note to self.
+
 ## GNOME/Keyring
 
 ### 1. PAM step
