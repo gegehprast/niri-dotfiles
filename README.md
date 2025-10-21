@@ -104,3 +104,27 @@ org.freedesktop.impl.portal.Settings=gnome;
 org.freedesktop.impl.portal.ScreenCast=gnome;
 ...
 ```
+
+## XWayland Applications
+Some apps, like Electron apps, won't launch without setting the DISPLAY environment variable to `:0`. The simplest way is to just append `DISPLAY=:0` before the executable, like `DISPLAY=:0 discord`.
+
+Now, some extra steps are required to make this work with Vicinae. I'm still very new to niri, so this is the best I can come up for now. Create a wrapper script for your app; see the example in `.config/niri/scripts/xwayland_{APP}.fish`. Then edit the app's desktop file to point to the wrapper script. Example for Discord:
+
+*~/.config/niri/scripts/xwayland_discord.fish*
+
+```fish
+#!/usr/bin/env fish
+
+set DISPLAY :0
+/usr/bin/discord $argv
+```
+
+*~/.local/share/applications/discord.desktop*
+
+```
+[Desktop Entry]
+Name=Discord
+...
+Exec=/home/gegeh/.config/niri/scripts/xwayland_discord.fish
+...
+```
