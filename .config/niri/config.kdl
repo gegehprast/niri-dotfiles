@@ -163,7 +163,7 @@ binds {
     MOD+F                               { maximize-column; }
     MOD+SHIFT+F                         { fullscreen-window; }
     MOD+W                               { toggle-column-tabbed-display; }
-    MOD+TAB                       { focus-window-down-or-top; }
+    MOD+TAB                             { focus-window-down-or-top; }
 
     // Screenshots
     MOD+SHIFT+S                         { screenshot; }

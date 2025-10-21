@@ -248,7 +248,7 @@
         "quality": "very_high",
         "showCursor": true,
         "videoCodec": "h264",
-        "videoSource": "screen"
+        "videoSource": "portal"
     },
     "settingsVersion": 16,
     "setupCompleted": true,
