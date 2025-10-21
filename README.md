@@ -33,9 +33,9 @@ password	optional	pam_gnome_keyring.so
 
 ### Automatic login to virtual console
 
-I don't like using a login manager. I just use the shell lockscreen, see `~/.config/niri/scripts/autolock.fish`. The script will trigger Noctalia lockScreen when niri first starts.
+I don't like using a login manager. I just use the shell lockscreen; see `~/.config/niri/scripts/autolock.fish`. The script will trigger the Noctalia lockscreen when niri first starts.
 
-Now to make automatic login to virtual console work, create a drop-in file for `getty@tty1.service` with the following contents:
+Now, to make automatic login to virtual console work, create a drop-in file for `getty@tty1.service` with the following contents:
 
 */etc/systemd/system/getty@tty1.service.d/autologin.conf*
 
@@ -55,9 +55,10 @@ Set the default terminal emulator to kitty, run:
 xdg-mime default kitty.desktop x-scheme-handler/terminal
 ```
 
-I've also installed xdg-terminal-exec and added kitty.desktop to the list (`~/.config/xdg-terminals.list`). Not sure if this is necessary, but this make Arch/Cachy-Update work properly with kitty as the terminal in my case.
+I've also installed `xdg-terminal-exec` and added kitty.desktop to the list (`~/.config/xdg-terminals.list`). This step is already configured in the dotfiles. Not sure if this is necessary, but this makes Arch/Cachy-Update work properly with kitty as the terminal in my case.
 
 ## Make browsers use Dolphin as file manager
+>*This step is already configured in the dotfiles.*
 
 Mask the `/usr/share/dbus-1/services/org.freedesktop.FileManager1.service` file by copying it to `~/.local/share/dbus-1/services/` and modifying the `Exec=` line to `/bin/false`.
 
@@ -71,9 +72,29 @@ Exec=/bin/false
 
 Probably requires a restart or relogin.
 
-## Screencasting
+## Make Firefox-based browsers use KDE file picker
 
-I don't know what happen during my setup but screencasting doesn't work without this two lines in `niri-portal.conf`.
+Set `org.freedesktop.impl.portal.FileChooser` to `kde` in `niri-portal.conf`. 
+
+*~/.config/xdg-desktop-portal/niri-portal.conf*
+```
+[preferred]
+...
+org.freedesktop.impl.portal.FileChooser=kde;
+...
+```
+
+This part is already configured in the dotfiles, but you probably need to configure your browser flags as well.
+
+Go to `about:config` and set `widget.use-xdg-desktop-portal.file-picker` to 1. The possible values, as far as I know, are:
+- 0 = Don't use xdg-desktop-portal file picker
+- 1 = Always use xdg-desktop-portal file picker
+- 2 = Automatic
+
+## Screencasting
+>*This step is already configured in the dotfiles.*
+
+I don't know what happened during my setup, but screencasting doesn't work without these two lines in `niri-portal.conf`.
 
 *~/.config/xdg-desktop-portal/niri-portal.conf*
 ```
