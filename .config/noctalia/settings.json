@@ -177,7 +177,6 @@
         "displayMode": "auto_hide",
         "floatingRatio": 2,
         "monitors": [
-            "DP-3"
         ],
         "onlySameOutput": true,
         "pinnedApps": [
