@@ -188,6 +188,8 @@ spawn-sh-at-startup "qs -c noctalia-shell"
 spawn-sh-at-startup "~/.config/niri/scripts/autolock.fish"
 spawn-sh-at-startup "vicinae server"
 spawn-sh-at-startup "~/.config/niri/scripts/personal_autostart.fish"
+spawn-sh-at-startup "~/.config/niri/scripts/xwayland_discord.fish &"
+spawn-sh-at-startup "~/.config/niri/scripts/xwayland_steam_native.fish &"
 
 // Disable window decorations
 // https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#prefer-no-csd
@@ -283,6 +285,10 @@ animations {
     }
 }
 
+// Named Workspaces
+workspace "1"
+workspace "2"
+
 // Window Rules
 // https://yalter.github.io/niri/Configuration%3A-Window-Rules.html
 window-rule {
@@ -318,6 +324,18 @@ window-rule {
     // open-maximized-to-edges true // TODO: available on next niri release
 }
 
+window-rule {
+    match app-id="steam"
+    exclude title=r#"^notificationtoasts_\d+_desktop$"#
+    open-on-workspace "2"
+}
+
+window-rule {
+    match app-id="discord"
+    open-on-workspace "2"
+}
+
+// Steam Notification Toasts Fix
 window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
     default-floating-position x=10 y=10 relative-to="bottom-right"
