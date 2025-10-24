@@ -31,11 +31,13 @@
         "widgets": {
             "center": [
                 {
-                    "hideMode": "hidden",
+                    "hideMode": "visible",
                     "id": "MediaMini",
-                    "scrollingMode": "always",
+                    "maxWidth": 200,
+                    "scrollingMode": "hover",
                     "showAlbumArt": true,
                     "showVisualizer": true,
+                    "useFixedWidth": false,
                     "visualizerType": "wave"
                 }
             ],
@@ -55,9 +57,10 @@
                     "colorizeIcons": false,
                     "hideMode": "hidden",
                     "id": "ActiveWindow",
+                    "maxWidth": 145,
                     "scrollingMode": "hover",
                     "showIcon": true,
-                    "width": 145
+                    "useFixedWidth": false
                 }
             ],
             "right": [
@@ -112,8 +115,11 @@
     "colorSchemes": {
         "darkMode": true,
         "generateTemplatesForPredefined": true,
+        "manualSunrise": "06:30",
+        "manualSunset": "18:30",
         "matugenSchemeType": "scheme-fruit-salad",
         "predefinedScheme": "Noctalia (default)",
+        "schedulingMode": "off",
         "useWallpaperColors": true
     },
     "controlCenter": {
@@ -180,7 +186,8 @@
         ],
         "onlySameOutput": true,
         "pinnedApps": [
-        ]
+        ],
+        "size": 1
     },
     "general": {
         "animationDisabled": false,
@@ -189,6 +196,8 @@
         "compactLockScreen": false,
         "dimDesktop": false,
         "forceBlackScreenCorners": false,
+        "language": "",
+        "lockOnSuspend": true,
         "radiusRatio": 1,
         "scaleRatio": 1,
         "screenRadiusRatio": 0.5,
@@ -201,6 +210,7 @@
     },
     "location": {
         "name": "Banten",
+        "showCalendarEvents": true,
         "showWeekNumberInCalendar": false,
         "use12hourFormat": false,
         "useFahrenheit": false,
@@ -219,24 +229,23 @@
         "nightTemp": "4000"
     },
     "notifications": {
-        "alwaysOnTop": false,
         "criticalUrgencyDuration": 15,
         "doNotDisturb": false,
-        "lastSeenTs": 1760875119000,
         "location": "bottom_right",
         "lowUrgencyDuration": 5,
         "monitors": [
         ],
         "normalUrgencyDuration": 10,
+        "overlayLayer": true,
         "respectExpireTimeout": false
     },
     "osd": {
-        "alwaysOnTop": false,
         "autoHideMs": 2000,
         "enabled": true,
         "location": "bottom",
         "monitors": [
-        ]
+        ],
+        "overlayLayer": true
     },
     "screenRecorder": {
         "audioCodec": "opus",
@@ -267,14 +276,15 @@
         "kcolorscheme": true,
         "kitty": true,
         "pywalfox": false,
-        "qt": true
+        "qt": true,
+        "vicinae": true
     },
     "ui": {
         "fontDefault": "Roboto",
         "fontDefaultScale": 1,
         "fontFixed": "FiraCode Nerd Font Mono",
         "fontFixedScale": 1,
-        "idleInhibitorEnabled": false,
+        "panelsOverlayLayer": true,
         "tooltipsEnabled": true
     },
     "wallpaper": {

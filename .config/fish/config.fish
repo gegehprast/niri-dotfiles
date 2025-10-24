@@ -86,3 +86,7 @@ alias pp=pnpm
 alias ppx=pnpx
 alias nmi=nmcli
 alias wp=wpctl
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
