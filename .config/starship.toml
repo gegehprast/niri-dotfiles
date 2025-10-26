@@ -14,6 +14,7 @@ $c\
 $rust\
 $golang\
 $nodejs\
+$bun\
 $php\
 $java\
 $kotlin\
@@ -132,6 +133,11 @@ format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [nodejs]
 symbol = ""
+style = "bg:teal"
+format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+
+[bun]
+symbol = ""
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
