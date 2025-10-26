@@ -1,4 +1,4 @@
 #!/usr/bin/env fish
 
-set DISPLAY :0
+# set DISPLAY :0
 /usr/bin/code $argv
