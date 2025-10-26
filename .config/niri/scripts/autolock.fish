@@ -12,4 +12,4 @@ end
 
 sleep 1.1
 
-qs -c noctalia-shell ipc call lockScreen toggle
+qs -c noctalia-shell ipc call lockScreen lock
