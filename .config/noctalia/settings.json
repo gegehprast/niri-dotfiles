@@ -1,6 +1,8 @@
 {
     "appLauncher": {
         "backgroundOpacity": 1,
+        "customLaunchPrefix": "",
+        "customLaunchPrefixEnabled": false,
         "enableClipboardHistory": false,
         "pinnedExecs": [
         ],
@@ -49,6 +51,7 @@
                     "useDistroLogo": false
                 },
                 {
+                    "characterCount": 2,
                     "hideUnoccupied": false,
                     "id": "Workspace",
                     "labelMode": "index"
@@ -97,7 +100,7 @@
                 },
                 {
                     "customFont": "",
-                    "formatHorizontal": "HH:mm ddd, MMM dd",
+                    "formatHorizontal": "ddd, MMM d, HH:mm",
                     "formatVertical": "HH mm - dd MM",
                     "id": "Clock",
                     "useCustomFont": false,
@@ -110,7 +113,8 @@
         "chargingMode": 0
     },
     "brightness": {
-        "brightnessStep": 5
+        "brightnessStep": 5,
+        "enforceMinimum": true
     },
     "colorSchemes": {
         "darkMode": true,
@@ -209,6 +213,7 @@
         "wallpaperChange": "notify-send \"Wallpaper changed\" \"Screen: $2\\nImage: $1\""
     },
     "location": {
+        "analogClockInCalendar": false,
         "name": "Banten",
         "showCalendarEvents": true,
         "showWeekNumberInCalendar": false,
@@ -229,6 +234,7 @@
         "nightTemp": "4000"
     },
     "notifications": {
+        "backgroundOpacity": 1,
         "criticalUrgencyDuration": 15,
         "doNotDisturb": false,
         "location": "bottom_right",
@@ -277,7 +283,8 @@
         "kitty": true,
         "pywalfox": false,
         "qt": true,
-        "vicinae": true
+        "vicinae": true,
+        "walker": false
     },
     "ui": {
         "fontDefault": "Roboto",
@@ -298,6 +305,7 @@
         ],
         "randomEnabled": true,
         "randomIntervalSec": 3600,
+        "recursiveSearch": false,
         "setWallpaperOnAllMonitors": true,
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
