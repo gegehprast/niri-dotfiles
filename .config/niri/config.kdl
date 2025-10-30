@@ -312,6 +312,12 @@ window-rule {
 }
 
 window-rule {
+    match app-id="zen"
+    exclude title=r#"^Picture-in-Picture$"#
+    default-column-width { fixed 1905; }
+}
+
+window-rule {
     match app-id="zen" title=r#"^Picture-in-Picture$"#
     open-floating true // Always float Zen PiP windows
 }
