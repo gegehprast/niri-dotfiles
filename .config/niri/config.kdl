@@ -190,7 +190,7 @@ spawn-sh-at-startup "~/.config/niri/scripts/autolock.fish"
 spawn-sh-at-startup "vicinae server"
 spawn-sh-at-startup "~/.config/niri/scripts/personal_autostart.fish"
 spawn-sh-at-startup "~/.config/niri/scripts/xwayland_discord.fish &"
-spawn-sh-at-startup "~/.config/niri/scripts/xwayland_steam_native.fish &"
+spawn-sh-at-startup "~/.config/niri/scripts/xwayland_steam.fish &"
 
 // Disable window decorations
 // https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#prefer-no-csd
