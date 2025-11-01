@@ -50,7 +50,7 @@ binds {
     MOD+SHIFT+W                         hotkey-overlay-title="Focus to Opened Window" { spawn-sh "~/.config/niri/scripts/vicinae_opened_windows.fish"; }
     MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "zen-browser"; }
     // MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "~/.config/niri/scripts/xwayland_zen.fish"; }
-    MOD+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
+    MOD+CTRL+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
     MOD+COMMA                           hotkey-overlay-title="Noctalia setting" { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
     MOD+PERIOD                          hotkey-overlay-title="Noctalia control center" { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
     MOD+E                               hotkey-overlay-title="File Manager: Dolphin" { spawn-sh "dolphin"; }
@@ -110,6 +110,11 @@ binds {
     MOD+SHIFT+CTRL+RIGHT                { move-column-to-monitor-right; }
     MOD+SHIFT+CTRL+UP                   { move-column-to-monitor-up; }
     MOD+SHIFT+CTRL+DOWN                 { move-column-to-monitor-down; }
+    
+    MOD+ALT+LEFT                        { consume-or-expel-window-left; }
+    MOD+ALT+H                           { consume-or-expel-window-left; }
+    MOD+ALT+RIGHT                       { consume-or-expel-window-right; }
+    MOD+ALT+L                           { consume-or-expel-window-right; }
 
     // Workspace Management
     MOD+WHEELSCROLLDOWN                 cooldown-ms=150 { focus-workspace-down; }
