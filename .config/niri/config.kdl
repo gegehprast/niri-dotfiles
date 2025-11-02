@@ -165,8 +165,8 @@ binds {
     MOD+SHIFT+EQUAL                     { set-window-height "+5%"; }
 
     // Window States
-    MOD+SHIFT+T                         { toggle-window-floating; }
-    MOD+ALT+T                           { switch-focus-between-floating-and-tiling; }
+    MOD+CTRL+T                          { toggle-window-floating; }
+    MOD+CTRL+SHIFT+T                    { switch-focus-between-floating-and-tiling; }
     MOD+F                               { maximize-column; }
     MOD+SHIFT+F                         { fullscreen-window; }
     MOD+W                               { toggle-column-tabbed-display; }
