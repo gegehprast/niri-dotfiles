@@ -101,7 +101,7 @@
                 {
                     "customFont": "",
                     "formatHorizontal": "ddd, MMM d, HH:mm",
-                    "formatVertical": "HH mm - dd MM",
+                    "formatVertical": "dd MM - HH mm",
                     "id": "Clock",
                     "useCustomFont": false,
                     "usePrimaryColor": true
