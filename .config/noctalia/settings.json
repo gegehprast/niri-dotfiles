@@ -23,17 +23,20 @@
     "bar": {
         "backgroundOpacity": 1,
         "density": "default",
+        "exclusive": true,
         "floating": false,
         "marginHorizontal": 0.25,
         "marginVertical": 0.25,
         "monitors": [
         ],
+        "outerCorners": true,
         "position": "top",
         "showCapsule": true,
         "widgets": {
             "center": [
                 {
                     "hideMode": "visible",
+                    "hideWhenIdle": false,
                     "id": "MediaMini",
                     "maxWidth": 200,
                     "scrollingMode": "hover",
@@ -74,7 +77,8 @@
                     "showDiskUsage": false,
                     "showMemoryAsPercent": false,
                     "showMemoryUsage": true,
-                    "showNetworkStats": true
+                    "showNetworkStats": true,
+                    "usePrimaryColor": true
                 },
                 {
                     "id": "ScreenRecorder"
@@ -83,10 +87,13 @@
                     "blacklist": [
                     ],
                     "colorizeIcons": false,
+                    "drawerEnabled": false,
+                    "favorites": [
+                    ],
                     "id": "Tray"
                 },
                 {
-                    "hideWhenZero": true,
+                    "hideWhenZero": false,
                     "id": "NotificationHistory",
                     "showUnreadBadge": true
                 },
@@ -114,6 +121,7 @@
     },
     "brightness": {
         "brightnessStep": 5,
+        "enableDdcSupport": false,
         "enforceMinimum": true
     },
     "colorSchemes": {
@@ -185,6 +193,7 @@
         "backgroundOpacity": 1,
         "colorizeIcons": false,
         "displayMode": "auto_hide",
+        "enabled": true,
         "floatingRatio": 2,
         "monitors": [
         ],
@@ -199,12 +208,16 @@
         "avatarImage": "~/Pictures/Wallpapers/wp6.jpg",
         "compactLockScreen": false,
         "dimDesktop": false,
+        "enableShadows": true,
         "forceBlackScreenCorners": false,
         "language": "",
         "lockOnSuspend": true,
         "radiusRatio": 1,
         "scaleRatio": 1,
-        "screenRadiusRatio": 0.5,
+        "screenRadiusRatio": 1,
+        "shadowDirection": "bottom_right",
+        "shadowOffsetX": 2,
+        "shadowOffsetY": 3,
         "showScreenCorners": true
     },
     "hooks": {
@@ -214,8 +227,10 @@
     },
     "location": {
         "analogClockInCalendar": false,
+        "firstDayOfWeek": -1,
         "name": "Banten",
         "showCalendarEvents": true,
+        "showCalendarWeather": true,
         "showWeekNumberInCalendar": false,
         "use12hourFormat": false,
         "useFahrenheit": false,
@@ -237,6 +252,7 @@
         "backgroundOpacity": 1,
         "criticalUrgencyDuration": 15,
         "doNotDisturb": false,
+        "enabled": true,
         "location": "bottom_right",
         "lowUrgencyDuration": 5,
         "monitors": [
@@ -264,9 +280,11 @@
         "videoCodec": "h264",
         "videoSource": "portal"
     },
-    "settingsVersion": 16,
+    "settingsVersion": 20,
     "setupCompleted": true,
     "templates": {
+        "alacritty": false,
+        "code": false,
         "discord": false,
         "discord_armcord": false,
         "discord_dorion": false,
@@ -284,14 +302,16 @@
         "pywalfox": false,
         "qt": true,
         "vicinae": true,
-        "walker": false
+        "walker": false,
+        "wezterm": false
     },
     "ui": {
         "fontDefault": "Roboto",
         "fontDefaultScale": 1,
         "fontFixed": "FiraCode Nerd Font Mono",
         "fontFixedScale": 1,
-        "panelsOverlayLayer": true,
+        "panelsAttachedToBar": true,
+        "settingsPanelAttachToBar": true,
         "tooltipsEnabled": true
     },
     "wallpaper": {
@@ -303,6 +323,8 @@
         "fillMode": "crop",
         "monitors": [
         ],
+        "overviewEnabled": true,
+        "panelPosition": "follow_bar",
         "randomEnabled": true,
         "randomIntervalSec": 3600,
         "recursiveSearch": false,
