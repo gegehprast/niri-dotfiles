@@ -207,6 +207,9 @@ prefer-no-csd
 // Layout
 // https://yalter.github.io/niri/Configuration%3A-Layout.html
 layout {
+    // Noctalia Stationary Wallpaper
+    // background-color "transparent"
+    
     gaps 4
     center-focused-column "never"
 
@@ -257,6 +260,14 @@ layout {
         // off
         color "#cc80ffff"
         gradient from="#cc80ff67" to="#bbddff49" angle=75 in="oklch longer hue" relative-to="workspace-view"
+    }
+}
+
+// Overview Settings
+overview {
+    workspace-shadow {
+        // Noctalia Stationary Wallpaper
+        // off
     }
 }
 
@@ -380,11 +391,18 @@ hotkey-overlay {
 
 // Layer Rules
 // https://yalter.github.io/niri/Configuration%3A-Layer-Rules.html
-// noctalia-shell need this
+
+// Noctalia Blurred Overview Wallpaper
 layer-rule {
-    match namespace="^quickshell-overview$"
-    place-within-backdrop true
+  match namespace="^noctalia-overview*"
+  place-within-backdrop true
 }
+
+// Noctalia Stationary Wallpaper
+// layer-rule {
+//   match namespace="^noctalia-wallpaper*"
+//   place-within-backdrop true
+// }
 
 // Debug Options
 // https://yalter.github.io/niri/Configuration%3A-Debug-Options.html
