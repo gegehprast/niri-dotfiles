@@ -55,7 +55,7 @@ binds {
     MOD+E                               hotkey-overlay-title="File Manager: Dolphin" { spawn-sh "dolphin"; }
     MOD+C                               hotkey-overlay-title="VS Code" { spawn-sh "~/.config/niri/scripts/xwayland_code.fish"; }
     MOD+V                               hotkey-overlay-title="Clipboard History: vicinae" { spawn-sh "vicinae vicinae://extensions/vicinae/clipboard/history"; }
-    MOD+SHIFT+W                         hotkey-overlay-title="Switch Window" { spawn-sh "vicinae vicinae://extensions/vicinae/wm/switch-windows"; }
+    MOD+W                               hotkey-overlay-title="Switch Window" { spawn-sh "vicinae vicinae://extensions/vicinae/wm/switch-windows"; }
     MOD+T                               hotkey-overlay-title="Task Manager: btop++" { spawn-sh "kitty btop"; }
     
     // Audio Controls
@@ -171,7 +171,7 @@ binds {
     MOD+CTRL+SHIFT+T                    { switch-focus-between-floating-and-tiling; }
     MOD+F                               { maximize-column; }
     MOD+SHIFT+F                         { fullscreen-window; }
-    MOD+W                               { toggle-column-tabbed-display; }
+    MOD+SHIFT+W                         { toggle-column-tabbed-display; }
     MOD+TAB                             { focus-window-down-or-top; }
 
     // Screenshots

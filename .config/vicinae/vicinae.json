@@ -1,5 +1,5 @@
 {
-    "closeOnFocusLoss": false,
+    "closeOnFocusLoss": true,
     "faviconService": "twenty",
     "font": {
         "normal": "FiraCode Nerd Font Mono",
