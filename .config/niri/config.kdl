@@ -122,8 +122,8 @@ binds {
     MOD+WHEELSCROLLUP                   cooldown-ms=150 { focus-workspace-up; }
     MOD+CTRL+WHEELSCROLLDOWN            cooldown-ms=150 { move-column-to-workspace-down; }
     MOD+CTRL+WHEELSCROLLUP              cooldown-ms=150 { move-column-to-workspace-up; }
-    MOD+I                               cooldown-ms=150 { focus-workspace-up; }
-    MOD+U                               cooldown-ms=150 { focus-workspace-down; }
+    MOD+I                               cooldown-ms=150 { focus-workspace-down; }
+    MOD+U                               cooldown-ms=150 { focus-workspace-up; }
 
     MOD+WHEELSCROLLRIGHT                { focus-column-right; }
     MOD+WHEELSCROLLLEFT                 { focus-column-left; }
