@@ -2,7 +2,7 @@
     "closeOnFocusLoss": true,
     "faviconService": "twenty",
     "font": {
-        "normal": "FiraCode Nerd Font Mono",
+        "normal": "Roboto",
         "size": 10.5
     },
     "keybinding": "default",
@@ -17,7 +17,7 @@
     },
     "window": {
         "csd": true,
-        "opacity": 0.95,
+        "opacity": 0.98,
         "rounding": 10
     }
 }
