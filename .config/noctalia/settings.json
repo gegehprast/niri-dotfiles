@@ -78,7 +78,7 @@
                     "showMemoryAsPercent": false,
                     "showMemoryUsage": true,
                     "showNetworkStats": true,
-                    "usePrimaryColor": false
+                    "usePrimaryColor": true
                 },
                 {
                     "id": "ScreenRecorder"
@@ -87,13 +87,13 @@
                     "blacklist": [
                     ],
                     "colorizeIcons": false,
-                    "drawerEnabled": true,
+                    "drawerEnabled": false,
                     "favorites": [
                     ],
                     "id": "Tray"
                 },
                 {
-                    "hideWhenZero": true,
+                    "hideWhenZero": false,
                     "id": "NotificationHistory",
                     "showUnreadBadge": true
                 },
@@ -113,7 +113,7 @@
                 {
                     "customFont": "",
                     "formatHorizontal": "ddd, MMM d, HH:mm",
-                    "formatVertical": "HH mm - dd MM",
+                    "formatVertical": "dd MM - HH mm",
                     "id": "Clock",
                     "useCustomFont": false,
                     "usePrimaryColor": true
@@ -220,7 +220,7 @@
         "lockOnSuspend": true,
         "radiusRatio": 1,
         "scaleRatio": 1,
-        "screenRadiusRatio": 0.5,
+        "screenRadiusRatio": 1,
         "shadowDirection": "bottom_right",
         "shadowOffsetX": 2,
         "shadowOffsetY": 3,
@@ -317,7 +317,7 @@
         "fontFixed": "FiraCode Nerd Font Mono",
         "fontFixedScale": 1,
         "panelsAttachedToBar": true,
-        "settingsPanelAttachToBar": false,
+        "settingsPanelAttachToBar": true,
         "tooltipsEnabled": true
     },
     "wallpaper": {
@@ -334,7 +334,7 @@
                 "wallpaper": "/home/zen/Pictures/Wallpapers/jr-korpa-9XngoIpxcEo-unsplash.jpg"
             }
         ],
-        "overviewEnabled": false,
+        "overviewEnabled": true,
         "panelPosition": "follow_bar",
         "randomEnabled": true,
         "randomIntervalSec": 3600,
