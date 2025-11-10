@@ -9,6 +9,7 @@ input {
     }
 
     mouse {
+        accel-speed 0.7
         accel-profile "flat"
         scroll-factor 2
     }
@@ -31,9 +32,9 @@ cursor {
 
 // Outputs
 // https://yalter.github.io/niri/Configuration%3A-Outputs.html
-output "DP-3" {
-    mode "2560x1440@144.000"
-    scale 1
+output "eDP-1" {
+    mode "2880x1800@120.000"
+    scale 1.5
     variable-refresh-rate
     focus-at-startup
 }
@@ -192,11 +193,11 @@ spawn-sh-at-startup "dbus-update-activation-environment --systemd --all"
 spawn-sh-at-startup "gnome-keyring-daemon --start --components=secrets"
 spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
 spawn-sh-at-startup "qs -c noctalia-shell"
-spawn-sh-at-startup "~/.config/niri/scripts/autolock.fish"
+// spawn-sh-at-startup "~/.config/niri/scripts/autolock.fish"
 spawn-sh-at-startup "vicinae server"
-spawn-sh-at-startup "~/.config/niri/scripts/personal_autostart.fish"
-spawn-sh-at-startup "~/.config/niri/scripts/xwayland_discord.fish &"
-spawn-sh-at-startup "~/.config/niri/scripts/xwayland_steam.fish &"
+// spawn-sh-at-startup "~/.config/niri/scripts/personal_autostart.fish"
+// spawn-sh-at-startup "~/.config/niri/scripts/xwayland_discord.fish &"
+// spawn-sh-at-startup "~/.config/niri/scripts/xwayland_steam.fish &"
 
 // Disable window decorations
 // https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#prefer-no-csd
@@ -244,11 +245,11 @@ layout {
         width 8
         gap 8
         gaps-between-tabs 8
-        length total-proportion=0.5
-        position "bottom"
+        length total-proportion=0.4
+        position "right"
         place-within-column
-        active-gradient from="#bbddffff" to="#cc80ffff" angle=75 in="oklch longer hue"
-        inactive-color "#505050"
+        active-gradient from="#bbddffff" to="#cc80ffff" in="oklch longer hue"
+        inactive-gradient from="#ffffffff" to="#ff0000ff" angle=45
     }
     
     insert-hint {
@@ -320,7 +321,7 @@ window-rule {
 window-rule {
     match app-id="zen"
     exclude title=r#"^Picture-in-Picture$"#
-    default-column-width { fixed 1905; }
+    default-column-width { fixed 1425; }
 }
 
 window-rule {
@@ -354,6 +355,13 @@ window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
     default-floating-position x=10 y=10 relative-to="bottom-right"
     open-focused false
+}
+
+// Telegram Media Viewer float
+window-rule {
+    match app-id="org.telegram.desktop" title=r#"Media viewer"#
+    open-floating true
+    open-fullscreen false
 }
 
 // Environment Variables
