@@ -208,7 +208,7 @@
         "animationSpeed": 1,
         "avatarImage": "~/Pictures/Wallpapers/wp6.jpg",
         "compactLockScreen": false,
-        "dimDesktop": false,
+        "dimmerOpacity": 0.1,
         "enableShadows": true,
         "forceBlackScreenCorners": false,
         "language": "",
@@ -264,6 +264,7 @@
     },
     "osd": {
         "autoHideMs": 2000,
+        "backgroundOpacity": 1,
         "enabled": true,
         "location": "bottom",
         "monitors": [
@@ -288,39 +289,56 @@
         "powerOptions": [
             {
                 "action": "lock",
+                "countdownEnabled": true,
                 "enabled": true
             },
             {
                 "action": "suspend",
+                "countdownEnabled": true,
                 "enabled": true
             },
             {
                 "action": "reboot",
+                "countdownEnabled": true,
                 "enabled": true
             },
             {
                 "action": "logout",
+                "countdownEnabled": true,
                 "enabled": true
             },
             {
                 "action": "shutdown",
+                "countdownEnabled": true,
+                "enabled": true
+            },
+            {
+                "action": "hibernate",
+                "countdownEnabled": true,
                 "enabled": true
             }
         ],
         "showHeader": true
     },
-    "settingsVersion": 22,
+    "settingsVersion": 23,
     "setupCompleted": true,
+    "systemMonitor": {
+        "cpuCriticalThreshold": 90,
+        "cpuWarningThreshold": 80,
+        "criticalColor": "#ffb4ab",
+        "diskCriticalThreshold": 90,
+        "diskWarningThreshold": 80,
+        "memCriticalThreshold": 90,
+        "memWarningThreshold": 80,
+        "tempCriticalThreshold": 90,
+        "tempWarningThreshold": 80,
+        "useCustomColors": true,
+        "warningColor": "#eab5ee"
+    },
     "templates": {
         "alacritty": false,
         "code": true,
         "discord": false,
-        "discord_armcord": false,
-        "discord_dorion": false,
-        "discord_equibop": false,
-        "discord_lightcord": false,
-        "discord_vesktop": false,
-        "discord_webcord": false,
         "enableUserTemplates": false,
         "foot": false,
         "fuzzel": false,
@@ -363,6 +381,15 @@
         "setWallpaperOnAllMonitors": true,
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
-        "transitionType": "random"
+        "transitionType": "random",
+        "useWallhaven": false,
+        "wallhavenCategories": "111",
+        "wallhavenOrder": "desc",
+        "wallhavenPurity": "100",
+        "wallhavenQuery": "",
+        "wallhavenResolutionHeight": "",
+        "wallhavenResolutionMode": "atleast",
+        "wallhavenResolutionWidth": "",
+        "wallhavenSorting": "date_added"
     }
 }

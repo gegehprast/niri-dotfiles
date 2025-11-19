@@ -343,6 +343,8 @@ window-rule {
 
 window-rule {
     match app-id=r#"code$"#
+
+    variable-refresh-rate true
     // open-maximized-to-edges true // TODO: available on next niri release
 }
 
