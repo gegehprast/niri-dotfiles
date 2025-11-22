@@ -371,6 +371,12 @@ window-rule {
     open-focused false
 }
 
+// Libreoffice qt6 save dialog fix
+window-rule {
+    match app-id="libreoffice-startcenter" title="Save"
+    open-floating true
+}
+
 // Environment Variables
 // https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#environment
 environment {
@@ -383,6 +389,7 @@ environment {
     XDG_SESSION_DESKTOP "niri"
     QT_QPA_PLATFORMTHEME "qt6ct"
     QS_ICON_THEME "Papirus-Dark"
+    SAL_USE_VCLPLUGIN "qt6"
 }
 
 // Hotkey Overlay
