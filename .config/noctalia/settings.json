@@ -2,16 +2,19 @@
     "appLauncher": {
         "customLaunchPrefix": "",
         "customLaunchPrefixEnabled": false,
+        "enableClipPreview": true,
         "enableClipboardHistory": false,
         "pinnedExecs": [
         ],
         "position": "center",
         "sortByMostUsed": true,
         "terminalCommand": "xterm -e",
-        "useApp2Unit": false
+        "useApp2Unit": false,
+        "viewMode": "list"
     },
     "audio": {
         "cavaFrameRate": 60,
+        "externalMixer": "pwvucontrol || pavucontrol",
         "mprisBlacklist": [
         ],
         "preferredPlayer": "spotify",
@@ -22,6 +25,7 @@
     },
     "bar": {
         "backgroundOpacity": 1,
+        "capsuleOpacity": 1,
         "density": "default",
         "exclusive": true,
         "floating": false,
@@ -41,6 +45,8 @@
                     "maxWidth": 200,
                     "scrollingMode": "hover",
                     "showAlbumArt": true,
+                    "showArtistFirst": true,
+                    "showProgressRing": true,
                     "showVisualizer": true,
                     "useFixedWidth": false,
                     "visualizerType": "wave"
@@ -56,6 +62,7 @@
                 },
                 {
                     "characterCount": 2,
+                    "followFocusedScreen": false,
                     "hideUnoccupied": false,
                     "id": "Workspace",
                     "labelMode": "index"
@@ -72,6 +79,7 @@
             ],
             "right": [
                 {
+                    "diskPath": "/",
                     "id": "SystemMonitor",
                     "showCpuTemp": false,
                     "showCpuUsage": true,
@@ -117,13 +125,13 @@
             ]
         }
     },
-    "battery": {
-        "chargingMode": 0
-    },
     "brightness": {
         "brightnessStep": 5,
         "enableDdcSupport": false,
         "enforceMinimum": true
+    },
+    "changelog": {
+        "lastSeenVersion": ""
     },
     "colorSchemes": {
         "darkMode": true,
@@ -201,9 +209,11 @@
         "onlySameOutput": true,
         "pinnedApps": [
         ],
+        "radiusRatio": 0.7000000000000001,
         "size": 1
     },
     "general": {
+        "allowPanelsOnScreenWithoutBar": true,
         "animationDisabled": false,
         "animationSpeed": 1,
         "avatarImage": "~/Pictures/Wallpapers/wp6.jpg",
@@ -219,6 +229,7 @@
         "shadowDirection": "bottom_right",
         "shadowOffsetX": 2,
         "shadowOffsetY": 3,
+        "showHibernateOnLockScreen": false,
         "showScreenCorners": true
     },
     "hooks": {
@@ -235,7 +246,8 @@
         "showWeekNumberInCalendar": false,
         "use12hourFormat": false,
         "useFahrenheit": false,
-        "weatherEnabled": true
+        "weatherEnabled": true,
+        "weatherShowEffects": true
     },
     "network": {
         "wifiEnabled": true
@@ -337,6 +349,7 @@
     },
     "templates": {
         "alacritty": false,
+        "cava": false,
         "code": true,
         "discord": false,
         "enableUserTemplates": false,
@@ -349,6 +362,7 @@
         "pywalfox": false,
         "qt": true,
         "spicetify": false,
+        "telegram": false,
         "vicinae": true,
         "walker": false,
         "wezterm": false
