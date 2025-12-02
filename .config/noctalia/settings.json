@@ -42,13 +42,13 @@
                     "hideMode": "visible",
                     "hideWhenIdle": false,
                     "id": "MediaMini",
-                    "maxWidth": 200,
+                    "maxWidth": 300,
                     "scrollingMode": "hover",
                     "showAlbumArt": true,
                     "showArtistFirst": true,
                     "showProgressRing": true,
                     "showVisualizer": true,
-                    "useFixedWidth": false,
+                    "useFixedWidth": true,
                     "visualizerType": "wave"
                 }
             ],
@@ -370,7 +370,7 @@
     },
     "templates": {
         "alacritty": false,
-        "cava": false,
+        "cava": true,
         "code": true,
         "discord": false,
         "enableUserTemplates": false,
