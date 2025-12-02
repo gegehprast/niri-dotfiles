@@ -46,6 +46,7 @@ binds {
     // Apps
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
     MOD+KP_Enter                        hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
+    MOD+SHIFT+RETURN                    hotkey-overlay-title="kitty quick access terminal" { spawn-sh "kitten quick-access-terminal"; }
     MOD+SPACE                           hotkey-overlay-title="Open App Launcher: vicinae" { spawn-sh "vicinae toggle"; }
     MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "zen-browser"; }
     // MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "~/.config/niri/scripts/xwayland_zen.fish"; }
@@ -56,7 +57,6 @@ binds {
     MOD+C                               hotkey-overlay-title="VS Code" { spawn-sh "~/.config/niri/scripts/xwayland_code.fish"; }
     MOD+V                               hotkey-overlay-title="Clipboard History: vicinae" { spawn-sh "vicinae vicinae://extensions/vicinae/clipboard/history"; }
     MOD+W                               hotkey-overlay-title="Switch Window" { spawn-sh "vicinae vicinae://extensions/vicinae/wm/switch-windows"; }
-    MOD+T                               hotkey-overlay-title="Task Manager: btop++" { spawn-sh "kitty btop"; }
     
     // Audio Controls
     XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1.5"; }
@@ -167,8 +167,8 @@ binds {
     MOD+SHIFT+EQUAL                     { set-window-height "+5%"; }
 
     // Window States
-    MOD+CTRL+T                          { toggle-window-floating; }
-    MOD+CTRL+SHIFT+T                    { switch-focus-between-floating-and-tiling; }
+    MOD+T                               { toggle-window-floating; }
+    MOD+SHIFT+T                         { switch-focus-between-floating-and-tiling; }
     MOD+F                               { maximize-column; }
     MOD+SHIFT+F                         { fullscreen-window; }
     MOD+SHIFT+W                         { toggle-column-tabbed-display; }
@@ -345,12 +345,10 @@ window-rule {
     match app-id=r#"code$"#
 
     variable-refresh-rate true
-    // open-maximized-to-edges true // TODO: available on next niri release
 }
 
 window-rule {
     match app-id=r#"kitty$"#
-    // open-maximized-to-edges true // TODO: available on next niri release
 }
 
 window-rule {
