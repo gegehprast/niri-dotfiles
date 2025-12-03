@@ -2,16 +2,19 @@
     "appLauncher": {
         "customLaunchPrefix": "",
         "customLaunchPrefixEnabled": false,
+        "enableClipPreview": true,
         "enableClipboardHistory": false,
         "pinnedExecs": [
         ],
         "position": "center",
         "sortByMostUsed": true,
         "terminalCommand": "xterm -e",
-        "useApp2Unit": false
+        "useApp2Unit": false,
+        "viewMode": "list"
     },
     "audio": {
         "cavaFrameRate": 60,
+        "externalMixer": "pwvucontrol || pavucontrol",
         "mprisBlacklist": [
         ],
         "preferredPlayer": "spotify",
@@ -22,6 +25,7 @@
     },
     "bar": {
         "backgroundOpacity": 1,
+        "capsuleOpacity": 1,
         "density": "default",
         "exclusive": true,
         "floating": false,
@@ -41,6 +45,8 @@
                     "maxWidth": 200,
                     "scrollingMode": "hover",
                     "showAlbumArt": true,
+                    "showArtistFirst": true,
+                    "showProgressRing": true,
                     "showVisualizer": true,
                     "useFixedWidth": false,
                     "visualizerType": "wave"
@@ -49,13 +55,16 @@
             "left": [
                 {
                     "colorizeDistroLogo": false,
+                    "colorizeSystemIcon": "none",
                     "customIconPath": "/usr/share/icons/Papirus-Dark/128x128/apps/distributor-logo-archlinux.svg",
+                    "enableColorization": false,
                     "icon": "noctalia",
                     "id": "ControlCenter",
                     "useDistroLogo": false
                 },
                 {
                     "characterCount": 2,
+                    "followFocusedScreen": false,
                     "hideUnoccupied": false,
                     "id": "Workspace",
                     "labelMode": "index"
@@ -72,6 +81,7 @@
             ],
             "right": [
                 {
+                    "diskPath": "/",
                     "id": "SystemMonitor",
                     "showCpuTemp": false,
                     "showCpuUsage": true,
@@ -107,6 +117,7 @@
                     "id": "Brightness"
                 },
                 {
+                    "deviceNativePath": "",
                     "displayMode": "alwaysShow",
                     "id": "Battery",
                     "warningThreshold": 30
@@ -122,13 +133,41 @@
             ]
         }
     },
-    "battery": {
-        "chargingMode": 2
-    },
     "brightness": {
         "brightnessStep": 5,
         "enableDdcSupport": false,
         "enforceMinimum": true
+    },
+    "calendar": {
+        "cards": [
+            {
+                "enabled": false,
+                "id": "calendar-header-card"
+            },
+            {
+                "enabled": false,
+                "id": "calendar-month-card"
+            },
+            {
+                "enabled": true,
+                "id": "calendar-header-card"
+            },
+            {
+                "enabled": true,
+                "id": "calendar-month-card"
+            },
+            {
+                "enabled": true,
+                "id": "timer-card"
+            },
+            {
+                "enabled": true,
+                "id": "weather-card"
+            }
+        ]
+    },
+    "changelog": {
+        "lastSeenVersion": ""
     },
     "colorSchemes": {
         "darkMode": true,
@@ -202,7 +241,6 @@
         "enabled": true,
         "floatingRatio": 2,
         "monitors": [
-            "eDP-1"
         ],
         "onlySameOutput": true,
         "pinnedApps": [
@@ -210,6 +248,7 @@
         "size": 1
     },
     "general": {
+        "allowPanelsOnScreenWithoutBar": true,
         "animationDisabled": false,
         "animationSpeed": 1,
         "avatarImage": "/home/zen/Pictures/Wallpapers/DvZl9bv.jpeg",
@@ -225,6 +264,7 @@
         "shadowDirection": "bottom_right",
         "shadowOffsetX": 2,
         "shadowOffsetY": 3,
+        "showHibernateOnLockScreen": false,
         "showScreenCorners": true
     },
     "hooks": {
@@ -241,7 +281,8 @@
         "showWeekNumberInCalendar": false,
         "use12hourFormat": false,
         "useFahrenheit": false,
-        "weatherEnabled": true
+        "weatherEnabled": true,
+        "weatherShowEffects": true
     },
     "network": {
         "wifiEnabled": true
@@ -272,6 +313,11 @@
         "autoHideMs": 2000,
         "backgroundOpacity": 1,
         "enabled": true,
+        "enabledTypes": [
+            0,
+            1,
+            2
+        ],
         "location": "bottom",
         "monitors": [
         ],
@@ -326,25 +372,31 @@
         ],
         "showHeader": true
     },
-    "settingsVersion": 23,
-    "setupCompleted": true,
+    "settingsVersion": 26,
     "systemMonitor": {
         "cpuCriticalThreshold": 90,
+        "cpuPollingInterval": 3000,
         "cpuWarningThreshold": 80,
         "criticalColor": "#ffb4ab",
         "diskCriticalThreshold": 90,
+        "diskPollingInterval": 3000,
         "diskWarningThreshold": 80,
         "memCriticalThreshold": 90,
+        "memPollingInterval": 3000,
         "memWarningThreshold": 80,
+        "networkPollingInterval": 3000,
         "tempCriticalThreshold": 90,
+        "tempPollingInterval": 3000,
         "tempWarningThreshold": 80,
         "useCustomColors": true,
         "warningColor": "#eab5ee"
     },
     "templates": {
         "alacritty": false,
+        "cava": false,
         "code": true,
         "discord": false,
+        "emacs": false,
         "enableUserTemplates": false,
         "foot": false,
         "fuzzel": false,
@@ -352,9 +404,11 @@
         "gtk": true,
         "kcolorscheme": true,
         "kitty": true,
+        "niri": false,
         "pywalfox": false,
         "qt": true,
         "spicetify": false,
+        "telegram": false,
         "vicinae": true,
         "walker": false,
         "wezterm": false
@@ -370,19 +424,13 @@
         "tooltipsEnabled": true
     },
     "wallpaper": {
-        "defaultWallpaper": "/etc/xdg/quickshell/noctalia-shell/Assets/Wallpaper/noctalia.png",
         "directory": "~/Pictures/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "fillColor": "#000000",
         "fillMode": "crop",
         "hideWallpaperFilenames": true,
-        "monitors": [
-            {
-                "directory": "/home/zen/Pictures/Wallpapers",
-                "name": "eDP-1",
-                "wallpaper": "/home/zen/Pictures/Wallpapers/jr-korpa-9XngoIpxcEo-unsplash.jpg"
-            }
+        "monitorDirectories": [
         ],
         "overviewEnabled": true,
         "panelPosition": "follow_bar",

@@ -1,5 +1,6 @@
 {
     "closeOnFocusLoss": true,
+    "considerPreedit": false,
     "faviconService": "twenty",
     "font": {
         "normal": "Roboto",
