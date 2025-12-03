@@ -3,7 +3,6 @@
     "considerPreedit": false,
     "faviconService": "twenty",
     "font": {
-        "normal": "Roboto",
         "size": 10.5
     },
     "keybinding": "default",

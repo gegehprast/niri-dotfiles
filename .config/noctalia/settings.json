@@ -42,13 +42,13 @@
                     "hideMode": "visible",
                     "hideWhenIdle": false,
                     "id": "MediaMini",
-                    "maxWidth": 200,
+                    "maxWidth": 300,
                     "scrollingMode": "hover",
                     "showAlbumArt": true,
                     "showArtistFirst": true,
                     "showProgressRing": true,
                     "showVisualizer": true,
-                    "useFixedWidth": false,
+                    "useFixedWidth": true,
                     "visualizerType": "wave"
                 }
             ],
@@ -141,20 +141,12 @@
     "calendar": {
         "cards": [
             {
-                "enabled": false,
-                "id": "calendar-header-card"
-            },
-            {
-                "enabled": false,
-                "id": "calendar-month-card"
+                "enabled": true,
+                "id": "banner-card"
             },
             {
                 "enabled": true,
-                "id": "calendar-header-card"
-            },
-            {
-                "enabled": true,
-                "id": "calendar-month-card"
+                "id": "calendar-card"
             },
             {
                 "enabled": true,
@@ -245,6 +237,7 @@
         "onlySameOutput": true,
         "pinnedApps": [
         ],
+        "radiusRatio": 0.7000000000000001,
         "size": 1
     },
     "general": {
@@ -314,9 +307,6 @@
         "backgroundOpacity": 1,
         "enabled": true,
         "enabledTypes": [
-            0,
-            1,
-            2
         ],
         "location": "bottom",
         "monitors": [
@@ -372,7 +362,7 @@
         ],
         "showHeader": true
     },
-    "settingsVersion": 26,
+    "settingsVersion": 25,
     "systemMonitor": {
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 3000,
@@ -393,7 +383,7 @@
     },
     "templates": {
         "alacritty": false,
-        "cava": false,
+        "cava": true,
         "code": true,
         "discord": false,
         "emacs": false,
