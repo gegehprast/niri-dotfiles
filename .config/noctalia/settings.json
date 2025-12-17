@@ -25,7 +25,6 @@
         "volumeStep": 5
     },
     "bar": {
-        "backgroundOpacity": 1,
         "capsuleOpacity": 1,
         "density": "default",
         "exclusive": true,
@@ -37,6 +36,8 @@
         "outerCorners": true,
         "position": "top",
         "showCapsule": true,
+        "showOutline": false,
+        "transparent": false,
         "widgets": {
             "center": [
                 {
@@ -56,7 +57,7 @@
             "left": [
                 {
                     "hideMode": "alwaysExpanded",
-                    "icon": "noctalia",
+                    "icon": "apps-filled",
                     "id": "CustomButton",
                     "leftClickExec": "vicinae toggle",
                     "leftClickUpdateText": false,
@@ -84,10 +85,14 @@
                 },
                 {
                     "characterCount": 2,
+                    "colorizeIcons": false,
+                    "enableScrollWheel": true,
                     "followFocusedScreen": false,
                     "hideUnoccupied": false,
                     "id": "Workspace",
-                    "labelMode": "index"
+                    "labelMode": "index",
+                    "showApplications": false,
+                    "showLabelsOnlyWhenOccupied": true
                 },
                 {
                     "colorizeIcons": false,
@@ -101,15 +106,25 @@
             ],
             "right": [
                 {
+                    "id": "plugin:catwalk"
+                },
+                {
                     "diskPath": "/",
                     "id": "SystemMonitor",
                     "showCpuTemp": false,
                     "showCpuUsage": true,
                     "showDiskUsage": false,
+                    "showGpuTemp": false,
                     "showMemoryAsPercent": false,
                     "showMemoryUsage": true,
-                    "showNetworkStats": true,
+                    "showNetworkStats": false,
                     "usePrimaryColor": true
+                },
+                {
+                    "id": "plugin:network-indicator"
+                },
+                {
+                    "id": "plugin:privacy-indicator"
                 },
                 {
                     "id": "ScreenRecorder"
@@ -119,6 +134,7 @@
                     ],
                     "colorizeIcons": false,
                     "drawerEnabled": false,
+                    "hidePassive": false,
                     "id": "Tray",
                     "pinned": [
                     ]
@@ -199,6 +215,10 @@
             {
                 "enabled": true,
                 "id": "media-sysmon-card"
+            },
+            {
+                "enabled": false,
+                "id": "brightness-card"
             }
         ],
         "position": "top_right",
@@ -232,6 +252,12 @@
                 }
             ]
         }
+    },
+    "desktopWidgets": {
+        "editMode": false,
+        "enabled": false,
+        "monitorWidgets": [
+        ]
     },
     "dock": {
         "backgroundOpacity": 1,
@@ -276,6 +302,8 @@
     "hooks": {
         "darkModeChange": "",
         "enabled": true,
+        "screenLock": "",
+        "screenUnlock": "",
         "wallpaperChange": "notify-send \"Wallpaper changed\" \"Screen: $2\\nImage: $1\""
     },
     "location": {
@@ -353,6 +381,7 @@
     "sessionMenu": {
         "countdownDuration": 10000,
         "enableCountdown": true,
+        "largeButtonsStyle": false,
         "position": "center",
         "powerOptions": [
             {
@@ -388,7 +417,7 @@
         ],
         "showHeader": true
     },
-    "settingsVersion": 26,
+    "settingsVersion": 31,
     "systemMonitor": {
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 3000,
@@ -397,6 +426,10 @@
         "diskCriticalThreshold": 90,
         "diskPollingInterval": 3000,
         "diskWarningThreshold": 80,
+        "enableNvidiaGpu": false,
+        "gpuCriticalThreshold": 90,
+        "gpuPollingInterval": 3000,
+        "gpuWarningThreshold": 80,
         "memCriticalThreshold": 90,
         "memPollingInterval": 3000,
         "memWarningThreshold": 80,
@@ -410,7 +443,7 @@
     "templates": {
         "alacritty": false,
         "cava": true,
-        "code": true,
+        "code": false,
         "discord": false,
         "emacs": false,
         "enableUserTemplates": false,
@@ -420,14 +453,16 @@
         "gtk": true,
         "kcolorscheme": true,
         "kitty": true,
-        "niri": false,
+        "niri": true,
         "pywalfox": false,
         "qt": true,
         "spicetify": false,
         "telegram": false,
         "vicinae": true,
         "walker": false,
-        "wezterm": false
+        "wezterm": false,
+        "yazi": false,
+        "zed": false
     },
     "ui": {
         "fontDefault": "Roboto",
@@ -436,7 +471,7 @@
         "fontFixedScale": 1,
         "panelBackgroundOpacity": 1,
         "panelsAttachedToBar": true,
-        "settingsPanelAttachToBar": true,
+        "settingsPanelMode": "attached",
         "tooltipsEnabled": true
     },
     "wallpaper": {
