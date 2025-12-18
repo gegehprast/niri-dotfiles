@@ -56,13 +56,32 @@
             ],
             "left": [
                 {
-                    "colorizeDistroLogo": false,
-                    "colorizeSystemIcon": "none",
-                    "customIconPath": "/usr/share/icons/Papirus-Dark/128x128/apps/distributor-logo-archlinux.svg",
-                    "enableColorization": false,
-                    "icon": "noctalia",
-                    "id": "ControlCenter",
-                    "useDistroLogo": false
+                    "hideMode": "alwaysExpanded",
+                    "icon": "apps-filled",
+                    "id": "CustomButton",
+                    "leftClickExec": "vicinae toggle",
+                    "leftClickUpdateText": false,
+                    "maxTextLength": {
+                        "horizontal": 0,
+                        "vertical": 0
+                    },
+                    "middleClickExec": "",
+                    "middleClickUpdateText": false,
+                    "parseJson": false,
+                    "rightClickExec": "",
+                    "rightClickUpdateText": false,
+                    "showIcon": true,
+                    "textCollapse": "",
+                    "textCommand": "",
+                    "textIntervalMs": 3000,
+                    "textStream": false,
+                    "wheelDownExec": "",
+                    "wheelDownUpdateText": false,
+                    "wheelExec": "",
+                    "wheelMode": "unified",
+                    "wheelUpExec": "",
+                    "wheelUpUpdateText": false,
+                    "wheelUpdateText": false
                 },
                 {
                     "characterCount": 2,
@@ -87,6 +106,9 @@
             ],
             "right": [
                 {
+                    "id": "plugin:catwalk"
+                },
+                {
                     "diskPath": "/",
                     "id": "SystemMonitor",
                     "showCpuTemp": false,
@@ -95,8 +117,14 @@
                     "showGpuTemp": false,
                     "showMemoryAsPercent": false,
                     "showMemoryUsage": true,
-                    "showNetworkStats": true,
+                    "showNetworkStats": false,
                     "usePrimaryColor": true
+                },
+                {
+                    "id": "plugin:network-indicator"
+                },
+                {
+                    "id": "plugin:privacy-indicator"
                 },
                 {
                     "id": "ScreenRecorder"
@@ -152,11 +180,11 @@
         "cards": [
             {
                 "enabled": true,
-                "id": "banner-card"
+                "id": "calendar-header-card"
             },
             {
                 "enabled": true,
-                "id": "calendar-card"
+                "id": "calendar-month-card"
             },
             {
                 "enabled": true,
@@ -199,6 +227,10 @@
             {
                 "enabled": true,
                 "id": "media-sysmon-card"
+            },
+            {
+                "enabled": false,
+                "id": "brightness-card"
             }
         ],
         "position": "top_right",
@@ -248,6 +280,7 @@
         "floatingRatio": 2,
         "inactiveIndicators": false,
         "monitors": [
+            "DP-3"
         ],
         "onlySameOutput": true,
         "pinnedApps": [
@@ -336,6 +369,10 @@
         "backgroundOpacity": 1,
         "enabled": true,
         "enabledTypes": [
+            0,
+            1,
+            2,
+            3
         ],
         "location": "bottom",
         "monitors": [
@@ -418,7 +455,7 @@
     "templates": {
         "alacritty": false,
         "cava": true,
-        "code": true,
+        "code": false,
         "discord": false,
         "emacs": false,
         "enableUserTemplates": false,
@@ -428,7 +465,7 @@
         "gtk": true,
         "kcolorscheme": true,
         "kitty": true,
-        "niri": false,
+        "niri": true,
         "pywalfox": false,
         "qt": true,
         "spicetify": false,
