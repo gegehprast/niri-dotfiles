@@ -14,10 +14,10 @@ Add `auth optional pam_gnome_keyring.so` at the end of the auth section and `ses
 auth       required     pam_securetty.so
 auth       requisite    pam_nologin.so
 auth       include      system-local-login
-auth       optional     pam_gnome_keyring.so
+auth       optional     pam_gnome_keyring.so <-- ADD THIS LINE
 account    include      system-local-login
 session    include      system-local-login
-session    optional     pam_gnome_keyring.so auto_start
+session    optional     pam_gnome_keyring.so auto_start <-- ADD THIS LINE
 ```
 
 ### 2. Automatically change keyring password with user password
