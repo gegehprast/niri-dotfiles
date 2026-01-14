@@ -34,20 +34,24 @@ cursor {
 output "DP-3" {
     mode "2560x1440@144.000"
     scale 1
-    variable-refresh-rate
+    variable-refresh-rate on-demand=true
     focus-at-startup
+}
+
+output "HDMI-A-1" {
+    off
 }
 
 // Keybindings
 // https://yalter.github.io/niri/Configuration%3A-Key-Bindings.html
 binds {
     MOD+SLASH                           { show-hotkey-overlay; }
-    
+
     // Apps
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
     MOD+KP_Enter                        hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
+    MOD+SHIFT+RETURN                    hotkey-overlay-title="kitty quick access terminal" { spawn-sh "kitten quick-access-terminal"; }
     MOD+SPACE                           hotkey-overlay-title="Open App Launcher: vicinae" { spawn-sh "vicinae toggle"; }
-    MOD+SHIFT+W                         hotkey-overlay-title="Focus to Opened Window" { spawn-sh "~/.config/niri/scripts/vicinae_opened_windows.fish"; }
     MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "zen-browser"; }
     // MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "~/.config/niri/scripts/xwayland_zen.fish"; }
     MOD+CTRL+ALT+L                      hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
@@ -56,8 +60,8 @@ binds {
     MOD+E                               hotkey-overlay-title="File Manager: Dolphin" { spawn-sh "dolphin"; }
     MOD+C                               hotkey-overlay-title="VS Code" { spawn-sh "~/.config/niri/scripts/xwayland_code.fish"; }
     MOD+V                               hotkey-overlay-title="Clipboard History: vicinae" { spawn-sh "vicinae vicinae://extensions/vicinae/clipboard/history"; }
-    MOD+T                               hotkey-overlay-title="Task Manager: btop++" { spawn-sh "kitty btop"; }
-    
+    MOD+W                               hotkey-overlay-title="Switch Window" { spawn-sh "vicinae vicinae://extensions/vicinae/wm/switch-windows"; }
+
     // Audio Controls
     XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1.5"; }
     XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05- -l 1.5"; }
@@ -70,7 +74,7 @@ binds {
     XF86AudioPlay                       allow-when-locked=true { spawn-sh "playerctl play-pause"; }
     XF86AudioPrev                       allow-when-locked=true { spawn-sh "playerctl previous"; }
     MOD+SHIFT+A                         hotkey-overlay-title="Select default audio sink" { spawn-sh "~/.config/niri/scripts/vicinae_audio.fish"; }
-    
+
     // Brightness Controls
     XF86MonBrightnessUp                 allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness increase"; }
     XF86MonBrightnessDown               allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness decrease"; }
@@ -111,7 +115,7 @@ binds {
     MOD+SHIFT+CTRL+RIGHT                { move-column-to-monitor-right; }
     MOD+SHIFT+CTRL+UP                   { move-column-to-monitor-up; }
     MOD+SHIFT+CTRL+DOWN                 { move-column-to-monitor-down; }
-    
+
     MOD+ALT+LEFT                        { consume-or-expel-window-left; }
     MOD+ALT+H                           { consume-or-expel-window-left; }
     MOD+ALT+RIGHT                       { consume-or-expel-window-right; }
@@ -122,8 +126,8 @@ binds {
     MOD+WHEELSCROLLUP                   cooldown-ms=150 { focus-workspace-up; }
     MOD+CTRL+WHEELSCROLLDOWN            cooldown-ms=150 { move-column-to-workspace-down; }
     MOD+CTRL+WHEELSCROLLUP              cooldown-ms=150 { move-column-to-workspace-up; }
-    MOD+I                               cooldown-ms=150 { focus-workspace-up; }
-    MOD+U                               cooldown-ms=150 { focus-workspace-down; }
+    MOD+I                               cooldown-ms=150 { focus-workspace-down; }
+    MOD+U                               cooldown-ms=150 { focus-workspace-up; }
 
     MOD+WHEELSCROLLRIGHT                { focus-column-right; }
     MOD+WHEELSCROLLLEFT                 { focus-column-left; }
@@ -167,11 +171,11 @@ binds {
     MOD+SHIFT+EQUAL                     { set-window-height "+5%"; }
 
     // Window States
-    MOD+CTRL+T                          { toggle-window-floating; }
-    MOD+CTRL+SHIFT+T                    { switch-focus-between-floating-and-tiling; }
+    MOD+T                               { toggle-window-floating; }
+    MOD+SHIFT+T                         { switch-focus-between-floating-and-tiling; }
     MOD+F                               { maximize-column; }
     MOD+SHIFT+F                         { fullscreen-window; }
-    MOD+W                               { toggle-column-tabbed-display; }
+    MOD+SHIFT+W                         { toggle-column-tabbed-display; }
     MOD+TAB                             { focus-window-down-or-top; }
 
     // Screenshots
@@ -207,6 +211,9 @@ prefer-no-csd
 // Layout
 // https://yalter.github.io/niri/Configuration%3A-Layout.html
 layout {
+    // Noctalia Stationary Wallpaper
+    // background-color "transparent"
+
     gaps 4
     center-focused-column "never"
 
@@ -252,11 +259,19 @@ layout {
         active-gradient from="#bbddffff" to="#cc80ffff" angle=75 in="oklch longer hue"
         inactive-color "#505050"
     }
-    
+
     insert-hint {
         // off
         color "#cc80ffff"
         gradient from="#cc80ff67" to="#bbddff49" angle=75 in="oklch longer hue" relative-to="workspace-view"
+    }
+}
+
+// Overview Settings
+overview {
+    workspace-shadow {
+        // Noctalia Stationary Wallpaper
+        // off
     }
 }
 
@@ -314,6 +329,7 @@ window-rule {
     default-window-height { fixed 560; }
 }
 
+// Synology Cloud Drive UI weirdness fix
 window-rule {
     match app-id=r#".*cloud-drive-ui.*"#
     open-floating true
@@ -332,12 +348,18 @@ window-rule {
 
 window-rule {
     match app-id=r#"code$"#
-    // open-maximized-to-edges true // TODO: available on next niri release
+
+    // variable-refresh-rate true
+}
+
+window-rule {
+    match app-id=r#"discord$"#
+
+    variable-refresh-rate true
 }
 
 window-rule {
     match app-id=r#"kitty$"#
-    // open-maximized-to-edges true // TODO: available on next niri release
 }
 
 window-rule {
@@ -358,6 +380,12 @@ window-rule {
     open-focused false
 }
 
+// Libreoffice qt6 save dialog fix
+window-rule {
+    match app-id="libreoffice-startcenter" title="Save"
+    open-floating true
+}
+
 // Environment Variables
 // https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#environment
 environment {
@@ -370,6 +398,7 @@ environment {
     XDG_SESSION_DESKTOP "niri"
     QT_QPA_PLATFORMTHEME "qt6ct"
     QS_ICON_THEME "Papirus-Dark"
+    SAL_USE_VCLPLUGIN "qt6"
 }
 
 // Hotkey Overlay
@@ -380,11 +409,18 @@ hotkey-overlay {
 
 // Layer Rules
 // https://yalter.github.io/niri/Configuration%3A-Layer-Rules.html
-// noctalia-shell need this
+
+// Noctalia Blurred Overview Wallpaper
 layer-rule {
-    match namespace="^quickshell-overview$"
-    place-within-backdrop true
+  match namespace="^noctalia-overview*"
+  place-within-backdrop true
 }
+
+// Noctalia Stationary Wallpaper
+// layer-rule {
+//   match namespace="^noctalia-wallpaper*"
+//   place-within-backdrop true
+// }
 
 // Debug Options
 // https://yalter.github.io/niri/Configuration%3A-Debug-Options.html
@@ -392,3 +428,5 @@ layer-rule {
 debug {
     honor-xdg-activation-with-invalid-serial
 }
+
+include "./noctalia.kdl"

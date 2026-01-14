@@ -1,4 +1,4 @@
 #!/usr/bin/env fish
 
 set DISPLAY :0
-/usr/bin/steam-native $argv
+another-redis-desktop-manager $argv
