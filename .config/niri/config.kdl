@@ -180,8 +180,8 @@ binds {
 
     // Screenshots
     MOD+SHIFT+S                         { screenshot; }
-    MOD+PRINT                           { screenshot-screen; }
-    MOD+SHIFT+PRINT                     { screenshot-window; }
+    PRINT                           { screenshot-screen; }
+    MOD+PRINT                     { screenshot-window; }
 
     // Emergency Escape Key
     MOD+ESCAPE                          allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
