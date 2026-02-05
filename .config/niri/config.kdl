@@ -45,7 +45,7 @@ output "eDP-1" {
 // https://yalter.github.io/niri/Configuration%3A-Key-Bindings.html
 binds {
     MOD+SLASH                           { show-hotkey-overlay; }
-    
+
     // Apps
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
     MOD+KP_Enter                        hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
@@ -60,7 +60,7 @@ binds {
     MOD+C                               hotkey-overlay-title="VS Code" { spawn-sh "~/.config/niri/scripts/xwayland_code.fish"; }
     MOD+V                               hotkey-overlay-title="Clipboard History: vicinae" { spawn-sh "vicinae vicinae://extensions/vicinae/clipboard/history"; }
     MOD+W                               hotkey-overlay-title="Switch Window" { spawn-sh "vicinae vicinae://extensions/vicinae/wm/switch-windows"; }
-    
+
     // Audio Controls
     XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1.5"; }
     XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05- -l 1.5"; }
@@ -73,7 +73,7 @@ binds {
     XF86AudioPlay                       allow-when-locked=true { spawn-sh "playerctl play-pause"; }
     XF86AudioPrev                       allow-when-locked=true { spawn-sh "playerctl previous"; }
     MOD+SHIFT+A                         hotkey-overlay-title="Select default audio sink" { spawn-sh "~/.config/niri/scripts/vicinae_audio.fish"; }
-    
+
     // Brightness Controls
     XF86MonBrightnessUp                 allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness increase"; }
     XF86MonBrightnessDown               allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness decrease"; }
@@ -114,7 +114,7 @@ binds {
     MOD+SHIFT+CTRL+RIGHT                { move-column-to-monitor-right; }
     MOD+SHIFT+CTRL+UP                   { move-column-to-monitor-up; }
     MOD+SHIFT+CTRL+DOWN                 { move-column-to-monitor-down; }
-    
+
     MOD+ALT+LEFT                        { consume-or-expel-window-left; }
     MOD+ALT+H                           { consume-or-expel-window-left; }
     MOD+ALT+RIGHT                       { consume-or-expel-window-right; }
@@ -213,7 +213,7 @@ prefer-no-csd
 layout {
     // Noctalia Stationary Wallpaper
     // background-color "transparent"
-    
+
     gaps 4
     center-focused-column "never"
 
@@ -259,7 +259,7 @@ layout {
         active-gradient from="#bbddffff" to="#cc80ffff" in="oklch longer hue"
         inactive-gradient from="#ffffffff" to="#ff0000ff" angle=45
     }
-    
+
     insert-hint {
         // off
         color "#cc80ffff"
@@ -329,6 +329,7 @@ window-rule {
     default-window-height { fixed 560; }
 }
 
+// Synology Cloud Drive UI weirdness fix
 window-rule {
     match app-id=r#".*cloud-drive-ui.*"#
     open-floating true
