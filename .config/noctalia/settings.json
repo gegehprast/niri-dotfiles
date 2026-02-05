@@ -178,14 +178,8 @@
                     "middleClickCommand": "pwvucontrol || pavucontrol"
                 },
                 {
-                    "deviceNativePath": "",
                     "displayMode": "onhover",
-                    "hideIfIdle": true,
-                    "hideIfNotDetected": true,
-                    "id": "Battery",
-                    "showNoctaliaPerformance": true,
-                    "showPowerProfiles": true,
-                    "warningThreshold": 30
+                    "id": "Bluetooth"
                 },
                 {
                     "displayMode": "onhover",
@@ -598,10 +592,6 @@
             },
             {
                 "enabled": true,
-                "id": "kcolorscheme"
-            },
-            {
-                "enabled": true,
                 "id": "vicinae"
             },
             {
@@ -615,6 +605,10 @@
             {
                 "enabled": true,
                 "id": "kitty"
+            },
+            {
+                "enabled": true,
+                "id": "kcolorscheme"
             },
             {
                 "enabled": true,
