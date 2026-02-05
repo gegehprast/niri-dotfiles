@@ -35,7 +35,7 @@ cursor {
 output "eDP-1" {
     mode "2880x1800@120.000"
     scale 1.5
-    variable-refresh-rate
+    // variable-refresh-rate
     focus-at-startup
 }
 
@@ -178,7 +178,7 @@ binds {
     MOD+TAB                             { focus-window-down-or-top; }
 
     // Screenshots
-    MOD+SHIFT+S                         { screenshot; }
+    MOD+SHIFT+S                         hotkey-overlay-title="Take a Screenshot" { spawn-sh "grim -g \"$(slurp)\" -t ppm - | satty --filename - --initial-tool brush --actions-on-enter save-to-clipboard,exit --actions-on-escape save-to-clipboard,exit --copy-command wl-copy --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png"; }
     MOD+PRINT                           { screenshot-screen; }
     MOD+SHIFT+PRINT                     { screenshot-window; }
 
@@ -202,6 +202,7 @@ spawn-sh-at-startup "vicinae server"
 // spawn-sh-at-startup "~/.config/niri/scripts/personal_autostart.fish"
 // spawn-sh-at-startup "~/.config/niri/scripts/xwayland_discord.fish &"
 // spawn-sh-at-startup "~/.config/niri/scripts/xwayland_steam.fish &"
+spawn-sh-at-startup "~/.config/niri/scripts/battery_status.fish"
 
 // Disable window decorations
 // https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#prefer-no-csd
@@ -347,7 +348,7 @@ window-rule {
 window-rule {
     match app-id=r#"code$"#
 
-    variable-refresh-rate true
+   // variable-refresh-rate true
 }
 
 window-rule {
@@ -427,3 +428,4 @@ layer-rule {
 debug {
     honor-xdg-activation-with-invalid-serial
 }
+include "./noctalia.kdl"
