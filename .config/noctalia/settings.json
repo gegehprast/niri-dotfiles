@@ -86,14 +86,6 @@
                         ]
                     },
                     "id": "plugin:todo"
-                },
-                {
-                    "defaultSettings": {
-                        "notes": [
-                        ],
-                        "showCountInBar": true
-                    },
-                    "id": "plugin:simple-notes"
                 }
             ],
             "left": [
@@ -110,8 +102,9 @@
                     "showCpuFreq": false,
                     "showCpuTemp": true,
                     "showCpuUsage": true,
-                    "showDiskAsFree": false,
+                    "showDiskAvailable": false,
                     "showDiskUsage": false,
+                    "showDiskUsageAsPercent": false,
                     "showGpuTemp": false,
                     "showLoadAverage": false,
                     "showMemoryAsPercent": true,
@@ -120,20 +113,6 @@
                     "showSwapUsage": false,
                     "useMonospaceFont": true,
                     "usePrimaryColor": true
-                },
-                {
-                    "defaultSettings": {
-                        "arrowType": "caret",
-                        "byteThresholdActive": 1024,
-                        "fontSizeModifier": 1,
-                        "forceMegabytes": false,
-                        "iconSizeModifier": 1,
-                        "minWidth": 0,
-                        "showNumbers": true,
-                        "spacingInbetween": 0,
-                        "useCustomColors": false
-                    },
-                    "id": "plugin:network-indicator"
                 },
                 {
                     "characterCount": 2,
@@ -148,6 +127,7 @@
                     "id": "Workspace",
                     "labelMode": "index",
                     "occupiedColor": "secondary",
+                    "pillSize": 0.6,
                     "reverseScroll": false,
                     "showApplications": false,
                     "showBadge": true,
@@ -214,6 +194,16 @@
                 {
                     "displayMode": "alwaysShow",
                     "id": "VPN"
+                },
+                {
+                    "deviceNativePath": "BAT0",
+                    "displayMode": "alwaysShow",
+                    "hideIfIdle": false,
+                    "hideIfNotDetected": true,
+                    "id": "Battery",
+                    "showNoctaliaPerformance": true,
+                    "showPowerProfiles": true,
+                    "warningThreshold": 30
                 },
                 {
                     "customFont": "",
@@ -336,22 +326,6 @@
                 "name": "DP-3",
                 "widgets": [
                     {
-                        "defaultSettings": {
-                            "barWidth": 0.6,
-                            "bloomIntensity": 0.5,
-                            "ringOpacity": 0.8,
-                            "rotationSpeed": 0.5,
-                            "sensitivity": 1.5,
-                            "showBars": true,
-                            "showRings": true
-                        },
-                        "id": "plugin:fancy-audiovisualizer",
-                        "scale": 3.192031021678298,
-                        "showBackground": true,
-                        "x": 800,
-                        "y": 240
-                    },
-                    {
                         "clockStyle": "minimal",
                         "customFont": "",
                         "format": "HH:mm:ss\\ndddd, d MMMM yyyy",
@@ -427,7 +401,7 @@
         "animationDisabled": false,
         "animationSpeed": 1,
         "autoStartAuth": true,
-        "avatarImage": "~/Pictures/avatar.jpg",
+        "avatarImage": "/home/zen/Pictures/Wallpapers/DvZl9bv.jpeg",
         "boxRadiusRatio": 1,
         "compactLockScreen": false,
         "dimmerOpacity": 0.1,
@@ -584,7 +558,7 @@
         "showHeader": true,
         "showNumberLabels": true
     },
-    "settingsVersion": 46,
+    "settingsVersion": 47,
     "systemMonitor": {
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 1000,
@@ -604,7 +578,7 @@
         "memCriticalThreshold": 90,
         "memPollingInterval": 1000,
         "memWarningThreshold": 80,
-        "networkPollingInterval": 3000,
+        "networkPollingInterval": 1000,
         "swapCriticalThreshold": 90,
         "swapWarningThreshold": 80,
         "tempCriticalThreshold": 90,
@@ -616,15 +590,7 @@
         "activeTemplates": [
             {
                 "enabled": true,
-                "id": "kcolorscheme"
-            },
-            {
-                "enabled": true,
-                "id": "kitty"
-            },
-            {
-                "enabled": true,
-                "id": "vicinae"
+                "id": "yazi"
             },
             {
                 "enabled": true,
@@ -632,7 +598,15 @@
             },
             {
                 "enabled": true,
-                "id": "yazi"
+                "id": "kcolorscheme"
+            },
+            {
+                "enabled": true,
+                "id": "vicinae"
+            },
+            {
+                "enabled": true,
+                "id": "niri"
             },
             {
                 "enabled": true,
@@ -640,7 +614,7 @@
             },
             {
                 "enabled": true,
-                "id": "niri"
+                "id": "kitty"
             },
             {
                 "enabled": true,
