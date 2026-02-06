@@ -1,4 +1,5 @@
 [Added Associations]
+application/octet-stream=code.desktop;
 application/vnd.ms-publisher=code.desktop;
 application/x-compressed-tar=org.kde.ark.desktop;
 application/x-extension-htm=zen.desktop;
@@ -22,6 +23,7 @@ x-scheme-handler/http=zen.desktop;
 x-scheme-handler/https=zen.desktop;
 
 [Default Applications]
+application/octet-stream=code.desktop;
 application/vnd.ms-publisher=code.desktop;
 application/x-compressed-tar=org.kde.ark.desktop;
 application/x-extension-htm=zen.desktop

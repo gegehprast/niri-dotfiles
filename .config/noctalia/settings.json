@@ -205,8 +205,7 @@
                     "formatVertical": "dd MM - HH mm",
                     "id": "Clock",
                     "tooltipFormat": "HH:mm ddd, MMM dd",
-                    "useCustomFont": false,
-                    "usePrimaryColor": true
+                    "useCustomFont": false
                 },
                 {
                     "colorizeDistroLogo": false,
@@ -609,6 +608,10 @@
             {
                 "enabled": true,
                 "id": "kcolorscheme"
+            },
+            {
+                "enabled": true,
+                "id": "kitty"
             },
             {
                 "enabled": true,
