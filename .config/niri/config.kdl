@@ -38,7 +38,7 @@ output "DP-2" {
 
 output "DP-1" {
     mode "3440x1440@144.050"
-    position x=-880 y=1440
+    position x=-500 y=1440
     focus-at-startup
 }
 
@@ -222,12 +222,12 @@ layout {
 
     gaps 4
     center-focused-column "never"
-    default-column-width { proportion 0.333333; }
+    default-column-width { proportion 0.333333333; }
 
     preset-column-widths {
-        proportion 0.33333
+        proportion 0.333333333
         proportion 0.5
-        proportion 0.66666
+        proportion 0.66666667
         proportion 0.75
     }
 
@@ -358,7 +358,7 @@ window-rule {
 window-rule {
     match app-id="zen"
     exclude title=r#"^Picture-in-Picture$"#
-    default-column-width { proportion 0.66666; }
+    default-column-width { proportion 0.66666667; }
 }
 
 window-rule {
@@ -407,7 +407,7 @@ window-rule {
 window-rule {
     match app-id=r#"^steam$"#
     exclude title=r#"^Steam$"#
-    default-column-width { proportion 0.3333; }
+    default-column-width { proportion 0.333333333; }
 }
 
 // steam games
