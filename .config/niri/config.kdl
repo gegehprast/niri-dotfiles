@@ -394,16 +394,27 @@ window-rule {
     match app-id=r#"kitty$"#
 }
 
-window-rule {
-    match app-id="steam"
-    exclude title=r#"^notificationtoasts_\d+_desktop$"#
-    open-on-workspace "2_1"
-}
-
+// steam main window
 window-rule {
     match app-id=r#"^steam$"#
     match title=r#"^Steam$"#
+    exclude title=r#"^notificationtoasts_\d+_desktop$"#
     default-column-width { proportion 0.5; }
+    open-on-workspace "2_1"
+}
+
+// steam main and other windows
+window-rule {
+    match app-id=r#"^steam$"#
+    exclude title=r#"^Steam$"#
+    default-column-width { proportion 0.3333; }
+}
+
+// steam games
+window-rule {
+    match app-id=r#"^steam_app_"#
+    open-on-workspace "1_1"
+    default-column-width {}
 }
 
 window-rule {
