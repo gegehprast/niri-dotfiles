@@ -31,10 +31,14 @@ cursor {
 
 // Outputs
 // https://yalter.github.io/niri/Configuration%3A-Outputs.html
-output "DP-3" {
+output "DP-2" {
     mode "2560x1440@144.000"
-    scale 1
-    variable-refresh-rate on-demand=true
+    position x=0 y=0
+}
+
+output "DP-1" {
+    mode "3440x1440@144.050"
+    position x=-880 y=1440
     focus-at-startup
 }
 
@@ -51,6 +55,7 @@ binds {
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
     MOD+KP_Enter                        hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
     MOD+SHIFT+RETURN                    hotkey-overlay-title="kitty quick access terminal" { spawn-sh "kitten quick-access-terminal"; }
+    MOD+SHIFT+KP_Enter                  hotkey-overlay-title="kitty quick access terminal" { spawn-sh "kitten quick-access-terminal"; }
     MOD+SPACE                           hotkey-overlay-title="Open App Launcher: vicinae" { spawn-sh "vicinae toggle"; }
     MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "zen-browser"; }
     // MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "~/.config/niri/scripts/xwayland_zen.fish"; }
@@ -175,6 +180,7 @@ binds {
     MOD+SHIFT+T                         { switch-focus-between-floating-and-tiling; }
     MOD+F                               { maximize-column; }
     MOD+SHIFT+F                         { fullscreen-window; }
+    MOD+CTRL+SHIFT+F                    { toggle-windowed-fullscreen; }
     MOD+SHIFT+W                         { toggle-column-tabbed-display; }
     MOD+TAB                             { focus-window-down-or-top; }
 
@@ -216,6 +222,7 @@ layout {
 
     gaps 4
     center-focused-column "never"
+    default-column-width { proportion 0.333333; }
 
     preset-column-widths {
         proportion 0.33333
@@ -311,8 +318,21 @@ animations {
 }
 
 // Named Workspaces
-workspace "1"
-workspace "2"
+workspace "1_1" {
+    open-on-output "DP-1"
+}
+
+workspace "1_2" {
+    open-on-output "DP-1"
+}
+
+workspace "2_1" {
+    open-on-output "DP-2"
+}
+
+workspace "2_2" {
+    open-on-output "DP-2"
+}
 
 // Window Rules
 // https://yalter.github.io/niri/Configuration%3A-Window-Rules.html
@@ -338,7 +358,7 @@ window-rule {
 window-rule {
     match app-id="zen"
     exclude title=r#"^Picture-in-Picture$"#
-    default-column-width { fixed 1905; }
+    default-column-width { proportion 0.66666; }
 }
 
 window-rule {
@@ -355,7 +375,19 @@ window-rule {
 window-rule {
     match app-id=r#"discord$"#
 
-    variable-refresh-rate true
+    // variable-refresh-rate true
+    default-column-width { proportion 0.5; }
+}
+
+window-rule {
+    match title=r#"^Endfield$"#
+    
+    open-fullscreen true
+    open-focused true
+    min-width 3440
+    min-height 1440
+    default-column-width { fixed 3440; }
+    default-window-height { fixed 1440; }
 }
 
 window-rule {
@@ -365,12 +397,18 @@ window-rule {
 window-rule {
     match app-id="steam"
     exclude title=r#"^notificationtoasts_\d+_desktop$"#
-    open-on-workspace "2"
+    open-on-workspace "2_1"
+}
+
+window-rule {
+    match app-id=r#"^steam$"#
+    match title=r#"^Steam$"#
+    default-column-width { proportion 0.5; }
 }
 
 window-rule {
     match app-id="discord"
-    open-on-workspace "2"
+    open-on-workspace "2_1"
 }
 
 // Steam Notification Toasts Fix
