@@ -313,6 +313,7 @@ animations {
 // Named Workspaces
 workspace "1"
 workspace "2"
+workspace "3"
 
 // Window Rules
 // https://yalter.github.io/niri/Configuration%3A-Window-Rules.html
@@ -332,6 +333,12 @@ window-rule {
 // Synology Cloud Drive UI weirdness fix
 window-rule {
     match app-id=r#".*cloud-drive-ui.*"#
+    open-floating true
+}
+
+// Satty
+window-rule {
+    match app-id=r#"^com.gabm.satty$"#
     open-floating true
 }
 
