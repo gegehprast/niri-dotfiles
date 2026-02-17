@@ -52,11 +52,10 @@
         "marginHorizontal": 5,
         "marginVertical": 5,
         "monitors": [
-            "DP-2",
-            "DP-1"
+            "eDP-1"
         ],
         "outerCorners": true,
-        "position": "bottom",
+        "position": "top",
         "screenOverrides": [
             {
                 "enabled": true,
@@ -126,20 +125,6 @@
                     "showSwapUsage": false,
                     "textColor": "none",
                     "useMonospaceFont": true
-                },
-                {
-                    "defaultSettings": {
-                        "arrowType": "caret",
-                        "byteThresholdActive": 1024,
-                        "fontSizeModifier": 1,
-                        "forceMegabytes": false,
-                        "iconSizeModifier": 1,
-                        "minWidth": 0,
-                        "showNumbers": true,
-                        "spacingInbetween": 0,
-                        "useCustomColors": false
-                    },
-                    "id": "plugin:network-indicator"
                 },
                 {
                     "characterCount": 2,
