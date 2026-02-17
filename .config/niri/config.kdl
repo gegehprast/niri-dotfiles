@@ -31,11 +31,17 @@ cursor {
 
 // Outputs
 // https://yalter.github.io/niri/Configuration%3A-Outputs.html
-output "DP-3" {
+output "DP-2" {
     mode "2560x1440@144.000"
-    scale 1
-    variable-refresh-rate on-demand=true
+    position x=0 y=0
+    // variable-refresh-rate
+}
+
+output "DP-1" {
+    mode "3440x1440@240.085"
+    position x=-500 y=1440
     focus-at-startup
+    // variable-refresh-rate
 }
 
 output "HDMI-A-1" {
@@ -51,6 +57,7 @@ binds {
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
     MOD+KP_Enter                        hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
     MOD+SHIFT+RETURN                    hotkey-overlay-title="kitty quick access terminal" { spawn-sh "kitten quick-access-terminal"; }
+    MOD+SHIFT+KP_Enter                  hotkey-overlay-title="kitty quick access terminal" { spawn-sh "kitten quick-access-terminal"; }
     MOD+SPACE                           hotkey-overlay-title="Open App Launcher: vicinae" { spawn-sh "vicinae toggle"; }
     MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "zen-browser"; }
     // MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "~/.config/niri/scripts/xwayland_zen.fish"; }
@@ -175,13 +182,14 @@ binds {
     MOD+SHIFT+T                         { switch-focus-between-floating-and-tiling; }
     MOD+F                               { maximize-column; }
     MOD+SHIFT+F                         { fullscreen-window; }
+    MOD+CTRL+SHIFT+F                    { toggle-windowed-fullscreen; }
     MOD+SHIFT+W                         { toggle-column-tabbed-display; }
     MOD+TAB                             { focus-window-down-or-top; }
 
     // Screenshots
     MOD+SHIFT+S                         { screenshot; }
-    MOD+PRINT                           { screenshot-screen; }
-    MOD+SHIFT+PRINT                     { screenshot-window; }
+    PRINT                           { screenshot-screen; }
+    MOD+PRINT                     { screenshot-window; }
 
     // Emergency Escape Key
     MOD+ESCAPE                          allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
@@ -201,8 +209,8 @@ spawn-sh-at-startup "qs -c noctalia-shell"
 spawn-sh-at-startup "~/.config/niri/scripts/autolock.fish"
 spawn-sh-at-startup "vicinae server"
 spawn-sh-at-startup "~/.config/niri/scripts/personal_autostart.fish"
-spawn-sh-at-startup "~/.config/niri/scripts/xwayland_discord.fish &"
-spawn-sh-at-startup "~/.config/niri/scripts/xwayland_steam.fish &"
+spawn-sh-at-startup "sleep 5; ~/.config/niri/scripts/xwayland_discord.fish &"
+spawn-sh-at-startup "sleep 5; ~/.config/niri/scripts/xwayland_steam.fish &"
 
 // Disable window decorations
 // https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#prefer-no-csd
@@ -216,11 +224,12 @@ layout {
 
     gaps 4
     center-focused-column "never"
+    default-column-width { proportion 0.333333333; }
 
     preset-column-widths {
-        proportion 0.33333
+        proportion 0.333333333
         proportion 0.5
-        proportion 0.66666
+        proportion 0.66666667
         proportion 0.75
     }
 
@@ -269,6 +278,7 @@ layout {
 
 // Overview Settings
 overview {
+    backdrop-color "#000000"
     workspace-shadow {
         // Noctalia Stationary Wallpaper
         // off
@@ -311,8 +321,21 @@ animations {
 }
 
 // Named Workspaces
-workspace "1"
-workspace "2"
+workspace "1_1" {
+    open-on-output "DP-1"
+}
+
+workspace "1_2" {
+    open-on-output "DP-1"
+}
+
+workspace "2_1" {
+    open-on-output "DP-2"
+}
+
+workspace "2_2" {
+    open-on-output "DP-2"
+}
 
 // Window Rules
 // https://yalter.github.io/niri/Configuration%3A-Window-Rules.html
@@ -338,7 +361,7 @@ window-rule {
 window-rule {
     match app-id="zen"
     exclude title=r#"^Picture-in-Picture$"#
-    default-column-width { fixed 1905; }
+    default-column-width { proportion 0.66666667; }
 }
 
 window-rule {
@@ -355,22 +378,51 @@ window-rule {
 window-rule {
     match app-id=r#"discord$"#
 
-    variable-refresh-rate true
+    // variable-refresh-rate true
+    default-column-width { proportion 0.5; }
+}
+
+window-rule {
+    match title=r#"^Endfield$"#
+    
+    open-fullscreen true
+    open-focused true
+    min-width 3440
+    min-height 1440
+    default-column-width { fixed 3440; }
+    default-window-height { fixed 1440; }
 }
 
 window-rule {
     match app-id=r#"kitty$"#
 }
 
+// steam main window
 window-rule {
-    match app-id="steam"
+    match app-id=r#"^steam$"#
+    match title=r#"^Steam$"#
     exclude title=r#"^notificationtoasts_\d+_desktop$"#
-    open-on-workspace "2"
+    default-column-width { proportion 0.5; }
+    open-on-workspace "2_1"
+}
+
+// steam main and other windows
+window-rule {
+    match app-id=r#"^steam$"#
+    exclude title=r#"^Steam$"#
+    default-column-width { proportion 0.333333333; }
+}
+
+// steam games
+window-rule {
+    match app-id=r#"^steam_app_"#
+    open-on-workspace "1_1"
+    default-column-width {}
 }
 
 window-rule {
     match app-id="discord"
-    open-on-workspace "2"
+    open-on-workspace "2_1"
 }
 
 // Steam Notification Toasts Fix
