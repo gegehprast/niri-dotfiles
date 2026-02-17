@@ -6,12 +6,15 @@
         "clipboardWrapText": true,
         "customLaunchPrefix": "",
         "customLaunchPrefixEnabled": false,
+        "density": "default",
         "enableClipPreview": true,
         "enableClipboardHistory": false,
+        "enableSessionSearch": true,
         "enableSettingsSearch": true,
         "enableWindowsSearch": true,
         "iconMode": "tabler",
         "ignoreMouseInput": false,
+        "overviewLayer": false,
         "pinnedApps": [
         ],
         "position": "bottom_center",
@@ -38,6 +41,7 @@
         "autoShowDelay": 150,
         "backgroundOpacity": 0.93,
         "barType": "simple",
+        "capsuleColorKey": "none",
         "capsuleOpacity": 1,
         "density": "default",
         "displayMode": "always_visible",
@@ -73,6 +77,7 @@
                     "showArtistFirst": true,
                     "showProgressRing": true,
                     "showVisualizer": true,
+                    "textColor": "none",
                     "useFixedWidth": true,
                     "visualizerType": "wave"
                 },
@@ -98,6 +103,7 @@
                 {
                     "compactMode": true,
                     "diskPath": "/",
+                    "iconColor": "none",
                     "id": "SystemMonitor",
                     "showCpuFreq": false,
                     "showCpuTemp": true,
@@ -111,8 +117,8 @@
                     "showMemoryUsage": true,
                     "showNetworkStats": false,
                     "showSwapUsage": false,
-                    "useMonospaceFont": true,
-                    "usePrimaryColor": true
+                    "textColor": "none",
+                    "useMonospaceFont": true
                 },
                 {
                     "characterCount": 2,
@@ -141,6 +147,7 @@
                     "maxWidth": 145,
                     "scrollingMode": "hover",
                     "showIcon": true,
+                    "textColor": "none",
                     "useFixedWidth": false
                 }
             ],
@@ -148,6 +155,7 @@
                 {
                     "blacklist": [
                     ],
+                    "chevronColor": "none",
                     "colorizeIcons": false,
                     "drawerEnabled": false,
                     "hidePassive": false,
@@ -156,6 +164,7 @@
                     ]
                 },
                 {
+                    "iconColor": "none",
                     "id": "NoctaliaPerformance"
                 },
                 {
@@ -168,38 +177,47 @@
                 {
                     "hideWhenZero": false,
                     "hideWhenZeroUnread": false,
+                    "iconColor": "none",
                     "id": "NotificationHistory",
                     "showUnreadBadge": true,
                     "unreadBadgeColor": "primary"
                 },
                 {
                     "displayMode": "onhover",
+                    "iconColor": "none",
                     "id": "Volume",
-                    "middleClickCommand": "pwvucontrol || pavucontrol"
+                    "middleClickCommand": "pwvucontrol || pavucontrol",
+                    "textColor": "none"
                 },
                 {
                     "displayMode": "onhover",
-                    "id": "Bluetooth"
+                    "iconColor": "none",
+                    "id": "Bluetooth",
+                    "textColor": "none"
                 },
                 {
                     "displayMode": "onhover",
-                    "id": "Network"
+                    "iconColor": "none",
+                    "id": "Network",
+                    "textColor": "none"
                 },
                 {
                     "displayMode": "alwaysShow",
-                    "id": "VPN"
+                    "iconColor": "none",
+                    "id": "VPN",
+                    "textColor": "none"
                 },
                 {
                     "deviceNativePath": "BAT0",
-                    "displayMode": "alwaysShow",
+                    "displayMode": "icon-always",
                     "hideIfIdle": false,
                     "hideIfNotDetected": true,
                     "id": "Battery",
                     "showNoctaliaPerformance": true,
-                    "showPowerProfiles": true,
-                    "warningThreshold": 30
+                    "showPowerProfiles": true
                 },
                 {
+                    "clockColor": "none",
                     "customFont": "",
                     "formatHorizontal": "MMM d, HH:mm",
                     "formatVertical": "dd MM - HH mm",
@@ -246,13 +264,13 @@
     },
     "colorSchemes": {
         "darkMode": true,
-        "generationMethod": "fruit-salad",
+        "generationMethod": "muted",
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Noctalia (default)",
+        "predefinedScheme": "One",
         "schedulingMode": "off",
-        "useWallpaperColors": true
+        "useWallpaperColors": false
     },
     "controlCenter": {
         "cards": [
@@ -396,15 +414,42 @@
         "autoStartAuth": true,
         "avatarImage": "/home/zen/Pictures/Wallpapers/DvZl9bv.jpeg",
         "boxRadiusRatio": 1,
+        "clockFormat": "hh\\nmm",
+        "clockStyle": "custom",
         "compactLockScreen": false,
         "dimmerOpacity": 0.1,
         "enableLockScreenCountdown": true,
         "enableShadows": true,
         "forceBlackScreenCorners": false,
         "iRadiusRatio": 1,
+        "keybinds": {
+            "keyDown": [
+                "Down"
+            ],
+            "keyEnter": [
+                "Return"
+            ],
+            "keyEscape": [
+                "Esc"
+            ],
+            "keyLeft": [
+                "Left"
+            ],
+            "keyRight": [
+                "Right"
+            ],
+            "keyUp": [
+                "Up"
+            ]
+        },
         "language": "",
         "lockOnSuspend": true,
+        "lockScreenAnimations": false,
+        "lockScreenBlur": 0,
         "lockScreenCountdownDuration": 10000,
+        "lockScreenMonitors": [
+        ],
+        "lockScreenTint": 0,
         "radiusRatio": 1,
         "scaleRatio": 1,
         "screenRadiusRatio": 1,
@@ -461,9 +506,8 @@
     },
     "notifications": {
         "backgroundOpacity": 1,
-        "batteryCriticalThreshold": 10,
-        "batteryWarningThreshold": 20,
         "criticalUrgencyDuration": 15,
+        "enableBatteryToast": true,
         "enableKeyboardLayoutToast": true,
         "enableMediaToast": false,
         "enabled": true,
@@ -504,6 +548,9 @@
         ],
         "overlayLayer": true
     },
+    "plugins": {
+        "autoUpdate": false
+    },
     "sessionMenu": {
         "countdownDuration": 10000,
         "enableCountdown": true,
@@ -515,44 +562,51 @@
                 "action": "lock",
                 "command": "",
                 "countdownEnabled": true,
-                "enabled": true
+                "enabled": true,
+                "keybind": "1"
             },
             {
                 "action": "suspend",
                 "command": "",
                 "countdownEnabled": true,
-                "enabled": true
+                "enabled": true,
+                "keybind": "2"
             },
             {
                 "action": "reboot",
                 "command": "",
                 "countdownEnabled": true,
-                "enabled": true
+                "enabled": true,
+                "keybind": "4"
             },
             {
                 "action": "logout",
                 "command": "",
                 "countdownEnabled": true,
-                "enabled": true
+                "enabled": true,
+                "keybind": "5"
             },
             {
                 "action": "shutdown",
                 "command": "",
                 "countdownEnabled": true,
-                "enabled": true
+                "enabled": true,
+                "keybind": "6"
             },
             {
                 "action": "hibernate",
                 "command": "",
                 "countdownEnabled": true,
-                "enabled": true
+                "enabled": true,
+                "keybind": "3"
             }
         ],
-        "showHeader": true,
-        "showNumberLabels": true
+        "showHeader": true
     },
-    "settingsVersion": 47,
+    "settingsVersion": 53,
     "systemMonitor": {
+        "batteryCriticalThreshold": 10,
+        "batteryWarningThreshold": 20,
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 1000,
         "cpuWarningThreshold": 80,
@@ -595,14 +649,6 @@
             },
             {
                 "enabled": true,
-                "id": "niri"
-            },
-            {
-                "enabled": true,
-                "id": "qt"
-            },
-            {
-                "enabled": true,
                 "id": "kitty"
             },
             {
@@ -611,7 +657,11 @@
             },
             {
                 "enabled": true,
-                "id": "kitty"
+                "id": "niri"
+            },
+            {
+                "enabled": true,
+                "id": "qt"
             },
             {
                 "enabled": true,
@@ -640,16 +690,21 @@
         "directory": "~/Pictures/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
+        "favorites": [
+        ],
         "fillColor": "#000000",
         "fillMode": "crop",
         "hideWallpaperFilenames": true,
         "monitorDirectories": [
         ],
+        "overviewBlur": 0.4,
         "overviewEnabled": true,
+        "overviewTint": 0.6,
         "panelPosition": "follow_bar",
         "randomIntervalSec": 3600,
         "setWallpaperOnAllMonitors": true,
         "showHiddenFiles": false,
+        "skipStartupTransition": false,
         "solidColor": "#504349",
         "sortOrder": "name",
         "transitionDuration": 1500,
