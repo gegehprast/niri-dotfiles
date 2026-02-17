@@ -216,7 +216,7 @@ layout {
 
     gaps 4
     center-focused-column "never"
-    default-column-width { proportion 0.333333333; }
+    default-column-width { proportion 0.5; }
 
     preset-column-widths {
         proportion 0.333333333
