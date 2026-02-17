@@ -52,10 +52,17 @@
         "marginHorizontal": 5,
         "marginVertical": 5,
         "monitors": [
+            "DP-2",
+            "DP-1"
         ],
         "outerCorners": true,
-        "position": "top",
+        "position": "bottom",
         "screenOverrides": [
+            {
+                "enabled": true,
+                "name": "DP-2",
+                "position": "top"
+            }
         ],
         "showCapsule": true,
         "showOutline": false,
@@ -119,6 +126,20 @@
                     "showSwapUsage": false,
                     "textColor": "none",
                     "useMonospaceFont": true
+                },
+                {
+                    "defaultSettings": {
+                        "arrowType": "caret",
+                        "byteThresholdActive": 1024,
+                        "fontSizeModifier": 1,
+                        "forceMegabytes": false,
+                        "iconSizeModifier": 1,
+                        "minWidth": 0,
+                        "showNumbers": true,
+                        "spacingInbetween": 0,
+                        "useCustomColors": false
+                    },
+                    "id": "plugin:network-indicator"
                 },
                 {
                     "characterCount": 2,
@@ -254,10 +275,6 @@
             },
             {
                 "enabled": true,
-                "id": "timer-card"
-            },
-            {
-                "enabled": true,
                 "id": "weather-card"
             }
         ]
@@ -300,7 +317,7 @@
             }
         ],
         "diskPath": "/",
-        "position": "top_right",
+        "position": "close_to_bar_button",
         "shortcuts": {
             "left": [
                 {
@@ -346,39 +363,39 @@
                         "showBackground": false,
                         "useCustomFont": false,
                         "usePrimaryColor": false,
-                        "x": 1920,
-                        "y": 80
+                        "x": 2565,
+                        "y": 630
                     },
                     {
                         "id": "Weather",
-                        "scale": 1.235702260395516,
+                        "scale": 1.2639865316429777,
                         "showBackground": false,
-                        "x": 2200,
-                        "y": 80
+                        "x": 2880,
+                        "y": 630
                     },
                     {
                         "hideMode": "hidden",
                         "id": "MediaPlayer",
                         "roundedCorners": true,
-                        "scale": 1.6033977866125204,
+                        "scale": 1.5751135153650584,
                         "showAlbumArt": true,
                         "showBackground": false,
                         "showButtons": false,
                         "showVisualizer": false,
                         "visualizerType": "linear",
-                        "x": 960,
-                        "y": 80
+                        "x": 1395,
+                        "y": 135
                     },
                     {
                         "diskPath": "/",
                         "id": "SystemStat",
                         "layout": "bottom",
                         "roundedCorners": true,
-                        "scale": 2.503780421323391,
+                        "scale": 2.616917506313239,
                         "showBackground": false,
                         "statType": "CPU",
-                        "x": 1920,
-                        "y": 240
+                        "x": 2565,
+                        "y": 270
                     }
                 ]
             }
@@ -397,7 +414,7 @@
             "DP-3",
             "eDP-1"
         ],
-        "onlySameOutput": true,
+        "onlySameOutput": false,
         "pinnedApps": [
             "zen",
             "code"
@@ -514,6 +531,7 @@
         "location": "bottom_right",
         "lowUrgencyDuration": 4,
         "monitors": [
+            "DP-1"
         ],
         "normalUrgencyDuration": 8,
         "overlayLayer": true,
@@ -549,7 +567,7 @@
         "overlayLayer": true
     },
     "plugins": {
-        "autoUpdate": false
+        "autoUpdate": true
     },
     "sessionMenu": {
         "countdownDuration": 10000,
@@ -678,7 +696,7 @@
         "fontDefaultScale": 1,
         "fontFixed": "FiraCode Nerd Font Mono",
         "fontFixedScale": 1,
-        "networkPanelView": "ethernet",
+        "networkPanelView": "wifi",
         "panelBackgroundOpacity": 1,
         "panelsAttachedToBar": true,
         "settingsPanelMode": "attached",
@@ -686,7 +704,7 @@
         "wifiDetailsViewMode": "grid"
     },
     "wallpaper": {
-        "automationEnabled": true,
+        "automationEnabled": false,
         "directory": "~/Pictures/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
@@ -717,7 +735,7 @@
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
         "wallhavenPurity": "100",
-        "wallhavenQuery": "",
+        "wallhavenQuery": "archlinux",
         "wallhavenRatios": "",
         "wallhavenResolutionHeight": "",
         "wallhavenResolutionMode": "atleast",

@@ -37,6 +37,7 @@ output "eDP-1" {
     scale 1.5
     // variable-refresh-rate
     focus-at-startup
+    // variable-refresh-rate
 }
 
 
@@ -50,6 +51,7 @@ binds {
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
     MOD+KP_Enter                        hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
     MOD+SHIFT+RETURN                    hotkey-overlay-title="kitty quick access terminal" { spawn-sh "kitten quick-access-terminal"; }
+    MOD+SHIFT+KP_Enter                  hotkey-overlay-title="kitty quick access terminal" { spawn-sh "kitten quick-access-terminal"; }
     MOD+SPACE                           hotkey-overlay-title="Open App Launcher: vicinae" { spawn-sh "vicinae toggle"; }
     MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "zen-browser"; }
     // MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "~/.config/niri/scripts/xwayland_zen.fish"; }
@@ -174,6 +176,7 @@ binds {
     MOD+SHIFT+T                         { switch-focus-between-floating-and-tiling; }
     MOD+F                               { maximize-column; }
     MOD+SHIFT+F                         { fullscreen-window; }
+    MOD+CTRL+SHIFT+F                    { toggle-windowed-fullscreen; }
     MOD+SHIFT+W                         { toggle-column-tabbed-display; }
     MOD+TAB                             { focus-window-down-or-top; }
 
@@ -199,9 +202,6 @@ spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
 spawn-sh-at-startup "qs -c noctalia-shell"
 // spawn-sh-at-startup "~/.config/niri/scripts/autolock.fish"
 spawn-sh-at-startup "vicinae server"
-// spawn-sh-at-startup "~/.config/niri/scripts/personal_autostart.fish"
-// spawn-sh-at-startup "~/.config/niri/scripts/xwayland_discord.fish &"
-// spawn-sh-at-startup "~/.config/niri/scripts/xwayland_steam.fish &"
 spawn-sh-at-startup "~/.config/niri/scripts/battery_status.fish"
 
 // Disable window decorations
@@ -216,11 +216,12 @@ layout {
 
     gaps 4
     center-focused-column "never"
+    default-column-width { proportion 0.333333333; }
 
     preset-column-widths {
-        proportion 0.33333
+        proportion 0.333333333
         proportion 0.5
-        proportion 0.66666
+        proportion 0.66666667
         proportion 0.75
     }
 
@@ -269,6 +270,7 @@ layout {
 
 // Overview Settings
 overview {
+    backdrop-color "#000000"
     workspace-shadow {
         // Noctalia Stationary Wallpaper
         // off
@@ -363,15 +365,32 @@ window-rule {
     match app-id=r#"kitty$"#
 }
 
+// steam main window
 window-rule {
-    match app-id="steam"
+    match app-id=r#"^steam$"#
+    match title=r#"^Steam$"#
     exclude title=r#"^notificationtoasts_\d+_desktop$"#
-    open-on-workspace "2"
+    default-column-width { proportion 0.5; }
+    open-on-workspace "2_1"
+}
+
+// steam main and other windows
+window-rule {
+    match app-id=r#"^steam$"#
+    exclude title=r#"^Steam$"#
+    default-column-width { proportion 0.333333333; }
+}
+
+// steam games
+window-rule {
+    match app-id=r#"^steam_app_"#
+    open-on-workspace "1_1"
+    default-column-width {}
 }
 
 window-rule {
     match app-id="discord"
-    open-on-workspace "2"
+    open-on-workspace "2_1"
 }
 
 // Steam Notification Toasts Fix
