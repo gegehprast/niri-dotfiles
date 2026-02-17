@@ -34,12 +34,14 @@ cursor {
 output "DP-2" {
     mode "2560x1440@144.000"
     position x=0 y=0
+    // variable-refresh-rate
 }
 
 output "DP-1" {
-    mode "3440x1440@144.050"
+    mode "3440x1440@240.085"
     position x=-500 y=1440
     focus-at-startup
+    // variable-refresh-rate
 }
 
 output "HDMI-A-1" {
@@ -207,8 +209,8 @@ spawn-sh-at-startup "qs -c noctalia-shell"
 spawn-sh-at-startup "~/.config/niri/scripts/autolock.fish"
 spawn-sh-at-startup "vicinae server"
 spawn-sh-at-startup "~/.config/niri/scripts/personal_autostart.fish"
-spawn-sh-at-startup "~/.config/niri/scripts/xwayland_discord.fish &"
-spawn-sh-at-startup "~/.config/niri/scripts/xwayland_steam.fish &"
+spawn-sh-at-startup "sleep 5; ~/.config/niri/scripts/xwayland_discord.fish &"
+spawn-sh-at-startup "sleep 5; ~/.config/niri/scripts/xwayland_steam.fish &"
 
 // Disable window decorations
 // https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#prefer-no-csd
@@ -276,6 +278,7 @@ layout {
 
 // Overview Settings
 overview {
+    backdrop-color "#000000"
     workspace-shadow {
         // Noctalia Stationary Wallpaper
         // off
