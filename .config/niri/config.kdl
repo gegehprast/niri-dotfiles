@@ -181,7 +181,7 @@ binds {
     MOD+TAB                             { focus-window-down-or-top; }
 
     // Screenshots
-    MOD+SHIFT+S                         hotkey-overlay-title="Take a Screenshot" { spawn-sh "grim -g \"$(slurp)\" -t ppm - | satty --filename - --initial-tool brush --actions-on-enter save-to-clipboard,exit --actions-on-escape save-to-clipboard,exit --copy-command wl-copy --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png"; }
+    MOD+SHIFT+S                         hotkey-overlay-title="Take a Screenshot" { spawn-sh "~/.config/niri/scripts/screenshot.fish"; }
     MOD+PRINT                           { screenshot-screen; }
     MOD+SHIFT+PRINT                     { screenshot-window; }
 
@@ -427,6 +427,9 @@ environment {
     QS_ICON_THEME "Papirus-Dark"
     // SAL_USE_VCLPLUGIN "qt6"
 }
+
+// Screenshot Path
+screenshot-path "~/Pictures/Screenshots/niri_%Y%m%d_%H%M%S.png"
 
 // Hotkey Overlay
 // https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#hotkey-overlay
