@@ -114,14 +114,22 @@ binds {
     MOD+SHIFT+END                       { move-column-to-last; }
 
     MOD+CTRL+LEFT                       { focus-monitor-left; }
+    MOD+CTRL+H                            { focus-monitor-left; }
     MOD+CTRL+RIGHT                      { focus-monitor-right; }
+    MOD+CTRL+L                            { focus-monitor-right; }
     MOD+CTRL+UP                         { focus-monitor-up; }
+    MOD+CTRL+K                            { focus-monitor-up; }
     MOD+CTRL+DOWN                       { focus-monitor-down; }
+    MOD+CTRL+J                            { focus-monitor-down; }
 
     MOD+SHIFT+CTRL+LEFT                 { move-column-to-monitor-left; }
+    MOD+SHIFT+CTRL+H                    { move-column-to-monitor-left; }
     MOD+SHIFT+CTRL+RIGHT                { move-column-to-monitor-right; }
+    MOD+SHIFT+CTRL+L                    { move-column-to-monitor-right; }
     MOD+SHIFT+CTRL+UP                   { move-column-to-monitor-up; }
+    MOD+SHIFT+CTRL+K                    { move-column-to-monitor-up; }
     MOD+SHIFT+CTRL+DOWN                 { move-column-to-monitor-down; }
+    MOD+SHIFT+CTRL+J                    { move-column-to-monitor-down; }
 
     MOD+ALT+LEFT                        { consume-or-expel-window-left; }
     MOD+ALT+H                           { consume-or-expel-window-left; }
@@ -209,8 +217,9 @@ spawn-sh-at-startup "qs -c noctalia-shell"
 spawn-sh-at-startup "~/.config/niri/scripts/autolock.fish"
 spawn-sh-at-startup "vicinae server"
 spawn-sh-at-startup "~/.config/niri/scripts/personal_autostart.fish"
-spawn-sh-at-startup "sleep 5; ~/.config/niri/scripts/xwayland_discord.fish &"
+// spawn-sh-at-startup "sleep 5; ~/.config/niri/scripts/xwayland_discord.fish &"
 spawn-sh-at-startup "sleep 5; ~/.config/niri/scripts/xwayland_steam.fish &"
+spawn-sh-at-startup "sleep 5; equibop &"
 
 // Disable window decorations
 // https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#prefer-no-csd
@@ -383,6 +392,13 @@ window-rule {
 }
 
 window-rule {
+    match app-id=r#"equibop$"#
+
+    // variable-refresh-rate true
+    default-column-width { proportion 0.5; }
+}
+
+window-rule {
     match title=r#"^Endfield$"#
     
     open-fullscreen true
@@ -422,6 +438,11 @@ window-rule {
 
 window-rule {
     match app-id="discord"
+    open-on-workspace "2_1"
+}
+
+window-rule {
+    match app-id="equibop"
     open-on-workspace "2_1"
 }
 
