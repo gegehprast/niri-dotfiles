@@ -1,5 +1,11 @@
 #!/usr/bin/env fish
 
+# Prevent multiple instances from running simultaneously
+set lockfile /tmp/screenshot.fish.lock
+if not mkdir $lockfile 2>/dev/null
+    exit 0
+end
+
 # 1. Screenshot with niri
 # It is saved in ~/Pictures/Screenshots with the name niri_%Y%m%d_%H%M%S.png
 
@@ -28,3 +34,5 @@ satty \
     --actions-on-escape save-to-clipboard,exit \
     --copy-command wl-copy \
     --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H%M%S').png
+
+rmdir $lockfile
