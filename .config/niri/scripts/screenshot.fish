@@ -14,14 +14,19 @@ set before (command ls ~/Pictures/Screenshots/niri_*.png 2>/dev/null | tail -n 1
 
 niri msg action screenshot
 
-# 2. Wait for a new screenshot file to appear
+# 2. Wait for a new screenshot file to appear (timeout after 5s)
 # `command ls` is used to avoid aliasing of `ls` for something like `eza`
 set latest_screenshot ""
+set timeout 50
 while test -z "$latest_screenshot"
     set current (command ls ~/Pictures/Screenshots/niri_*.png 2>/dev/null | tail -n 1)
     if test "$current" != "$before"
         set latest_screenshot $current
+    else if test $timeout -le 0
+        rmdir $lockfile
+        exit 1
     else
+        set timeout (math $timeout - 1)
         sleep 0.1
     end
 end
