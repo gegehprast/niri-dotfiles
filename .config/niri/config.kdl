@@ -363,8 +363,7 @@ window-rule {
 
 // Dolphin Duplicate File Dialog
 window-rule {
-    match app-id=r#"^org.kde.dolphin$"#
-    match title=r#"^Copying — Dolphin$"#
+    match app-id=r#"^org.kde.dolphin$"# title=r#"^Copying — Dolphin$"#
     open-focused false
 }
 
