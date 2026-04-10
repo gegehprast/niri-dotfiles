@@ -361,6 +361,13 @@ window-rule {
     default-window-height { fixed 560; }
 }
 
+// Dolphin Duplicate File Dialog
+window-rule {
+    match app-id=r#"^org.kde.dolphin$"#
+    match title=r#"^Copying — Dolphin$"#
+    open-focused false
+}
+
 // Synology Cloud Drive UI weirdness fix
 window-rule {
     match app-id=r#".*cloud-drive-ui.*"#
