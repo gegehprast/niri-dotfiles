@@ -33,19 +33,20 @@ cursor {
 // https://yalter.github.io/niri/Configuration%3A-Outputs.html
 output "DP-2" {
     mode "2560x1440@144.000"
-    position x=0 y=0
-    // variable-refresh-rate
-}
-
-output "DP-1" {
-    mode "3440x1440@240.085"
-    position x=-500 y=1440
-    focus-at-startup
+    position x=4240 y=-2040
     // variable-refresh-rate
 }
 
 output "HDMI-A-1" {
-    off
+    mode "3440x1440@239.999"
+    position x=0 y=0
+}
+
+output "DP-1" {
+    mode "3440x1440@240.085"
+    position x=3440 y=-600
+    focus-at-startup
+    // variable-refresh-rate
 }
 
 // Keybindings
