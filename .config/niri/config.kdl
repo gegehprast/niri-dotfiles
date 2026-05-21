@@ -68,14 +68,14 @@ binds {
     MOD+PERIOD                          hotkey-overlay-title="Noctalia control center" { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
     MOD+E                               hotkey-overlay-title="File Manager: Dolphin" { spawn-sh "dolphin"; }
     MOD+C                               hotkey-overlay-title="VS Code" { spawn-sh "~/.config/niri/scripts/xwayland_code.fish"; }
-    MOD+V                               hotkey-overlay-title="Clipboard History: vicinae" { spawn-sh "vicinae vicinae://extensions/vicinae/clipboard/history"; }
+    MOD+V                               hotkey-overlay-title="Clipboard History: vicinae" { spawn-sh "vicinae vicinae://launch/clipboard/history"; }
     MOD+W                               hotkey-overlay-title="Switch Window" { spawn-sh "vicinae vicinae://extensions/vicinae/wm/switch-windows"; }
 
     // Audio Controls
-    XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1.5"; }
-    XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05- -l 1.5"; }
-    SHIFT+XF86AudioRaiseVolume          allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1"; }
-    SHIFT+XF86AudioLowerVolume          allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05- -l 1"; }
+    XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1.5"; }
+    XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02- -l 1.5"; }
+    SHIFT+XF86AudioRaiseVolume          allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1"; }
+    SHIFT+XF86AudioLowerVolume          allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02- -l 1"; }
     XF86AudioMute                       allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute                    allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
     XF86AudioNext                       allow-when-locked=true { spawn-sh "playerctl next"; }
