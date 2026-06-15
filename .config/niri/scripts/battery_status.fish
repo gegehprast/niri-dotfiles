@@ -26,16 +26,22 @@ while true
     set low_brightness (math "round($max_brightness * 0.15)")
     set critical_brightness (math "round($max_brightness * 0.1)")
 
-    # Only adjust brightness if discharging
+    # Adjust brightness based on battery status and level
     if test "$bat_status" = "Discharging"
         # Adjust brightness based on battery level
         if test $bat_capacity -le $CRITICAL_THRESHOLD
             brightnessctl -q set $critical_brightness
-            notify-send -u critical "Battery Critical" "Battery at $bat_capacity%. Brightness reduced to 30%"
+            notify-send -u critical "Battery Critical" "Battery at $bat_capacity%. Brightness reduced to 10%"
         else if test $bat_capacity -le $LOW_THRESHOLD
             brightnessctl -q set $low_brightness
-            notify-send -u normal "Battery Low" "Battery at $bat_capacity%. Brightness reduced to 50%"
+            notify-send -u normal "Battery Low" "Battery at $bat_capacity%. Brightness reduced to 15%"
+        else
+            # Battery is above threshold, restore normal brightness
+            brightnessctl -q set $normal_brightness
         end
+    else
+        # Charging or Full, restore normal brightness
+        brightnessctl -q set $normal_brightness
     end
 
     # Sleep for 10 minutes (600 seconds)
