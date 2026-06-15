@@ -89,9 +89,9 @@ binds {
     MOD+RIGHT                           { focus-column-right; }
     MOD+L                               { focus-column-right; }
     MOD+UP                              { focus-window-up; }
-    MOD+K                               { focus-window-up; }
+    MOD+K                               { focus-window-or-workspace-up; }
     MOD+DOWN                            { focus-window-down; }
-    MOD+J                               { focus-window-down; }
+    MOD+J                               { focus-window-or-workspace-down; }
 
     MOD+SHIFT+LEFT                      { move-column-left; }
     MOD+SHIFT+H                         { move-column-left; }
@@ -412,6 +412,31 @@ window-rule {
     match app-id="libreoffice-startcenter" title="Save"
     open-floating true
 }
+
+// window-rule {
+//     match is-focused=true
+// }
+
+// window-rule {
+//     exclude app-id=r#"^zen$"#
+//     exclude app-id=r#"^code$"#
+//     match is-focused=false
+//     opacity 0.9
+// }
+
+// window-rule {
+//   background-effect {
+//     blur true
+//     xray false
+//   }
+// }
+
+// layer-rule {
+//   match namespace="^noctalia-(background|launcher-overlay|dock)-.*$"
+//   background-effect {
+//     xray false
+//   }
+// }
 
 // Environment Variables
 // https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#environment

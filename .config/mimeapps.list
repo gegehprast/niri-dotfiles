@@ -51,3 +51,4 @@ x-scheme-handler/https=zen.desktop
 x-scheme-handler/postman=Postman.desktop
 x-scheme-handler/terminal=kitty.desktop
 x-scheme-handler/postman=Postman.desktop
+x-scheme-handler/defguard=defguard-client-handler.desktop
