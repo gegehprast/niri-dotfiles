@@ -60,7 +60,10 @@
         "middleClickCommand": "",
         "middleClickFollowMouse": false,
         "monitors": [
-            "eDP-1"
+            "eDP-1",
+            "HDMI-A-1",
+            "DP-2",
+            "DP-1"
         ],
         "mouseWheelAction": "none",
         "mouseWheelWrap": true,
@@ -75,6 +78,11 @@
                 "enabled": true,
                 "name": "DP-2",
                 "position": "top"
+            },
+            {
+                "enabled": true,
+                "name": "eDP-1",
+                "position": "bottom"
             }
         ],
         "showCapsule": true,
@@ -551,7 +559,7 @@
         "bluetoothRssiPollIntervalMs": 10000,
         "bluetoothRssiPollingEnabled": false,
         "disableDiscoverability": false,
-        "networkPanelView": "wifi",
+        "networkPanelView": "ethernet",
         "wifiDetailsViewMode": "grid"
     },
     "nightLight": {
@@ -580,8 +588,7 @@
         "location": "bottom_right",
         "lowUrgencyDuration": 3,
         "monitors": [
-            "DP-1",
-            "eDP-1"
+            "DP-1"
         ],
         "normalUrgencyDuration": 7,
         "overlayLayer": true,
@@ -593,7 +600,7 @@
         },
         "sounds": {
             "criticalSoundFile": "",
-            "enabled": false,
+            "enabled": true,
             "excludedApps": "discord,firefox,chrome,chromium,edge",
             "lowSoundFile": "",
             "normalSoundFile": "",
@@ -746,7 +753,7 @@
         "settingsPanelMode": "attached",
         "settingsPanelSideBarCardStyle": false,
         "tooltipsEnabled": true,
-        "translucentWidgets": false
+        "translucentWidgets": true
     },
     "wallpaper": {
         "automationEnabled": false,
@@ -783,13 +790,13 @@
         ],
         "useOriginalImages": false,
         "useSolidColor": false,
-        "useWallhaven": false,
+        "useWallhaven": true,
         "viewMode": "recursive",
         "wallhavenApiKey": "",
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
-        "wallhavenPurity": "100",
-        "wallhavenQuery": "archlinux",
+        "wallhavenPurity": "000",
+        "wallhavenQuery": "",
         "wallhavenRatios": "",
         "wallhavenResolutionHeight": "",
         "wallhavenResolutionMode": "atleast",

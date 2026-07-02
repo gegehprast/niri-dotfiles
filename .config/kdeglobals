@@ -142,6 +142,7 @@ TerminalService=kitty.desktop
 Theme=Papirus-Dark
 
 [KDE]
+ShowDeleteCommand=false
 contrast=4
 frameContrast=0.2
 widgetStyle=qt6ct-style
@@ -163,6 +164,10 @@ Sort hidden files last=false
 Sort reversed=false
 Speedbar Width=187
 View Style=DetailTree
+
+[PreviewSettings]
+EnableRemoteFolderThumbnail=false
+MaximumRemoteSize=0
 
 [WM]
 activeBackground=107,2,233
