@@ -33,10 +33,38 @@ cursor {
 // Outputs
 // https://yalter.github.io/niri/Configuration%3A-Outputs.html
 output "eDP-1" {
+    position x=0 y=0
     mode "2880x1800@120.000"
     scale 1.5
     // variable-refresh-rate
     focus-at-startup
+    // variable-refresh-rate
+}
+
+output "HDMI-A-1" {
+    position x=-760 y=-1440
+    mode "3440x1440@100.000"
+    scale 1
+    // variable-refresh-rate
+    // focus-at-startup
+    // variable-refresh-rate
+}
+
+output "DP-1" {
+    position x=-760 y=-1440
+    mode "3440x1440@100.000"
+    scale 1
+    // variable-refresh-rate
+    // focus-at-startup
+    // variable-refresh-rate
+}
+
+output "DP-2" {
+    position x=-760 y=-1440
+    mode "3440x1440@100.000"
+    scale 1
+    // variable-refresh-rate
+    // focus-at-startup
     // variable-refresh-rate
 }
 
@@ -175,8 +203,8 @@ binds {
     MOD+T                               { toggle-window-floating; }
     MOD+SHIFT+T                         { switch-focus-between-floating-and-tiling; }
     MOD+F                               { maximize-column; }
-    MOD+SHIFT+F                         { fullscreen-window; }
-    MOD+CTRL+SHIFT+F                    { toggle-windowed-fullscreen; }
+    MOD+SHIFT+F                         hotkey-overlay-title="Exclusive fullscreen" { fullscreen-window; }
+    MOD+CTRL+SHIFT+F                    hotkey-overlay-title="Borderless fullscreen" { toggle-windowed-fullscreen; }
     MOD+SHIFT+W                         { toggle-column-tabbed-display; }
     MOD+TAB                             { focus-window-down-or-top; }
 
@@ -292,7 +320,7 @@ animations {
         curve "ease-out-cubic"
     }
     horizontal-view-movement {
-        spring damping-ratio=0.75 stiffness=500 epsilon=0.0001
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
     }
     window-movement {
         spring damping-ratio=0.75 stiffness=500 epsilon=0.0001
@@ -411,6 +439,16 @@ window-rule {
 window-rule {
     match app-id="libreoffice-startcenter" title="Save"
     open-floating true
+}
+
+// defguard
+window-rule {
+    match app-id=r#"^defguard-client$"#
+    default-column-width { proportion 0.5; }
+    open-fullscreen false
+    open-floating false
+    open-maximized false
+    open-maximized-to-edges false
 }
 
 // window-rule {
