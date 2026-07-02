@@ -88,14 +88,14 @@ binds {
     MOD+PERIOD                          hotkey-overlay-title="Noctalia control center" { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
     MOD+E                               hotkey-overlay-title="File Manager: Dolphin" { spawn-sh "dolphin"; }
     MOD+C                               hotkey-overlay-title="VS Code" { spawn-sh "~/.config/niri/scripts/xwayland_code.fish"; }
-    MOD+V                               hotkey-overlay-title="Clipboard History: vicinae" { spawn-sh "vicinae vicinae://extensions/vicinae/clipboard/history"; }
+    MOD+V                               hotkey-overlay-title="Clipboard History: vicinae" { spawn-sh "vicinae vicinae://launch/clipboard/history"; }
     MOD+W                               hotkey-overlay-title="Switch Window" { spawn-sh "vicinae vicinae://extensions/vicinae/wm/switch-windows"; }
 
     // Audio Controls
-    XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1.5"; }
-    XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05- -l 1.5"; }
-    SHIFT+XF86AudioRaiseVolume          allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1"; }
-    SHIFT+XF86AudioLowerVolume          allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05- -l 1"; }
+    XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1.5"; }
+    XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02- -l 1.5"; }
+    SHIFT+XF86AudioRaiseVolume          allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1"; }
+    SHIFT+XF86AudioLowerVolume          allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02- -l 1"; }
     XF86AudioMute                       allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute                    allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
     XF86AudioNext                       allow-when-locked=true { spawn-sh "playerctl next"; }
@@ -136,14 +136,22 @@ binds {
     MOD+SHIFT+END                       { move-column-to-last; }
 
     MOD+CTRL+LEFT                       { focus-monitor-left; }
+    MOD+CTRL+H                            { focus-monitor-left; }
     MOD+CTRL+RIGHT                      { focus-monitor-right; }
+    MOD+CTRL+L                            { focus-monitor-right; }
     MOD+CTRL+UP                         { focus-monitor-up; }
+    MOD+CTRL+K                            { focus-monitor-up; }
     MOD+CTRL+DOWN                       { focus-monitor-down; }
+    MOD+CTRL+J                            { focus-monitor-down; }
 
     MOD+SHIFT+CTRL+LEFT                 { move-column-to-monitor-left; }
+    MOD+SHIFT+CTRL+H                    { move-column-to-monitor-left; }
     MOD+SHIFT+CTRL+RIGHT                { move-column-to-monitor-right; }
+    MOD+SHIFT+CTRL+L                    { move-column-to-monitor-right; }
     MOD+SHIFT+CTRL+UP                   { move-column-to-monitor-up; }
+    MOD+SHIFT+CTRL+K                    { move-column-to-monitor-up; }
     MOD+SHIFT+CTRL+DOWN                 { move-column-to-monitor-down; }
+    MOD+SHIFT+CTRL+J                    { move-column-to-monitor-down; }
 
     MOD+ALT+LEFT                        { consume-or-expel-window-left; }
     MOD+ALT+H                           { consume-or-expel-window-left; }
@@ -360,6 +368,12 @@ window-rule {
     default-window-height { fixed 560; }
 }
 
+// Dolphin Duplicate File Dialog
+window-rule {
+    match app-id=r#"^org.kde.dolphin$"# title=r#"^Copying — Dolphin$"#
+    open-focused false
+}
+
 // Synology Cloud Drive UI weirdness fix
 window-rule {
     match app-id=r#".*cloud-drive-ui.*"#
@@ -418,6 +432,11 @@ window-rule {
 
 window-rule {
     match app-id="discord"
+    open-on-workspace "2_1"
+}
+
+window-rule {
+    match app-id="equibop"
     open-on-workspace "2_1"
 }
 

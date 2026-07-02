@@ -97,35 +97,16 @@
                     "hideMode": "visible",
                     "hideWhenIdle": false,
                     "id": "MediaMini",
-                    "maxWidth": 300,
+                    "maxWidth": 400,
                     "panelShowAlbumArt": true,
                     "scrollingMode": "hover",
                     "showAlbumArt": true,
                     "showArtistFirst": true,
                     "showProgressRing": true,
-                    "showVisualizer": true,
+                    "showVisualizer": false,
                     "textColor": "none",
-                    "useFixedWidth": true,
-                    "visualizerType": "wave"
-                },
-                {
-                    "defaultSettings": {
-                        "completedCount": 0,
-                        "count": 0,
-                        "showBackground": true,
-                        "showCompleted": true,
-                        "todos": [
-                        ]
-                    },
-                    "id": "plugin:todo"
-                },
-                {
-                    "defaultSettings": {
-                        "notes": [
-                        ],
-                        "showCountInBar": true
-                    },
-                    "id": "plugin:simple-notes"
+                    "useFixedWidth": false,
+                    "visualizerType": "linear"
                 }
             ],
             "left": [
@@ -333,6 +314,15 @@
                 },
                 {
                     "id": "WallpaperSelector"
+                },
+                {
+                    "defaultSettings": {
+                        "compactMode": false,
+                        "defaultDuration": 0,
+                        "iconColor": "none",
+                        "textColor": "none"
+                    },
+                    "id": "plugin:timer"
                 }
             ],
             "right": [

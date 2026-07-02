@@ -1,5 +1,6 @@
 [Added Associations]
 application/octet-stream=code.desktop;
+application/pdf=zen.desktop;
 application/vnd.ms-publisher=code.desktop;
 application/x-compressed-tar=org.kde.ark.desktop;
 application/x-extension-htm=zen.desktop;
@@ -17,6 +18,7 @@ inode/directory=code.desktop;
 text/html=zen.desktop;
 text/plain=code.desktop;
 text/x-csrc=code.desktop;
+text/x-lua=code.desktop;
 video/mp4=vlc.desktop;org.kde.gwenview.desktop;
 x-scheme-handler/chrome=zen.desktop;
 x-scheme-handler/http=zen.desktop;
@@ -24,6 +26,7 @@ x-scheme-handler/https=zen.desktop;
 
 [Default Applications]
 application/octet-stream=code.desktop;
+application/pdf=zen.desktop;
 application/vnd.ms-publisher=code.desktop;
 application/x-compressed-tar=org.kde.ark.desktop;
 application/x-extension-htm=zen.desktop
@@ -44,8 +47,10 @@ inode/directory=org.kde.dolphin.desktop
 text/html=zen.desktop
 text/plain=code.desktop;
 text/x-csrc=code.desktop;
+text/x-lua=code.desktop;
 video/mp4=vlc.desktop;
 x-scheme-handler/chrome=zen.desktop
+x-scheme-handler/discord=equibop.desktop
 x-scheme-handler/http=zen.desktop
 x-scheme-handler/https=zen.desktop
 x-scheme-handler/postman=Postman.desktop
