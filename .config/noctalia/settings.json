@@ -314,15 +314,6 @@
                 },
                 {
                     "id": "WallpaperSelector"
-                },
-                {
-                    "defaultSettings": {
-                        "compactMode": false,
-                        "defaultDuration": 0,
-                        "iconColor": "none",
-                        "textColor": "none"
-                    },
-                    "id": "plugin:timer"
                 }
             ],
             "right": [
@@ -578,7 +569,9 @@
         "location": "bottom_right",
         "lowUrgencyDuration": 3,
         "monitors": [
-            "DP-1"
+            "DP-1",
+            "HDMI-A-1",
+            "eDP-1"
         ],
         "normalUrgencyDuration": 7,
         "overlayLayer": true,
@@ -591,7 +584,7 @@
         "sounds": {
             "criticalSoundFile": "",
             "enabled": true,
-            "excludedApps": "discord,firefox,chrome,chromium,edge",
+            "excludedApps": "discord,firefox,chrome,chromium,edge,satty",
             "lowSoundFile": "",
             "normalSoundFile": "",
             "separateSounds": false,
