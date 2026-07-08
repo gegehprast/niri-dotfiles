@@ -748,7 +748,7 @@
         "fillColor": "#000000",
         "fillMode": "crop",
         "hideWallpaperFilenames": true,
-        "linkLightAndDarkWallpapers": true,
+        "linkLightAndDarkWallpapers": false,
         "monitorDirectories": [
         ],
         "overviewBlur": 0.4,
