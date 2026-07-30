@@ -1,5 +1,10 @@
 source /usr/share/cachyos-fish-config/cachyos-config.fish
 
+bind ctrl-right nextd-or-forward-word
+bind ctrl-left prevd-or-backward-word
+bind alt-right forward-token
+bind alt-left backward-token
+
 # overwrite greeting
 # potentially disabling fastfetch
 #function fish_greeting
