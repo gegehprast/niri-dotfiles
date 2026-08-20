@@ -33,19 +33,22 @@ cursor {
 // https://yalter.github.io/niri/Configuration%3A-Outputs.html
 output "DP-2" {
     mode "2560x1440@144.000"
-    position x=0 y=0
+    position x=4240 y=-2040
     // variable-refresh-rate
+    // off
+}
+
+output "HDMI-A-1" {
+    mode "3440x1440@239.999"
+    position x=0 y=0
+    off
 }
 
 output "DP-1" {
     mode "3440x1440@240.085"
-    position x=-500 y=1440
+    position x=3440 y=-600
     focus-at-startup
     // variable-refresh-rate
-}
-
-output "HDMI-A-1" {
-    off
 }
 
 // Keybindings
@@ -66,14 +69,14 @@ binds {
     MOD+PERIOD                          hotkey-overlay-title="Noctalia control center" { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
     MOD+E                               hotkey-overlay-title="File Manager: Dolphin" { spawn-sh "dolphin"; }
     MOD+C                               hotkey-overlay-title="VS Code" { spawn-sh "~/.config/niri/scripts/xwayland_code.fish"; }
-    MOD+V                               hotkey-overlay-title="Clipboard History: vicinae" { spawn-sh "vicinae vicinae://extensions/vicinae/clipboard/history"; }
-    MOD+W                               hotkey-overlay-title="Switch Window" { spawn-sh "vicinae vicinae://extensions/vicinae/wm/switch-windows"; }
+    MOD+V                               hotkey-overlay-title="Clipboard History: vicinae" { spawn-sh "vicinae 'vicinae://launch/clipboard/history?toggle=true'"; }
+    MOD+W                               hotkey-overlay-title="Switch Window" { spawn-sh "vicinae vicinae://launch/wm/switch-windows"; }
 
     // Audio Controls
-    XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1.5"; }
-    XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05- -l 1.5"; }
-    SHIFT+XF86AudioRaiseVolume          allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1"; }
-    SHIFT+XF86AudioLowerVolume          allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05- -l 1"; }
+    XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1.5"; }
+    XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02- -l 1.5"; }
+    SHIFT+XF86AudioRaiseVolume          allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1"; }
+    SHIFT+XF86AudioLowerVolume          allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02- -l 1"; }
     XF86AudioMute                       allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute                    allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
     XF86AudioNext                       allow-when-locked=true { spawn-sh "playerctl next"; }
@@ -114,14 +117,22 @@ binds {
     MOD+SHIFT+END                       { move-column-to-last; }
 
     MOD+CTRL+LEFT                       { focus-monitor-left; }
+    MOD+CTRL+H                            { focus-monitor-left; }
     MOD+CTRL+RIGHT                      { focus-monitor-right; }
+    MOD+CTRL+L                            { focus-monitor-right; }
     MOD+CTRL+UP                         { focus-monitor-up; }
+    MOD+CTRL+K                            { focus-monitor-up; }
     MOD+CTRL+DOWN                       { focus-monitor-down; }
+    MOD+CTRL+J                            { focus-monitor-down; }
 
     MOD+SHIFT+CTRL+LEFT                 { move-column-to-monitor-left; }
+    MOD+SHIFT+CTRL+H                    { move-column-to-monitor-left; }
     MOD+SHIFT+CTRL+RIGHT                { move-column-to-monitor-right; }
+    MOD+SHIFT+CTRL+L                    { move-column-to-monitor-right; }
     MOD+SHIFT+CTRL+UP                   { move-column-to-monitor-up; }
+    MOD+SHIFT+CTRL+K                    { move-column-to-monitor-up; }
     MOD+SHIFT+CTRL+DOWN                 { move-column-to-monitor-down; }
+    MOD+SHIFT+CTRL+J                    { move-column-to-monitor-down; }
 
     MOD+ALT+LEFT                        { consume-or-expel-window-left; }
     MOD+ALT+H                           { consume-or-expel-window-left; }
@@ -209,8 +220,9 @@ spawn-sh-at-startup "qs -c noctalia-shell"
 spawn-sh-at-startup "~/.config/niri/scripts/autolock.fish"
 spawn-sh-at-startup "vicinae server"
 spawn-sh-at-startup "~/.config/niri/scripts/personal_autostart.fish"
-spawn-sh-at-startup "sleep 5; ~/.config/niri/scripts/xwayland_discord.fish &"
+// spawn-sh-at-startup "sleep 5; ~/.config/niri/scripts/xwayland_discord.fish &"
 spawn-sh-at-startup "sleep 5; ~/.config/niri/scripts/xwayland_steam.fish &"
+spawn-sh-at-startup "sleep 5; equibop &"
 
 // Disable window decorations
 // https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#prefer-no-csd
@@ -344,12 +356,26 @@ window-rule {
     clip-to-geometry true // noctalia-shell also need this?
 }
 
+// Disable sizing for VLC
+window-rule {
+    match app-id=r#"^vlc$"#
+    open-floating true
+    default-column-width {}
+    default-window-height {}
+}
+
 // KDE portal file picker
 window-rule {
     match app-id="org.freedesktop.impl.portal.desktop.kde"
     open-floating true
     default-column-width { fixed 720; }
     default-window-height { fixed 560; }
+}
+
+// Dolphin Duplicate File Dialog
+window-rule {
+    match app-id=r#"^org.kde.dolphin$"# title=r#"^Copying — Dolphin$"#
+    open-focused false
 }
 
 // Synology Cloud Drive UI weirdness fix
@@ -383,6 +409,13 @@ window-rule {
 }
 
 window-rule {
+    match app-id=r#"equibop$"#
+
+    // variable-refresh-rate true
+    default-column-width { proportion 0.5; }
+}
+
+window-rule {
     match title=r#"^Endfield$"#
     
     open-fullscreen true
@@ -391,6 +424,16 @@ window-rule {
     min-height 1440
     default-column-width { fixed 3440; }
     default-window-height { fixed 1440; }
+}
+
+window-rule {
+    match app-id=r#"^org.kde.gwenview$"#
+    match title=r#"^Annotate"#
+    
+    min-width 1141
+    min-height 1402
+    default-column-width { fixed 1141; }
+    default-window-height { fixed 1402; }
 }
 
 window-rule {
@@ -403,7 +446,7 @@ window-rule {
     match title=r#"^Steam$"#
     exclude title=r#"^notificationtoasts_\d+_desktop$"#
     default-column-width { proportion 0.5; }
-    open-on-workspace "2_1"
+    // open-on-workspace "2_1"
 }
 
 // steam main and other windows
@@ -422,6 +465,11 @@ window-rule {
 
 window-rule {
     match app-id="discord"
+    open-on-workspace "2_1"
+}
+
+window-rule {
+    match app-id="equibop"
     open-on-workspace "2_1"
 }
 
