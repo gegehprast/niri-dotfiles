@@ -35,6 +35,7 @@ output "DP-2" {
     mode "2560x1440@144.000"
     position x=4240 y=-2040
     // variable-refresh-rate
+    // off
 }
 
 output "HDMI-A-1" {
@@ -423,6 +424,16 @@ window-rule {
     min-height 1440
     default-column-width { fixed 3440; }
     default-window-height { fixed 1440; }
+}
+
+window-rule {
+    match app-id=r#"^org.kde.gwenview$"#
+    match title=r#"^Annotate"#
+    
+    min-width 1141
+    min-height 1402
+    default-column-width { fixed 1141; }
+    default-window-height { fixed 1402; }
 }
 
 window-rule {
