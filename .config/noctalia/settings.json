@@ -73,7 +73,7 @@
         "rightClickFollowMouse": true,
         "screenOverrides": [
             {
-                "enabled": true,
+                "enabled": false,
                 "name": "DP-2",
                 "position": "top"
             }
