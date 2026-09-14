@@ -39,6 +39,7 @@ output "eDP-1" {
     // variable-refresh-rate
     focus-at-startup
     // variable-refresh-rate
+    // off
 }
 
 output "HDMI-A-1" {
@@ -409,6 +410,16 @@ window-rule {
     match app-id=r#"code$"#
 
    // variable-refresh-rate true
+}
+
+window-rule {
+    match app-id=r#"^org.kde.gwenview$"#
+    match title=r#"^Annotate"#
+    
+    min-width 1141
+    min-height 1402
+    default-column-width { fixed 1141; }
+    default-window-height { fixed 1402; }
 }
 
 window-rule {
