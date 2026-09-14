@@ -478,6 +478,20 @@ window-rule {
     open-maximized-to-edges false
 }
 
+// remmina, main window 33%
+window-rule {
+    match app-id=r#"^org.remmina.Remmina$"#
+    match title=r#"^Remmina Remote Desktop Client$"#
+    default-column-width { proportion 0.333333333; }
+}
+
+// remmina, rdp window 66%
+window-rule {
+    match app-id=r#"^org.remmina.Remmina$"#
+    exclude title=r#"^Remmina Remote Desktop Client$"#
+    default-column-width { proportion 0.666666666; }
+}
+
 // window-rule {
 //     match is-focused=true
 // }

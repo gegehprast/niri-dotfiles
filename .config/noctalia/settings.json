@@ -205,6 +205,15 @@
                     "textColor": "none"
                 },
                 {
+                    "defaultSettings": {
+                        "githubGistId": "",
+                        "githubToken": "",
+                        "notes": "[]",
+                        "syncEnabled": false
+                    },
+                    "id": "plugin:sticky-notes"
+                },
+                {
                     "displayMode": "alwaysShow",
                     "iconColor": "none",
                     "id": "VPN",
@@ -393,11 +402,11 @@
         "animationSpeed": 1,
         "backgroundOpacity": 0.6,
         "colorizeIcons": false,
-        "deadOpacity": 0.6,
+        "deadOpacity": 0.2,
         "displayMode": "auto_hide",
         "dockType": "floating",
         "enabled": true,
-        "floatingRatio": 2,
+        "floatingRatio": 0.4,
         "groupApps": false,
         "groupClickAction": "cycle",
         "groupContextMenuMode": "extended",
@@ -412,7 +421,8 @@
         "launcherUseDistroLogo": false,
         "monitors": [
             "DP-3",
-            "eDP-1"
+            "eDP-1",
+            "HDMI-A-1"
         ],
         "onlySameOutput": false,
         "pinnedApps": [
@@ -424,7 +434,7 @@
         "showDockIndicator": false,
         "showLauncherIcon": false,
         "sitOnFrame": false,
-        "size": 1
+        "size": 1.41
     },
     "general": {
         "allowPanelsOnScreenWithoutBar": true,
@@ -570,8 +580,7 @@
         "lowUrgencyDuration": 3,
         "monitors": [
             "DP-1",
-            "HDMI-A-1",
-            "eDP-1"
+            "HDMI-A-1"
         ],
         "normalUrgencyDuration": 7,
         "overlayLayer": true,
@@ -779,7 +788,7 @@
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
         "wallhavenPurity": "000",
-        "wallhavenQuery": "",
+        "wallhavenQuery": "ace combat",
         "wallhavenRatios": "",
         "wallhavenResolutionHeight": "",
         "wallhavenResolutionMode": "atleast",
