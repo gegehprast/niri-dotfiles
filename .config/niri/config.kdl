@@ -33,22 +33,23 @@ cursor {
 // https://yalter.github.io/niri/Configuration%3A-Outputs.html
 output "DP-2" {
     mode "2560x1440@144.000"
-    position x=4240 y=-2040
+    position x=-1440 y=-860
+    transform "90"
     // variable-refresh-rate
     // off
+}
+
+output "DP-1" {
+    mode "3440x1440@240.085"
+    position x=0 y=0
+    focus-at-startup
+    // variable-refresh-rate
 }
 
 output "HDMI-A-1" {
     mode "3440x1440@239.999"
     position x=0 y=0
     off
-}
-
-output "DP-1" {
-    mode "3440x1440@240.085"
-    position x=3440 y=-600
-    focus-at-startup
-    // variable-refresh-rate
 }
 
 // Keybindings
@@ -412,7 +413,7 @@ window-rule {
     match app-id=r#"equibop$"#
 
     // variable-refresh-rate true
-    default-column-width { proportion 0.5; }
+    default-column-width { proportion 1.0; }
 }
 
 window-rule {
@@ -445,7 +446,7 @@ window-rule {
     match app-id=r#"^steam$"#
     match title=r#"^Steam$"#
     exclude title=r#"^notificationtoasts_\d+_desktop$"#
-    default-column-width { proportion 0.5; }
+    default-column-width { proportion 1.0; }
     // open-on-workspace "2_1"
 }
 
@@ -460,7 +461,7 @@ window-rule {
 window-rule {
     match app-id=r#"^steam_app_"#
     open-on-workspace "1_1"
-    default-column-width {}
+    default-column-width { proportion 1.0; }
 }
 
 window-rule {

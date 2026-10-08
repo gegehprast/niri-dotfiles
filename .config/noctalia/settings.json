@@ -73,7 +73,7 @@
         "rightClickFollowMouse": true,
         "screenOverrides": [
             {
-                "enabled": true,
+                "enabled": false,
                 "name": "DP-2",
                 "position": "top"
             }
@@ -633,7 +633,7 @@
         "bluetoothRssiPollIntervalMs": 10000,
         "bluetoothRssiPollingEnabled": false,
         "disableDiscoverability": false,
-        "networkPanelView": "ethernet",
+        "networkPanelView": "wifi",
         "wifiDetailsViewMode": "grid"
     },
     "nightLight": {
@@ -864,7 +864,7 @@
         ],
         "useOriginalImages": false,
         "useSolidColor": false,
-        "useWallhaven": true,
+        "useWallhaven": false,
         "viewMode": "recursive",
         "wallhavenApiKey": "",
         "wallhavenCategories": "111",
