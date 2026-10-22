@@ -36,9 +36,14 @@ widget_order = []
     [desktop_widgets.widget]
 
 [lockscreen_widgets]
-enabled = false
+enabled = true
 schema_version = 2
-widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@DP-2" ]
+widget_order = [
+    "lockscreen-login-box@DP-1",
+    "lockscreen-login-box@DP-2",
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-widget-0000000000000002"
+]
 
     [lockscreen_widgets.grid]
     cell_size = 16
@@ -49,7 +54,7 @@ widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@DP-2" ]
     box_height = 196.0
     box_width = 810.0
     cx = 1720.0
-    cy = 1258.0
+    cy = 1250.0
     output = "DP-1"
     placement_height = 1440.0
     placement_width = 3440.0
@@ -101,16 +106,59 @@ widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@DP-2" ]
         show_unlock_hint = true
         show_weather = true
 
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 3108.0
+    cy = 237.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 3440.0
+    rotation = 0.0
+    type = "calendar"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 192.0
+    box_width = 832.0
+    cx = 1720.0
+    cy = 720.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 3440.0
+    rotation = 0.0
+    type = "audio_visualizer"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        bands = 32
+        show_when_idle = true
+
+[notification]
+position = "bottom_right"
+
+[osd]
+orientation = "vertical"
+position = "bottom_right"
+position_vertical = "center_right"
+
 [plugins]
 enabled = [ "davemhammer/tailscale" ]
 
 [shell]
+clipboard_history_max_entries = 5000
 panel_anchor_bar = "default"
 
+    [shell.launcher]
+    show_app_actions = true
+    width = 880
+
     [shell.panel]
+    clipboard_placement = "attached"
     clipboard_position = "auto"
+    launcher_placement = "attached"
+    launcher_position = "auto"
     open_near_click_clipboard = true
     open_near_click_control_center = true
+    open_near_click_launcher = true
     open_near_click_session = true
     transparency_mode = "soft"
 
@@ -145,8 +193,20 @@ enabled = false
 [widget.control-center]
 enabled = false
 
+[widget.launcher]
+enabled = false
+
+[widget.media]
+art_size = 32
+max_length = 348
+show_progress = true
+title_scroll = "on_hover"
+
 [widget.status]
 type = "davemhammer/tailscale:status"
 
 [widget.volume]
 show_label = false
+
+[widget.wallpaper]
+enabled = false
