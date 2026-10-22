@@ -18,7 +18,10 @@ end = [
     "clock",
     "session"
 ]
+margin_ends = 0
 position = "bottom"
+radius_bottom_left = 0
+radius_bottom_right = 0
 thickness = 32
 widget_spacing = 4
 
@@ -35,14 +38,22 @@ widget_order = []
 
     [desktop_widgets.widget]
 
+[lockscreen]
+edge_smoothness = 0.29999999329447746
+transition = [ "honeycomb", "stripes" ]
+transition_duration = 700
+
 [lockscreen_widgets]
 enabled = true
 schema_version = 2
 widget_order = [
+    "lockscreen-widget-0000000000000003",
     "lockscreen-login-box@DP-1",
     "lockscreen-login-box@DP-2",
     "lockscreen-widget-0000000000000001",
-    "lockscreen-widget-0000000000000002"
+    "lockscreen-widget-0000000000000002",
+    "lockscreen-widget-0000000000000004",
+    "lockscreen-widget-0000000000000005"
 ]
 
     [lockscreen_widgets.grid]
@@ -107,10 +118,10 @@ widget_order = [
         show_weather = true
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
-    box_height = 0.0
-    box_width = 0.0
-    cx = 3108.0
-    cy = 237.0
+    box_height = 416.0
+    box_width = 624.0
+    cx = 3116.0
+    cy = 230.0
     output = "DP-1"
     placement_height = 1440.0
     placement_width = 3440.0
@@ -118,7 +129,22 @@ widget_order = [
     type = "calendar"
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
-    box_height = 192.0
+    box_height = 208.0
+    box_width = 368.0
+    cx = 1720.0
+    cy = 720.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 3440.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        bands = 32
+        show_when_idle = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
+    box_height = 688.0
     box_width = 832.0
     cx = 1720.0
     cy = 720.0
@@ -126,11 +152,36 @@ widget_order = [
     placement_height = 1440.0
     placement_width = 3440.0
     rotation = 0.0
-    type = "audio_visualizer"
+    type = "fancy_audio_visualizer"
 
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
-        bands = 32
-        show_when_idle = true
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
+        background = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000004]
+    box_height = 272.0
+    box_width = 592.0
+    cx = 3128.0
+    cy = 1288.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 3440.0
+    rotation = 0.0
+    type = "sysmon"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000004.settings]
+        stat = "cpu_usage"
+        stat2 = "cpu_temp"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000005]
+    box_height = 288.0
+    box_width = 624.0
+    cx = 3116.0
+    cy = 592.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 3440.0
+    rotation = 0.0
+    type = "weather"
 
 [notification]
 position = "bottom_right"
@@ -180,13 +231,13 @@ wallpaper_scheme = "m3-content"
 path = "/home/gegeh/Pictures/Wallpapers/jr-korpa-9XngoIpxcEo-unsplash.jpg"
 
 [wallpaper.last]
-path = "/home/gegeh/Pictures/Wallpapers/jr-korpa-9XngoIpxcEo-unsplash.jpg"
+path = "/home/gegeh/Pictures/Wallpapers/os-x-snow-leopard-5120x3200-24052.jpg"
 
 [wallpaper.monitors.DP-1]
 path = "/home/gegeh/Pictures/Wallpapers/jr-korpa-9XngoIpxcEo-unsplash.jpg"
 
 [wallpaper.monitors.DP-2]
-path = "/home/gegeh/Pictures/Wallpapers/jr-korpa-9XngoIpxcEo-unsplash.jpg"
+path = "/home/gegeh/Pictures/Wallpapers/os-x-snow-leopard-5120x3200-24052.jpg"
 
 [widget.battery]
 enabled = false
