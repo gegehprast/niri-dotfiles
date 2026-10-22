@@ -3,7 +3,6 @@
 # Essentials
 paru -S --needed \
     xwayland-satellite \
-    polkit-kde-agent \
     gnome-keyring \
     seahorse \
     playerctl \

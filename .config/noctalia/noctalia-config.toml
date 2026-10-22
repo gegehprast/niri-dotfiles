@@ -146,6 +146,7 @@ enabled = [ "davemhammer/tailscale" ]
 [shell]
 clipboard_history_max_entries = 10000
 panel_anchor_bar = "default"
+polkit_agent = true
 
     [shell.launcher]
     show_app_actions = true

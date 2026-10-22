@@ -217,7 +217,6 @@ binds {
 // https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#spawn-at-startup
 spawn-sh-at-startup "dbus-update-activation-environment --systemd --all"
 spawn-sh-at-startup "gnome-keyring-daemon --start --components=secrets"
-spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
 spawn-sh-at-startup "noctalia"
 spawn-sh-at-startup "~/.config/niri/scripts/autolock.fish"
 spawn-sh-at-startup "~/.config/niri/scripts/personal_autostart.fish"
