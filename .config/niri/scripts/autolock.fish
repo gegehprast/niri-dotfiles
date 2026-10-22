@@ -1,15 +1,10 @@
 #!/usr/bin/env fish
 
-while true
-    set output (qs -c noctalia-shell list | string collect)
-
-    if string match -q "*Process ID: *" -- $output
-        break
-    end
-
+# Wait until noctalia is up and answering IPC
+while not noctalia msg status >/dev/null 2>&1
     sleep 1
 end
 
 sleep 1.1
 
-qs -c noctalia-shell ipc call lockScreen lock
+noctalia msg session lock

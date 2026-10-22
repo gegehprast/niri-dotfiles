@@ -1,5 +1,17 @@
 #!/usr/bin/env fish
 
+# Toggle: close if this picker is already open, otherwise close whatever launcher mode is open and take over
+# (state file shared with launcher_toggle.fish)
+set state_file $XDG_RUNTIME_DIR/noctalia-launcher-mode
+if noctalia msg status | string match -q '*"activePanelId": "launcher"*'
+    noctalia msg panel-close launcher
+    if test (cat $state_file 2>/dev/null) = audio
+        exit
+    end
+    sleep 0.15
+end
+echo audio >$state_file
+
 # Get current default audio sink
 set current_sink (pactl get-default-sink)
 
@@ -33,7 +45,7 @@ for sink_name in (pactl list short sinks | awk '{print $2}')
 end
 
 # Show dmenu selector and get user choice
-printf '%s\n' $display_list | vicinae dmenu --placeholder "Select audio output" | read --local selected_item
+printf '%s\n' $display_list | noctalia dmenu -p "Select audio output" | read --local selected_item
 
 # Switch to selected audio output
 if test -n "$selected_item"
