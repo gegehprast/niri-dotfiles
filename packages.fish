@@ -3,7 +3,6 @@
 # Essentials
 paru -S --needed \
     xwayland-satellite \
-    polkit-kde-agent \
     gnome-keyring \
     seahorse \
     playerctl \
@@ -29,8 +28,7 @@ paru -S --needed \
     kitty \
     neovim \
     visual-studio-code-bin \
-    noctalia-shell \
-    vicinae-bin
+    noctalia
 
 # My personal app & tools
 paru -S --needed \

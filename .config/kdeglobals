@@ -32,7 +32,7 @@ ForegroundNegative=243,139,168
 ForegroundNeutral=148,226,213
 ForegroundNormal=205,214,244
 ForegroundPositive=148,226,213
-ForegroundVisited=16,7,1
+ForegroundVisited=11,2,0
 
 [Colors:Complementary]
 BackgroundAlternate=39,40,57
@@ -46,7 +46,7 @@ ForegroundNegative=243,139,168
 ForegroundNeutral=148,226,213
 ForegroundNormal=228,208,251
 ForegroundPositive=148,226,213
-ForegroundVisited=16,7,1
+ForegroundVisited=11,2,0
 
 [Colors:Header]
 BackgroundAlternate=30,30,46
@@ -60,7 +60,7 @@ ForegroundNegative=243,139,168
 ForegroundNeutral=148,226,213
 ForegroundNormal=205,214,244
 ForegroundPositive=148,226,213
-ForegroundVisited=16,7,1
+ForegroundVisited=11,2,0
 
 [Colors:Header][Inactive]
 BackgroundAlternate=49,50,68
@@ -74,7 +74,7 @@ ForegroundNegative=243,139,168
 ForegroundNeutral=148,226,213
 ForegroundNormal=205,214,244
 ForegroundPositive=148,226,213
-ForegroundVisited=16,7,1
+ForegroundVisited=11,2,0
 
 [Colors:Selection]
 BackgroundAlternate=39,40,57
@@ -84,11 +84,11 @@ DecorationHover=203,166,247
 ForegroundActive=17,17,27
 ForegroundInactive=163,180,235
 ForegroundLink=250,179,135
-ForegroundNegative=200,4,58
-ForegroundNeutral=27,168,145
+ForegroundNegative=187,16,64
+ForegroundNeutral=35,160,139
 ForegroundNormal=17,17,27
-ForegroundPositive=27,168,145
-ForegroundVisited=16,7,1
+ForegroundPositive=35,160,139
+ForegroundVisited=11,2,0
 
 [Colors:Tooltip]
 BackgroundAlternate=30,30,46
@@ -102,7 +102,7 @@ ForegroundNegative=243,139,168
 ForegroundNeutral=148,226,213
 ForegroundNormal=205,214,244
 ForegroundPositive=148,226,213
-ForegroundVisited=16,7,1
+ForegroundVisited=11,2,0
 
 [Colors:View]
 BackgroundAlternate=49,50,68
@@ -116,10 +116,10 @@ ForegroundNegative=243,139,168
 ForegroundNeutral=148,226,213
 ForegroundNormal=205,214,244
 ForegroundPositive=148,226,213
-ForegroundVisited=16,7,1
+ForegroundVisited=11,2,0
 
 [Colors:Window]
-BackgroundAlternate=107,2,233
+BackgroundAlternate=109,16,218
 BackgroundNormal=49,50,68
 DecorationFocus=203,166,247
 DecorationHover=203,166,247
@@ -130,7 +130,7 @@ ForegroundNegative=243,139,168
 ForegroundNeutral=148,226,213
 ForegroundNormal=205,214,244
 ForegroundPositive=148,226,213
-ForegroundVisited=16,7,1
+ForegroundVisited=11,2,0
 
 [General]
 ColorScheme=Noctalia
@@ -170,7 +170,7 @@ EnableRemoteFolderThumbnail=false
 MaximumRemoteSize=0
 
 [WM]
-activeBackground=107,2,233
+activeBackground=109,16,218
 activeBlend=228,208,251
 activeForeground=228,208,251
 inactiveBackground=30,30,46
