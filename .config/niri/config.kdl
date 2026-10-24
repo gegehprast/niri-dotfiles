@@ -244,11 +244,12 @@ binds {
 spawn-sh-at-startup "dbus-update-activation-environment --systemd --all"
 spawn-sh-at-startup "gnome-keyring-daemon --start --components=secrets"
 spawn-sh-at-startup "noctalia"
-spawn-sh-at-startup "~/.config/niri/scripts/autolock.fish"
-spawn-sh-at-startup "~/.config/niri/scripts/personal_autostart.fish"
+// spawn-sh-at-startup "~/.config/niri/scripts/autolock.fish"
+// spawn-sh-at-startup "~/.config/niri/scripts/personal_autostart.fish"
 // spawn-sh-at-startup "sleep 5; ~/.config/niri/scripts/xwayland_discord.fish &"
-spawn-sh-at-startup "sleep 5; ~/.config/niri/scripts/xwayland_steam.fish &"
-spawn-sh-at-startup "sleep 5; equibop &"
+// spawn-sh-at-startup "sleep 5; ~/.config/niri/scripts/xwayland_steam.fish &"
+// spawn-sh-at-startup "sleep 5; equibop &"
+spawn-sh-at-startup "~/.config/niri/scripts/battery_status.fish"
 
 // Disable window decorations
 // https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#prefer-no-csd
