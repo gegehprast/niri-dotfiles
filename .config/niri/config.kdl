@@ -42,6 +42,13 @@ output "eDP-1" {
     // off
 }
 
+output "DP-1" {
+    mode "3440x1440@240.085"
+    position x=0 y=0
+    focus-at-startup
+    // variable-refresh-rate
+}
+
 output "HDMI-A-1" {
     position x=-760 y=-1440
     mode "3440x1440@100.000"
@@ -81,16 +88,16 @@ binds {
     MOD+KP_Enter                        hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
     MOD+SHIFT+RETURN                    hotkey-overlay-title="kitty quick access terminal" { spawn-sh "kitten quick-access-terminal"; }
     MOD+SHIFT+KP_Enter                  hotkey-overlay-title="kitty quick access terminal" { spawn-sh "kitten quick-access-terminal"; }
-    MOD+SPACE                           hotkey-overlay-title="Open App Launcher: vicinae" { spawn-sh "vicinae toggle"; }
+    MOD+SPACE                           hotkey-overlay-title="Open App Launcher: noctalia" { spawn-sh "~/.config/niri/scripts/launcher_toggle.fish app"; }
     MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "zen-browser"; }
     // MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "~/.config/niri/scripts/xwayland_zen.fish"; }
-    MOD+CTRL+ALT+L                      hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
-    MOD+COMMA                           hotkey-overlay-title="Noctalia setting" { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
-    MOD+PERIOD                          hotkey-overlay-title="Noctalia control center" { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
+    MOD+CTRL+ALT+L                      hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "noctalia msg session lock"; }
+    MOD+COMMA                           hotkey-overlay-title="Noctalia setting" { spawn-sh "noctalia msg settings-toggle"; }
+    MOD+PERIOD                          hotkey-overlay-title="Noctalia control center" { spawn-sh "noctalia msg panel-toggle control-center"; }
     MOD+E                               hotkey-overlay-title="File Manager: Dolphin" { spawn-sh "dolphin"; }
     MOD+C                               hotkey-overlay-title="VS Code" { spawn-sh "~/.config/niri/scripts/xwayland_code.fish"; }
-    MOD+V                               hotkey-overlay-title="Clipboard History: vicinae" { spawn-sh "vicinae 'vicinae://launch/clipboard/history?toggle=true'"; }
-    MOD+W                               hotkey-overlay-title="Switch Window" { spawn-sh "vicinae vicinae://launch/wm/switch-windows"; }
+    MOD+V                               hotkey-overlay-title="Clipboard History: noctalia" { spawn-sh "noctalia msg panel-toggle clipboard"; }
+    MOD+W                               hotkey-overlay-title="Switch Window: noctalia" { spawn-sh "~/.config/niri/scripts/launcher_toggle.fish win"; }
 
     // Audio Controls
     XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1.5"; }
@@ -103,11 +110,11 @@ binds {
     XF86AudioPause                      allow-when-locked=true { spawn-sh "playerctl play-pause"; }
     XF86AudioPlay                       allow-when-locked=true { spawn-sh "playerctl play-pause"; }
     XF86AudioPrev                       allow-when-locked=true { spawn-sh "playerctl previous"; }
-    MOD+SHIFT+A                         hotkey-overlay-title="Select default audio sink" { spawn-sh "~/.config/niri/scripts/vicinae_audio.fish"; }
+    MOD+SHIFT+A                         hotkey-overlay-title="Select default audio sink" { spawn-sh "~/.config/niri/scripts/audio_sink.fish"; }
 
     // Brightness Controls
-    XF86MonBrightnessUp                 allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness increase"; }
-    XF86MonBrightnessDown               allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness decrease"; }
+    XF86MonBrightnessUp                 allow-when-locked=true { spawn-sh "noctalia msg brightness-up"; }
+    XF86MonBrightnessDown               allow-when-locked=true { spawn-sh "noctalia msg brightness-down"; }
 
     // Window Management
     MOD+Q                               { close-window; }
@@ -216,11 +223,12 @@ binds {
     MOD+CTRL+SHIFT+F                    hotkey-overlay-title="Borderless fullscreen" { toggle-windowed-fullscreen; }
     MOD+SHIFT+W                         { toggle-column-tabbed-display; }
     MOD+TAB                             { focus-window-down-or-top; }
+    ALT+TAB                             hotkey-overlay-title="Window Switcher: noctalia" { spawn-sh "noctalia msg window-switcher hold"; }
 
     // Screenshots
-    MOD+SHIFT+S                         hotkey-overlay-title="Take a Screenshot" { spawn-sh "~/.config/niri/scripts/screenshot.fish"; }
-    MOD+PRINT                           { screenshot-screen; }
-    MOD+SHIFT+PRINT                     { screenshot-window; }
+    MOD+SHIFT+S                         hotkey-overlay-title="Screenshot Region: noctalia" { spawn-sh "noctalia msg screenshot-region"; }
+    PRINT                               hotkey-overlay-title="Screenshot Monitor: noctalia" { spawn-sh "noctalia msg screenshot-fullscreen"; }
+    MOD+PRINT                     { screenshot-window; }
 
     // Emergency Escape Key
     MOD+ESCAPE                          allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
@@ -235,11 +243,12 @@ binds {
 // https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#spawn-at-startup
 spawn-sh-at-startup "dbus-update-activation-environment --systemd --all"
 spawn-sh-at-startup "gnome-keyring-daemon --start --components=secrets"
-spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
-spawn-sh-at-startup "qs -c noctalia-shell"
-// spawn-sh-at-startup "~/.config/niri/scripts/autolock.fish"
-spawn-sh-at-startup "vicinae server"
-spawn-sh-at-startup "~/.config/niri/scripts/battery_status.fish"
+spawn-sh-at-startup "noctalia"
+spawn-sh-at-startup "~/.config/niri/scripts/autolock.fish"
+spawn-sh-at-startup "~/.config/niri/scripts/personal_autostart.fish"
+// spawn-sh-at-startup "sleep 5; ~/.config/niri/scripts/xwayland_discord.fish &"
+spawn-sh-at-startup "sleep 5; ~/.config/niri/scripts/xwayland_steam.fish &"
+spawn-sh-at-startup "sleep 5; equibop &"
 
 // Disable window decorations
 // https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#prefer-no-csd
@@ -358,7 +367,7 @@ workspace "3"
 // https://yalter.github.io/niri/Configuration%3A-Window-Rules.html
 window-rule {
     geometry-corner-radius 5
-    clip-to-geometry true // noctalia-shell also need this?
+    clip-to-geometry true
 }
 
 // Disable sizing for VLC
@@ -409,7 +418,32 @@ window-rule {
 window-rule {
     match app-id=r#"code$"#
 
-   // variable-refresh-rate true
+    // variable-refresh-rate true
+}
+
+window-rule {
+    match app-id=r#"discord$"#
+
+    // variable-refresh-rate true
+    default-column-width { proportion 0.5; }
+}
+
+window-rule {
+    match app-id=r#"equibop$"#
+
+    // variable-refresh-rate true
+    default-column-width { proportion 1.0; }
+}
+
+window-rule {
+    match title=r#"^Endfield$"#
+    
+    open-fullscreen true
+    open-focused true
+    min-width 3440
+    min-height 1440
+    default-column-width { fixed 3440; }
+    default-window-height { fixed 1440; }
 }
 
 window-rule {
@@ -431,7 +465,7 @@ window-rule {
     match app-id=r#"^steam$"#
     match title=r#"^Steam$"#
     exclude title=r#"^notificationtoasts_\d+_desktop$"#
-    default-column-width { proportion 0.5; }
+    default-column-width { proportion 1.0; }
     // open-on-workspace "2_1"
 }
 
@@ -446,7 +480,7 @@ window-rule {
 window-rule {
     match app-id=r#"^steam_app_"#
     open-on-workspace "1_1"
-    default-column-width {}
+    default-column-width { proportion 1.0; }
 }
 
 window-rule {
@@ -528,6 +562,22 @@ window-rule {
 //   }
 // }
 
+// Noctalia settings window
+window-rule {
+    match app-id="dev.noctalia.Noctalia"
+    open-floating true
+    default-column-width { fixed 1080; }
+    default-window-height { fixed 920; }
+}
+
+// Blur translucent windows (niri 26.04+)
+window-rule {
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
 // Environment Variables
 // https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html#environment
 environment {
@@ -539,8 +589,7 @@ environment {
     XDG_CURRENT_DESKTOP "niri"
     XDG_SESSION_DESKTOP "niri"
     QT_QPA_PLATFORMTHEME "qt6ct"
-    QS_ICON_THEME "Papirus-Dark"
-    // SAL_USE_VCLPLUGIN "qt6"
+    SAL_USE_VCLPLUGIN "qt6"
 }
 
 // Screenshot Path
@@ -557,19 +606,30 @@ hotkey-overlay {
 
 // Noctalia Blurred Overview Wallpaper
 layer-rule {
-  match namespace="^noctalia-overview*"
+  match namespace="^noctalia-backdrop"
   place-within-backdrop true
 }
 
-// Noctalia Stationary Wallpaper
-// layer-rule {
-//   match namespace="^noctalia-wallpaper*"
-//   place-within-backdrop true
-// }
+// Noctalia surfaces: no xray (noctalia publishes its own blur regions)
+layer-rule {
+  match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+  background-effect {
+    xray false
+  }
+}
+
+// Noctalia window switcher blur
+layer-rule {
+  match namespace="noctalia-window-switcher"
+  background-effect {
+    blur true
+    xray false
+  }
+}
 
 // Debug Options
 // https://yalter.github.io/niri/Configuration%3A-Debug-Options.html
-// noctalia-shell need this
+// noctalia need this
 debug {
     honor-xdg-activation-with-invalid-serial
 }
