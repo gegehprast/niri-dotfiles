@@ -27,6 +27,9 @@ widget_spacing = 4
 
 [config]
 
+[control_center]
+width = 770
+
 [desktop_widgets]
 schema_version = 2
 widget_order = []
@@ -37,6 +40,24 @@ widget_order = []
     visible = true
 
     [desktop_widgets.widget]
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = false
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = true
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 660.0
 
 [lockscreen]
 edge_smoothness = 0.29999999329447746
@@ -216,6 +237,11 @@ polkit_agent = true
 
     [shell.screenshot]
     annotate = true
+    close_on_save = false
+    skip_annotate_on_copy_save = true
+
+    [shell.window_switcher]
+    mru = true
 
 [theme]
 builtin = "Catppuccin"
