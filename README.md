@@ -31,23 +31,35 @@ Append `password optional pam_gnome_keyring.so` to `/etc/pam.d/passwd`:
 password	optional	pam_gnome_keyring.so
 ```
 
-## getty
+## Installation
 
-### Automatic login to virtual console
+1. Install paru first; `packages.fish` uses it:
 
-I don't like using a login manager. I just use the shell lockscreen; see `~/.config/niri/scripts/autolock.fish`. The script will trigger the Noctalia lockscreen when niri first starts.
+    ```
+    sudo pacman -S paru
+    ```
 
-Now, to make automatic login to virtual console work, create a drop-in file for `getty@tty1.service` with the following contents:
+2. Run `./install.fish`. It installs the packages and runs `stow --no-folding .`, so only files get symlinked, never whole directories. That keeps files noctalia generates (kitty theme, GTK/Qt colors, etc.) out of the repo.
 
-*/etc/systemd/system/getty@tty1.service.d/autologin.conf*
+3. Disable any login manager the distro installed, otherwise the tty login below never happens:
 
+    ```
+    sudo systemctl disable sddm
+    ```
+
+## Login on tty1
+
+I don't use a login manager. Log in with your password on tty1, and fish starts niri (see `.config/fish/config.fish`):
+
+```fish
+if [ -z $WAYLAND_DISPLAY ] && [ $XDG_VTNR -eq 1 ]
+    niri-session -l
+end
 ```
-[Service]
-ExecStart=
-ExecStart=-/sbin/agetty --noreset --noclear --autologin USERNAME - ${TERM}
-```
 
-Replace `USERNAME` with your username.
+Logging in with a password also unlocks the GNOME keyring via PAM (see above).
+
+`~/.config/niri/scripts/autolock.fish` is for the old autologin setup (getty `--autologin` plus locking noctalia right after niri starts). It's disabled in `config.kdl` and not needed with password login.
 
 ## Default Terminal
 
@@ -76,9 +88,9 @@ Probably requires a restart or relogin.
 
 ## Make Firefox-based browsers use KDE file picker
 
-Set `org.freedesktop.impl.portal.FileChooser` to `kde` in `niri-portal.conf`. 
+Set `org.freedesktop.impl.portal.FileChooser` to `kde` in `niri-portals.conf`. 
 
-*~/.config/xdg-desktop-portal/niri-portal.conf*
+*~/.config/xdg-desktop-portal/niri-portals.conf*
 ```
 [preferred]
 ...
@@ -96,9 +108,9 @@ Go to `about:config` and set `widget.use-xdg-desktop-portal.file-picker` to 1. T
 ## Screencasting
 >*This step is already configured in the dotfiles.*
 
-I don't know what happened during my setup, but screencasting doesn't work without these two lines in `niri-portal.conf`.
+I don't know what happened during my setup, but screencasting doesn't work without these two lines in `niri-portals.conf`.
 
-*~/.config/xdg-desktop-portal/niri-portal.conf*
+*~/.config/xdg-desktop-portal/niri-portals.conf*
 ```
 [preferred]
 ...

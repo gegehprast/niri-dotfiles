@@ -5,7 +5,7 @@ fish packages.fish
 echo "Packages installed."
 
 echo "Stowing configuration files..."
-stow .
+stow --no-folding .
 echo "Configuration files stowed."
 
 echo "Setup complete!"
