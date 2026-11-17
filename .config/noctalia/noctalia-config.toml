@@ -215,10 +215,6 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
     rotation = 0.0
     type = "clock"
 
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
-        bands = 32
-        show_when_idle = true
-
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
     box_height = 688.0
     box_width = 832.0
