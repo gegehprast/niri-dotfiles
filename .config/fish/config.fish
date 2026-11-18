@@ -20,7 +20,9 @@ bind alt-delete kill-token
 #    # smth smth
 #end
 
-if [ -z $WAYLAND_DISPLAY ] && [ $XDG_VTNR -eq 1 ]
+if status is-login
+    and not set -q WAYLAND_DISPLAY
+    and test "$XDG_VTNR" = 1
     niri-session -l
 end
 
